@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Listener</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .books {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .books img {
+      width: 120px;       /* 横幅を揃える */
+      height: 160px;      /* 高さを揃える */
+      object-fit: cover;  /* 枠いっぱいに表示 */
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="textbook">
+    <h2>音トレ道場</h2>
+    <div class="books">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra06_top_2.png" alt="音トレ6段">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra05_top.png" alt="音トレ5段">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra04_top.png" alt="音トレ4段">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra03_top.png" alt="音トレ3段">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra02_top.png" alt="音トレ2段">
+      <img src="https://step.saitama.jp/lp/ontra/img/ontra01_top.png" alt="音トレ初段">
+    </div>
+  </div>
+  <div class="textbook">
+    <h2>リズムでマスター</h2>
+    <div class="books">
+      <img src="https://step.saitama.jp/lp/img/pc/book06.png" alt="リズムでマスター英検準1級">
+      <img src="https://step.saitama.jp/lp/img/pc/book05.png" alt="リズムでマスター英検2級">
+      <img src="https://step.saitama.jp/lp/img/pc/book04.png" alt="リズムでマスター英検準2級">
+      <img src="https://step.saitama.jp/lp/img/pc/book03.png" alt="リズムでマスター英検3級">
+      <img src="https://step.saitama.jp/lp/img/pc/book02.png" alt="リズムでマスター英検4級">
+      <img src="https://step.saitama.jp/lp/img/pc/book01.png" alt="リズムでマスター英検5級">
+    </div>
+  </div>
+</body>
+</html>
