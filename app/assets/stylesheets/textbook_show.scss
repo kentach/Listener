@@ -1,0 +1,43 @@
+.textbook-show-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto 100px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: rgb(86, 86, 86);
+}
+
+.my-list {
+  align-items: center;
+  padding: 10px;
+  gap: 6px;
+  text-align: center;
+  border: 1px solid rgb(158, 158, 158);
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.textbook-show-audio-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.textbook-show-img {
+  margin: 20px 0;
+  flex-shrink: 0;
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  -webkit-user-drag: none;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}

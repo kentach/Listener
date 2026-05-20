@@ -1,0 +1,90 @@
+.audio-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.audio-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.audio-nav-btn {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+.audio-nav-btn i {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: #2a2a2a;
+
+}
+
+.audio-nav-btn:hover {
+  background-color: rgb(227, 226, 226);
+}
+
+.audio-nav-link {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+  color: gray;
+}
+
+.audio-nav-btn i {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.learning-time,
+.learning-level {
+  margin: 10px 0;
+  padding: 20px 18px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: rgb(227, 226, 226);
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.learning-time h5,
+.learning-level h5 {
+  margin: 0;
+  min-width: 80px;
+}
+
+.progress-wrapper {
+  flex: 1;
+  height: 20px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #a5a5a5;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  transition: width 0.3s;
+}

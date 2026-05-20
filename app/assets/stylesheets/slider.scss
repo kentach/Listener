@@ -1,27 +1,27 @@
 /* ================= SLIDER ================= */
 
-.slider {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 24px;
-}
+// .slider {
+//   position: relative;
+//   width: 100%;
+//   height: 200px;
+//   overflow: hidden;
+//   border-radius: 24px;
+// }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+// .slide {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+// }
 
-.slider-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
+// .slider-image {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   opacity: 0;
+//   transition: opacity 0.8s ease;
+// }
 
-.slider-image.active {
-  opacity: 1;
-}
+// .slider-image.active {
+//   opacity: 1;
+// }
