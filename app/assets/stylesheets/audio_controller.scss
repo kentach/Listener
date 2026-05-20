@@ -1,0 +1,172 @@
+
+:root {
+  --playerBg: rgba(25, 25, 25, 0.92);
+  --mainColor: #4f8cff;
+  --textMain: #ffffff;
+  --textSub: rgba(255, 255, 255, 0.7);
+}
+
+/* ================= PLAYER ================= */
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: var(--playerBg);
+  backdrop-filter: blur(30px);
+  color: var(--textMain);
+  transition: 0.4s ease;
+}
+
+/* ================= RANGE ================= */
+
+.sound-bar-range {
+  -webkit-appearance: none;
+  position: absolute;
+  top: -4px;
+  width: 100%;
+  height: 6px;
+
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.sound-bar-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  width: 6px;
+  height: 6px;
+
+  background: var(--mainColor);
+
+  cursor: pointer;
+
+  box-shadow: -400px 0 0 400px var(--mainColor);
+}
+
+/* ================= TRACK NAME ================= */
+
+.current-track-name {
+  margin-top: 8px;
+
+  text-align: center;
+  text-transform: capitalize;
+
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--textMain);
+}
+
+/* ================= CONTROL PANEL ================= */
+
+.control-panel {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  height: 60px;
+
+  margin: auto;
+
+  font-size: 30px;
+}
+
+.control-panel span {
+  display: none;
+
+  opacity: 0;
+  color: var(--textSub);
+
+  transition: 0.3s ease;
+}
+
+.player.active .control-panel {
+  justify-content: space-between;
+}
+
+.player.active .control-panel span {
+  display: block;
+
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.player.active .control-panel span.active {
+  color: var(--mainColor);
+  opacity: 1;
+}
+/* ================= MAIN ICON ================= */
+
+.control-panel .main {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-panel .main i {
+  display: none;
+
+  margin: 0 10px;
+
+  font-size: 34px;
+  color: var(--textMain);
+}
+
+.control-panel .main i.active {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+/* ================= HIDE ================= */
+
+.player .hide {
+  display: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.player.active .hide {
+  display: block;
+  opacity: 1;
+}
+
+/* ================= ACTIVE PLAYER ================= */
+
+.player.active {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+.player.active .sound-bar-range {
+  position: relative;
+  display: block;
+  margin: auto;
+  border-radius: 999px;
+}
+
+.player.active .current-track-name {
+  font-size: 40px;
+}
+
+.player.active .control-panel {
+  width: 100%;
+  font-size: 50px;
+}
+
