@@ -18,6 +18,20 @@
   border-radius: 8px;
   cursor: pointer;
   box-sizing: border-box;
+  transition: all .3s ease;
+}
+
+.my-list.active {
+  align-items: center;
+  padding: 10px;
+  border: none;
+  gap: 6px;
+  text-align: center;
+  border-radius: 8px;
+  color:#fff;
+  background-color: #ff5757;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .textbook-show-audio-container {
