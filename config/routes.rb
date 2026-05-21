@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   root 'static_pages#top' 
 
   resources :textbooks, only: [:index, :show] do
-    member do
-      get :reading
-      get :listening
-    end
+    resources :readings, only: [:index, :show], path:'reading'
+    resources :listenings, only: [:index, :show], path: 'listening'
+    resources :shadowings, only: [:index, :show], path: 'shadowing'
   end
+
 end

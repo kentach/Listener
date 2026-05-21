@@ -1,22 +1,20 @@
 <div class="audio-nav-container">
   <div class="audio-nav">
-
-    <%= link_to reading_textbook_path(1), class: 'audio-nav-btn audio-nav-link' do %>
+    <%= link_to textbook_readings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
       <i class="bi bi-book-half"></i>
       <span>音読練習</span>
     <% end %>
 
-    <%= link_to listening_textbook_path(1), class: 'audio-nav-btn audio-nav-link' do %>
+    <%= link_to textbook_listenings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
       <i class="bi bi-headphones"></i>
       <span>リスニング</span>
     <% end %>
 
-    <%= link_to listening_textbook_path(1), class: 'audio-nav-btn audio-nav-link' do %>
+    <%= link_to textbook_shadowings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
       <i class="fa-regular fa-comment"></i>
       <span>シャドー<br>
       イング</span>
     <% end %>
-
   </div>
 </div>
 
@@ -37,5 +35,3 @@
       </div>
     </div>
   </div>
-
-</div>

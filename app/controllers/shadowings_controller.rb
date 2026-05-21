@@ -1,0 +1,2 @@
+class ShadowingsController < ApplicationController
+end

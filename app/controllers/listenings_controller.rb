@@ -1,0 +1,2 @@
+class ListeningsController < ApplicationController
+end

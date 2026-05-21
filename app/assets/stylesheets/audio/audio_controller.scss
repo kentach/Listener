@@ -1,172 +1,113 @@
-
-:root {
-  --playerBg: rgba(25, 25, 25, 0.92);
-  --mainColor: #4f8cff;
-  --textMain: #ffffff;
-  --textSub: rgba(255, 255, 255, 0.7);
-}
-
-/* ================= PLAYER ================= */
-
-.player {
+/* ===== プレーヤー全体 ===== */
+.audio-player {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 110px;
-  background: var(--playerBg);
-  backdrop-filter: blur(30px);
-  color: var(--textMain);
-  transition: 0.4s ease;
+  padding: 14px 18px 20px;
+  background: #fff;
+  color: gray;
+
+  border-top: 1px solid rgb(207, 207, 207);
+
+  z-index: 1000;
 }
 
-/* ================= RANGE ================= */
+/* ===== 進捗バーエリア ===== */
+.audio-progress-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-.sound-bar-range {
-  -webkit-appearance: none;
-  position: absolute;
-  top: -4px;
-  width: 100%;
-  height: 6px;
-
-  background: rgba(255, 255, 255, 0.15);
-  overflow: hidden;
+  margin-bottom: 18px;
 }
 
-.sound-bar-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
+/* ===== 時間 ===== */
+.time-text {
+  font-size: 13px;
+  min-width: 40px;
+  text-align: center;
+}
 
-  width: 6px;
-  height: 6px;
+/* ===== range ===== */
+.audio-progress {
+  flex: 1;
+  cursor: pointer;
+}
 
-  background: var(--mainColor);
+/* ===== コントロール ===== */
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ===== ボタン共通 ===== */
+.audio-btn {
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
 
-  box-shadow: -400px 0 0 400px var(--mainColor);
+  transition: 0.2s;
 }
 
-/* ================= TRACK NAME ================= */
-
-.current-track-name {
-  margin-top: 8px;
-
-  text-align: center;
-  text-transform: capitalize;
-
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--textMain);
+/* hover */
+.audio-btn:hover {
+  opacity: 0.8;
 }
 
-/* ================= CONTROL PANEL ================= */
+/* ===== 小ボタン ===== */
+.sub-btn {
+  width: 44px;
+  height: 44px;
 
-.control-panel {
-  position: relative;
+  background: transparent;
+  color: rgb(77, 77, 77);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 80%;
-  height: 60px;
-
-  margin: auto;
-
-  font-size: 30px;
+  border: 1px solid #666;
 }
 
-.control-panel span {
-  display: none;
+/* ===== 再生ボタン ===== */
+.play-btn {
+  width: 64px;
+  height: 64px;
 
-  opacity: 0;
-  color: var(--textSub);
+  background: #28c2c2;
+  color: #fff;
 
-  transition: 0.3s ease;
 }
 
-.player.active .control-panel {
-  justify-content: space-between;
-}
-
-.player.active .control-panel span {
-  display: block;
-
-  font-size: 25px;
-  opacity: 0.7;
-}
-
-.player.active .control-panel span.active {
-  color: var(--mainColor);
-  opacity: 1;
-}
-/* ================= MAIN ICON ================= */
-
-.control-panel .main {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.control-panel .main i {
-  display: none;
-
-  margin: 0 10px;
-
+/* ===== 再生アイコン ===== */
+.play-icon {
   font-size: 34px;
-  color: var(--textMain);
 }
 
-.control-panel .main i.active {
-  display: flex;
+/* ===== ループ ===== */
+.loop-btn {
+  width: 40px;
+  height: 40px;
 
-  align-items: center;
-  justify-content: center;
-}
-/* ================= HIDE ================= */
+  background: transparent;
+  color: rgb(68, 68, 68);
 
-.player .hide {
-  display: none;
-  opacity: 0;
-  transition: 0.3s ease;
+  border: 1px solid #666;
 }
 
-.player.active .hide {
-  display: block;
-  opacity: 1;
+/* ===== speed select ===== */
+.speed-select {
+  width: 90px;
+  height: 40px;
+
+  border-radius: 8px;
+  border: 1px solid #666;
+
+  background: fff#2c2c2c;
+  color: rgb(68, 68, 68);
+  padding: 0 10px;
 }
-
-/* ================= ACTIVE PLAYER ================= */
-
-.player.active {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-}
-
-.player.active .sound-bar-range {
-  position: relative;
-  display: block;
-  margin: auto;
-  border-radius: 999px;
-}
-
-.player.active .current-track-name {
-  font-size: 40px;
-}
-
-.player.active .control-panel {
-  width: 100%;
-  font-size: 50px;
-}
-

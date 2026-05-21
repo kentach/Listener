@@ -1,8 +1,10 @@
 document.addEventListener('turbo:load', () => {
   const textbookImages = document.querySelectorAll('.textbook-img');
-  const closeBtn = document.querySelector('.fa-solid');
+  const closeBtn = document.querySelector('.fa-x');
   const modalBackground = document.getElementById('modal');
   const modalInner = document.querySelector('.modal-inner');
+
+  if (!textbookImages || !closeBtn || !modalBackground || !modalInner) return;
 
   textbookImages.forEach((textbook) => {
     textbook.addEventListener('click', () => {
