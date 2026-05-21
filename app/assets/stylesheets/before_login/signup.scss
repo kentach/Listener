@@ -1,0 +1,120 @@
+/* =========================
+  CTA SECTION
+========================= */
+.cta-section {
+  padding: 140px 20px;
+  border-radius: 40px;
+  margin: 80px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* 中央 */
+.cta-section-inner {
+  text-align: center;
+}
+
+/* タイトル */
+.cta-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 50px;
+  font-family:
+    'ヒラギノ角ゴ StdN',
+    'Hiragino Kaku Gothic StdN',
+    sans-serif;
+}
+
+/* =========================
+  CTA Buttons
+========================= */
+.cta-section-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 共通 */
+.cta-section-buttons .btn {
+  min-width: 220px;
+  transition: 0.25s;
+}
+
+/* hover */
+.cta-section-buttons .btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 30px rgba(0,0,0,0.18);
+}
+
+/* 白ボタン */
+.cta-section-buttons .btn-primary {
+  background: #fff;
+  color: #3b82f6;
+  border: none;
+}
+
+/* outline */
+.cta-section-buttons .btn-outline-primary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta-section-buttons .btn-outline-primary:hover {
+  background: #fff;
+  color: #3b82f6;
+}
+
+/* =========================
+  Animation
+========================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+  Responsive
+========================= */
+@media (max-width: 768px) {
+
+  .cta-section {
+    margin: 40px 20px;
+    padding: 90px 24px;
+
+    border-radius: 28px;
+  }
+
+  .cta-title {
+    font-size: 38px;
+    margin-bottom: 40px;
+  }
+
+  .cta-section-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-section-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}

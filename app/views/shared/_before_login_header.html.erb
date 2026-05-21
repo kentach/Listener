@@ -1,0 +1,32 @@
+<header class="lp-header">
+  <div>
+    <span class="logo-text">LISTENER</span>
+  </div>
+
+  <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="hamburger-menu" id="hamburger-menu">
+    <ul>
+      <li class="nav-item">
+      <i class="fa-solid fa-user-plus"></i>
+        <%= link_to new_user_registration_path,
+            class: "nav-link" do %>
+          新規登録
+        <% end %>
+      </li>
+      
+      <li class="nav-item">
+      <i class="fa-solid fa-right-to-bracket"></i>
+        <%= link_to new_user_session_path,
+            class: "nav-link" do %>
+          ログイン
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+  <div id="menu-overlay" class="menu-overlay"></div>
+</header>

@@ -13,16 +13,29 @@
     <ul>
       <li class="nav-item">
         <i class="bi bi-house-door-fill me-2 fs-4"></i>
-        ホーム
+          <%= link_to root_path,
+              class: "nav-link" do %>
+            ホーム
+          <% end %>
       </li>
+
       <li class="nav-item">
-        <i class="bi bi-headphones me-2 fs-4"></i>
-        リスニングを学習する
+        <i class="fa-solid fa-circle-user"></i>
+
+        <%= link_to "メール・パスワード変更",
+            edit_user_registration_path,
+            class: "nav-link" %>
       </li>
+
       <li class="nav-item">
-        <i class="bi bi-book me-2 fs-4"></i>
-        リーディングを学習する
+      <i class="fa-solid fa-right-from-bracket"></i>
+        <%= link_to destroy_user_session_path,
+            data: { turbo_method: :delete },
+            class: "nav-link" do %>
+          ログアウト
+        <% end %>
       </li>
+    
     </ul>
   </nav>
   <div id="menu-overlay" class="menu-overlay"></div>

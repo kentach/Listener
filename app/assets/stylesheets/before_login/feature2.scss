@@ -1,0 +1,212 @@
+/* =========================
+  FEATURE 02
+========================= */
+.feature02-section {
+  padding: 50px 20px 100px;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #c8dff6 100%
+  );
+
+  display: flex;
+  justify-content: center;
+}
+
+/* 中央コンテナ */
+.feature02-inner {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* =========================
+  FEATURE番号
+========================= */
+.feature02-number {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #54c9de;
+
+  margin-bottom: 24px;
+}
+
+.feature02-number span {
+  font-size: 34px;
+  margin-left: 8px;
+  font-weight: 900;
+}
+
+/* =========================
+  タイトル
+========================= */
+.feature02-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.4;
+
+  margin-bottom: 28px;
+
+  font-family:
+    'ヒラギノ角ゴ StdN',
+    'Hiragino Kaku Gothic StdN',
+    sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #54c9de 0%,
+    #3b82f6 50%,
+    #7c3aed 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================
+  説明文
+========================= */
+.feature02-subtitle {
+  font-size: 30px;
+  line-height: 1.9;
+  color: #1e1e1e;
+
+  margin-bottom: 80px;
+
+  font-family:
+    'ヒラギノ角ゴ StdN',
+    'Hiragino Kaku Gothic StdN',
+    sans-serif;
+}
+
+/* =========================
+  アイコンエリア
+========================= */
+.feature02-icon-area {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* カード */
+.feature02-icon-wrapper {
+  width: 220px;
+
+  padding: 40px 24px;
+
+  background: #fff;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(84, 201, 222, 0.08);
+
+  transition: 0.25s;
+}
+
+/* hover */
+.feature02-icon-wrapper:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(84, 201, 222, 0.16);
+}
+
+/* アイコン丸 */
+.feature02-icon-circle {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #54c9de 0%,
+    #3b82f6 100%
+  );
+
+  color: #fff;
+}
+
+/* Bootstrap icon */
+.feature02-icon-circle i {
+  font-size: 40px;
+}
+
+/* ラベル */
+.feature02-icon-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+
+  font-family:
+    'ヒラギノ角ゴ StdN',
+    'Hiragino Kaku Gothic StdN',
+    sans-serif;
+}
+
+/* =========================
+  アニメーション
+========================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+  Responsive
+========================= */
+@media (max-width: 768px) {
+
+  .feature02-section {
+    padding: 100px 20px;
+  }
+
+  .feature02-title {
+    font-size: 38px;
+  }
+
+  .feature02-subtitle {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+
+  .feature02-icon-wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .feature02-icon-circle {
+    width: 72px;
+    height: 72px;
+  }
+
+  .feature02-icon-circle i {
+    font-size: 32px;
+  }
+}

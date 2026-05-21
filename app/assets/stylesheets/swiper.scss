@@ -1,0 +1,31 @@
+.feature-heading-group .swiper {
+  width: 420px;
+}
+
+.feature-heading-group .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-heading-group .title-img {
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+
+  .feature-heading-group {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .feature-heading-group .swiper {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .feature-heading-group .title-img {
+    width: 140px;
+  }
+}
