@@ -1,0 +1,104 @@
+<div class="account-edit-page">
+  <div class="account-card">
+
+    <h2 class="account-title">
+      メール・パスワード
+    </h2>
+
+    <%= form_for(resource,
+      as: resource_name,
+      url: registration_path(resource_name),
+      html: { method: :put }) do |f| %>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <!-- メール -->
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス", class: "form-label" %>
+
+        <%= f.email_field :email,
+          autocomplete: "email",
+          class: "form-control" %>
+      </div>
+
+      <!-- confirmable -->
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div class="alert-warning">
+          確認待ちのメールアドレス：
+          <strong><%= resource.unconfirmed_email %></strong>
+        </div>
+      <% end %>
+
+      <!-- 新パスワード -->
+      <div class="form-group">
+        <%= f.label :password,
+          "新しいパスワード",
+          class: "form-label" %>
+
+        <%= f.password_field :password,
+          autocomplete: "new-password",
+          class: "form-control" %>
+
+        <% if @minimum_password_length %>
+          <div class="form-text">
+            ※ <%= @minimum_password_length %>文字以上
+          </div>
+        <% end %>
+      </div>
+
+      <!-- 確認 -->
+      <div class="form-group">
+        <%= f.label :password_confirmation,
+          "新しいパスワード（確認）",
+          class: "form-label" %>
+
+        <%= f.password_field :password_confirmation,
+          autocomplete: "new-password",
+          class: "form-control" %>
+      </div>
+
+      <!-- 現在 -->
+      <div class="form-group">
+        <%= f.label :current_password,
+          "現在のパスワード（必須）",
+          class: "form-label" %>
+
+        <%= f.password_field :current_password,
+          autocomplete: "current-password",
+          class: "form-control" %>
+
+        <div class="form-text">
+          ※ セキュリティのため変更時は必須です
+        </div>
+      </div>
+
+      <%= f.submit "変更を保存する", class: "save-btn" %>
+
+    <% end %>
+
+    <hr class="divider">
+
+    <!-- アカウント削除 -->
+    <div class="delete-section">
+
+      <h6 class="delete-title">
+        アカウント削除（取り消し不可）
+      </h6>
+
+      <%= button_to "アカウントを削除する",
+        registration_path(resource_name),
+        method: :delete,
+        data: {
+          confirm: "本当に削除しますか？",
+          turbo_confirm: "本当に削除しますか？"
+        },
+        class: "delete-btn" %>
+
+      <%= link_to "← 戻る",
+        root_path,
+        class: "back-link" %>
+
+    </div>
+
+  </div>
+</div>

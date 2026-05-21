@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="signup-card">
+
+    <h2 class="signup-title">新規登録</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <!-- 名前 -->
+      <div class="form-group">
+        <%= f.label :name, "名前", class: "form-label" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <!-- メール -->
+      <div class="form-group">
+        <%= f.label :email, "Eメール", class: "form-label" %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <!-- 英検級 -->
+      <div class="form-group">
+        <%= f.label :eiken_level, "英検取得級*", class: "form-label" %>
+
+        <%= f.select :eiken_level,
+          [["まだ取得していない"], ["英検5級"], ["英検4級"], ["英検3級"],
+          ["英検準2級"], ["英検準2プラス級"], ["英検2級"], ["英検準1級"], ["英検1級"]],
+          { prompt: "選択してください" },
+          class: "form-select" %>
+      </div>
+
+      <!-- パスワード -->
+      <div class="form-group">
+        <%= f.label :password, "パスワード", class: "form-label" %>
+
+        <% if @minimum_password_length %>
+          <small class="password-hint">
+            最低 <%= @minimum_password_length %> 文字
+          </small>
+        <% end %>
+
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <!-- パスワード確認 -->
+      <div class="form-group">
+        <%= f.label :password_confirmation, "パスワード確認", class: "form-label" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <!-- ボタン -->
+      <%= f.submit "サインアップする", class: "signup-btn" %>
+
+    <% end %>
+
+    <div class="auth-links">
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>

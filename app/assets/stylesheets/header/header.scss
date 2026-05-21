@@ -5,10 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   padding: 14px 20px;
-
   background: #fff;
   border-bottom: 1px solid #eee;
 }
@@ -36,10 +34,8 @@
 .hamburger span {
   width: 100%;
   height: 3px;
-
   background: #333;
   border-radius: 2px;
-
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
@@ -63,24 +59,18 @@
   position: fixed;
   top: 0;
   right: -260px;
-
   z-index: 1500;
-
   width: 260px;
   height: 100vh;
-
   padding-top: 80px;
-
   background: #fff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-
   transition: right 0.3s ease;
 }
 
 .hamburger-menu.open {
   right: 0;
 }
-
 
 .hamburger-menu ul {
   list-style: none;
@@ -94,12 +84,11 @@
   gap: 10px;
   padding: 14px 20px;
   font-size: 1rem;
+  transition: 0.3s;
 }
 
-.nav-item:hover {
-  color: #ff6600;
-  transition-duration: .5s;
-  cursor: point;
+.hamburger-menu li:hover {
+  transform: translateY(-4px);
 }
 
 .hamburger-menu i {
@@ -111,14 +100,10 @@
 .menu-overlay {
   position: fixed;
   inset: 0;
-
   z-index: 1400;
-
   background: rgba(0, 0, 0, 0.35);
-
   opacity: 0;
   visibility: hidden;
-
   transition: opacity 0.3s ease;
 }
 
