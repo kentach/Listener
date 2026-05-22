@@ -1,26 +1,29 @@
-document.addEventListener('turbo:load', () => {
-  const textbookImages = document.querySelectorAll('.textbook-img');
-  const closeBtn = document.querySelector('.fa-x');
-  const modalBackground = document.getElementById('modal');
-  const modalInner = document.querySelector('.modal-inner');
+document.addEventListener("turbo:load", () => {
 
-  if (!textbookImages || !closeBtn || !modalBackground || !modalInner) return;
+  const textbookCards = document.querySelectorAll(".textbook-card");
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modal-image");
+  const modalTitle = document.getElementById("modal-title");
+  const modalLevel = document.getElementById("modal-level");
+  const modalLink = document.getElementById("modal-link");
+  const closeBtn = document.getElementById("close-modal");
 
-  textbookImages.forEach((textbook) => {
-    textbook.addEventListener('click', () => {
-      modalBackground.classList.add('active');
+  if (!modal) return;
+
+  textbookCards.forEach(card => {
+    
+    card.addEventListener("click", () => {
+      modalImage.src = card.dataset.image;
+      modalTitle.textContent = card.dataset.name;
+      modalLevel.textContent =
+        `レベル：${card.dataset.level}`;
+      modalLink.href = card.dataset.link;
+      modal.classList.add("active");
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modalBackground.classList.remove('active');
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
   });
 
-  modalBackground.addEventListener('click', () => {
-    modalBackground.classList.remove('active');
-  });
-
-  modalInner.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
 });
