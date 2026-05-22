@@ -1,26 +1,60 @@
-<%= render 'static_pages/modal' %>
+<!-- モーダルウィンドウ -->
 
-<div class="textbook-container">
+<div class="modal-background" id="modal">
+  <div class="modal-inner">
+    <i class="fa-solid fa-x" id="close-modal"></i>
+    <img src=""
+         id="modal-image"
+         class="modal-image">
 
-  <h2 class="textbook-title">音トレ道場</h2>
-  <div class="textbook-img-container">
-    <%= image_tag 'ontra_beginner.png', alt: '音トレ道場初段', class: 'textbook-img' %>
-    <%= image_tag 'ontra_step2.png', alt: '音トレ道場２段', class: 'textbook-img' %>
-    <%= image_tag 'ontra_step3.png', alt: '音トレ道場３段', class: 'textbook-img' %>
-    <%= image_tag 'ontra_step4.png', alt: '音トレ道場４段', class: 'textbook-img' %>
-    <%= image_tag 'ontra_step5.png', alt: '音トレ道場５段', class: 'textbook-img' %>
-    <%= image_tag 'ontra_step6.png', alt: '音トレ道場６段', class: 'textbook-img' %>
+    <h3 class="textbook-name"
+        id="modal-title"></h3>
+
+    <p class="textbook-level"
+       id="modal-level"></p>
+
+    <a href=""
+       class="modal-button"
+       id="modal-link">
+      学習を始める
+    </a>
+
   </div>
-
-  <h2 class="rhythmas-title">リズムでマスター</h2>
-  <div class="textbook-img-container">
-    <%= image_tag 'rhythmas_pre1.png', alt: 'リズムでマスター準１級', class: 'textbook-img' %>
-    <%= image_tag 'rhythmas_pre2.png', alt: 'リズムでマスター準２級', class: 'textbook-img' %>
-    <%= image_tag 'rhythmas_step2.png', alt: 'リズムでマスター２級', class: 'textbook-img' %>
-    <%= image_tag 'rhythmas_step3.png', alt: 'リズムでマスター３級', class: 'textbook-img' %>
-    <%= image_tag 'rhythmas_step4.png', alt: 'リズムでマスター４級', class: 'textbook-img' %>
-    <%= image_tag 'rhythmas_step5.png', alt: 'リズムでマスター５級', class: 'textbook-img' %>
-  </div>
-
 </div>
 
+<!-- トップ画面 -->
+<div class="textbook-container">
+  <h2 class="textbook-title">音トレ道場</h2>
+  <div class="textbook-img-container">
+
+    <% @ontre_textbooks.each do |textbook| %>
+      <div class="textbook-card"
+            data-image="<%= asset_path(textbook.image) %>"
+            data-name="<%= textbook.name %>"
+            data-level="<%= textbook.level %>"
+            data-link="<%= textbook_path(textbook) %>">
+
+        <%= image_tag textbook.image,
+            alt: textbook.name,
+            class: 'textbook-img' %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <h2 class="textbook-title">リズムでマスター</h2>
+  <div class="textbook-img-container">
+    <% @rhythmas_textbooks.each do |textbook| %>
+      <div class="textbook-card"
+            data-image="<%= asset_path(textbook.image) %>"
+            data-name="<%= textbook.name %>"
+            data-level="<%= textbook.level %>"
+            data-link="<%= textbook_path(textbook) %>">
+
+        <%= image_tag textbook.image,
+            alt: textbook.name,
+            class: 'textbook-img' %>
+      </div>
+    <% end %>
+  </div>
+</div>
