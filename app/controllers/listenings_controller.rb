@@ -1,2 +1,0 @@
-class ListeningsController < ApplicationController
-end

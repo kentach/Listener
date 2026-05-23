@@ -1,0 +1,59 @@
+<section class="text-container">
+
+  <%= link_to '＜戻る', textbook_lesson_path(@textbook, @lesson.learning_mode), class: "back-btn" %>
+
+  <h5 class="audio-title">音声スクリプト</h5>
+  <section class="ja-en-container">
+  <div class="english-container">
+  Learning a new language is not something that can be achieved overnight. 
+  It requires patience, consistency, and a willingness to make mistakes along the way. 
+  Many learners become discouraged because they expect rapid progress, but language acquisition is usually a slow and gradual process. 
+  The important thing is to continue exposing yourself to the language every single day, even if it is only for a short amount of time.
+
+  Reading books, listening to podcasts, watching movies, and speaking with native speakers are all effective ways to improve your skills. 
+  In particular, listening practice helps learners become familiar with natural pronunciation, rhythm, and intonation. 
+  Over time, words and expressions that once seemed difficult will start to feel natural and automatic.
+
+  Another important aspect of language learning is motivation. 
+  People who study with a clear purpose tend to improve much faster than those who study without a goal. 
+  Whether your reason is travel, work, education, or personal enjoyment, having a meaningful objective can help you stay focused during difficult periods.
+
+  It is also important not to compare yourself too much with other learners. 
+  Everyone learns at a different pace, and progress is not always visible from day to day. 
+  Sometimes it may feel like you are not improving at all, but small improvements accumulate over time and eventually lead to significant growth.
+
+  In the end, successful language learners are not necessarily the most talented people. 
+  More often, they are simply the people who continue learning without giving up.
+</div>
+
+  <div class="japanese-container">
+    新しい言語を学ぶことは、一晩で達成できるものではありません。 
+    そこには忍耐力、継続力、そして途中で失敗を受け入れる姿勢が必要です。 
+    多くの学習者は短期間で大きな成果を期待してしまうため、思うように上達せず落ち込んでしまいます。 
+    しかし、語学習得とは通常、ゆっくりと段階的に進んでいくものです。 
+    大切なのは、たとえ短い時間であっても、毎日その言語に触れ続けることです。
+
+    本を読んだり、ポッドキャストを聞いたり、映画を観たり、ネイティブスピーカーと会話したりすることは、すべて効果的な学習方法です。 
+    特にリスニング練習は、自然な発音やリズム、イントネーションに慣れるのに役立ちます。 
+    時間が経つにつれて、以前は難しく感じていた単語や表現も自然に理解できるようになります。
+
+    また、語学学習においてはモチベーションも非常に重要です。 
+    明確な目的を持って勉強している人は、目的なしに学んでいる人よりも早く上達する傾向があります。 
+    旅行、仕事、教育、あるいは純粋な楽しみなど、どのような理由であっても、意味のある目標は困難な時期に学習を続ける支えになります。
+
+    さらに、他の学習者と自分を比較しすぎないことも重要です。 
+    学ぶスピードは人それぞれ異なり、成長は毎日目に見える形で現れるわけではありません。 
+    時には全く上達していないように感じることもありますが、小さな進歩は少しずつ積み重なり、やがて大きな成長へとつながります。
+
+    最終的に、成功する語学学習者とは、必ずしも最も才能のある人ではありません。 
+    むしろ、諦めずに学び続けた人たちなのです。
+  </div>
+  </section>
+
+  <div class="language-toggle-btn">
+    <div class="en active">英語</div>
+    <div class="ja">日本語</div>
+  </div>
+</section>
+
+<%= render 'shared/audio_controller' %>

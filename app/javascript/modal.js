@@ -26,4 +26,8 @@ document.addEventListener("turbo:load", () => {
     modal.classList.remove("active");
   });
 
+  modal.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
 });

@@ -50,10 +50,14 @@
 }
 
 .audio-name {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  width: 100%;
+
+  text-decoration: none;
+  color: inherit; 
 }
 
 .audio-icons {

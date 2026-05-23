@@ -1,18 +1,7 @@
 class TextbooksController < ApplicationController
   
   def show
-    
+    @textbook = Textbook.find(params[:id])
   end
 
-  def reading
-    
-  end
-
-  def listening
-    
-  end
-
-  def shadowing
-    
-  end
 end

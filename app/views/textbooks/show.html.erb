@@ -3,18 +3,19 @@
 
   <div class="textbook-show-audio-container">
     <div class="textbook-show-image-container">
-      <%= image_tag 'ontra_beginner.png',
-          alt: '音トレ道場初段',
+      <%= image_tag @textbook.image,
+          alt: @textbook.name,
           class: 'textbook-show-img' %>
     </div>
     <div class="textbook-show-info">
-      <h2 class="textbook-name">音トレ道場初段</h2>
-      <p class="textbook-level">レベル: 英検5級〜4級</p>
+      <h2 class="textbook-name"><%= @textbook.name %></h2>
+      <p class="textbook-level">レベル: <%= @textbook.level %></p>
       <div class="my-list">
         マイリストに追加
         <i class="bi bi-heart"></i>
       </div>
     </div>
+
   </div>
   <%= render 'textbooks/audio_nav' %>
 </div>

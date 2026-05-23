@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_21_103957) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_22_072033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audios", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.string "title"
+    t.string "file_name", null: false
+    t.text "script"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_audios_on_lesson_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.bigint "textbook_id", null: false
+    t.string "title", null: false
+    t.string "learning_mode", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["textbook_id"], name: "index_lessons_on_textbook_id"
+  end
 
   create_table "textbooks", force: :cascade do |t|
     t.string "name", null: false
@@ -36,4 +56,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_21_103957) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "audios", "lessons"
+  add_foreign_key "lessons", "textbooks"
 end

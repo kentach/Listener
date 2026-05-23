@@ -3,4 +3,7 @@ class Textbook < ApplicationRecord
   validates :level, presence: true
   validates :series, presence: true
   validates :image, presence: true
+
+  has_many :lessons, dependent: :destroy
+  has_many :audios, dependent: :destroy
 end

@@ -1,27 +1,23 @@
 <div class="audio-nav-container">
   <div class="audio-nav">
-    <%= link_to textbook_readings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
+    <%= link_to textbook_lesson_path(@textbook, 'reading'), class: 'audio-nav-btn audio-nav-link' do %>
       <i class="bi bi-book-half"></i>
       <span>音読練習</span>
     <% end %>
 
-    <%= link_to textbook_listenings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
-      <i class="bi bi-headphones"></i>
+    <%= link_to textbook_lesson_path(@textbook, 'listening'), class: 'audio-nav-btn audio-nav-link' do %>
+      <i class="bi bi-book-half"></i>
       <span>リスニング</span>
     <% end %>
-
-    <%= link_to textbook_shadowings_path(1), class: 'audio-nav-btn audio-nav-link' do %>
-      <i class="fa-regular fa-comment"></i>
-      <span>シャドー<br>
-      イング</span>
-    <% end %>
   </div>
+
 </div>
+
 
   <div class="learning-container">
     <div class="learning-level">
       <h5>習得度</h5>
-      <p>0％</p>
+      <p>0%</p>
       <div class="progress-wrapper">
         <div class="progress-bar">0%</div>
       </div>

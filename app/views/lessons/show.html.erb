@@ -1,0 +1,26 @@
+
+<section class="audio-list">
+  <%= link_to "＜戻る",
+      textbook_path(@textbook),
+      class: "back-btn" %>
+
+  <h5 class="audio-title">音声一覧</h5>
+
+  <div class="audio-list-wrapper">
+
+      <% @lesson.audios.each do |audio| %>
+        <div class="audio-item">
+
+          <%= link_to audio.title || audio.file_name,
+              textbook_lesson_audio_path(@textbook, @lesson.learning_mode, audio),
+              class: "audio-name" %>
+
+          <div class="audio-icons">
+            <i class="fa-regular fa-circle-check check-btn"></i>
+          </div>
+
+        </div>
+      <% end %>
+
+  </div>
+</section>
