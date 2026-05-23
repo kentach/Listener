@@ -3,13 +3,13 @@
 @import './top/top';
 @import './top/modal';
 
-@import './audio/audio_controller';
+@import './audio/audio_player';
 @import './audio/audio_list';
 @import './audio/audio_nav';
-@import './audio/reading_show';
+@import './audio/english-japanese';
+@import './audio/sidebar';
 
 @import './show/textbook_show';
-@import './show/reading';
 
 @import './devise/session_new';
 @import './devise/registration_new';

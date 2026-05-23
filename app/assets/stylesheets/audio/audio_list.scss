@@ -27,11 +27,12 @@
 }
 
 .audio-list-wrapper::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .audio-list-wrapper::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #a8a9a9;
+  cursor: pointer;
   border-radius: 999px;
 }
 
@@ -53,9 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
-
   text-decoration: none;
   color: inherit; 
 }
@@ -64,7 +63,6 @@
   display: flex;
   gap: 12px;
   font-size: 18px;
-  color: #4f8cff;
 }
 
 .fa-circle-check, .fa-circle-exclamation {
@@ -73,7 +71,7 @@
 }
 
 .fa-circle-check {
-  color: #0e9252;
+  color: #bdbdbd;
 }
 
 .fa-circle-check.active {
