@@ -10,22 +10,49 @@
 
 /* 表示エリア */
 .ja-en-container {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
 }
 
 .english-container,
 .japanese-container {
-  flex: 1;
-  max-height: 400px;
   overflow-y: auto;
+  max-height: 400px;
+
+  transition:
+    flex 0.5s ease,
+    opacity 0.5s ease;
+
   line-height: 1.8;
 }
 
+.english-container {
+  width: 100%;
+  transition: width 0.4s ease;
+}
 
-.hidden {
-  display: none;
+.japanese-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50%;
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.ja-en-container.show-japanese .english-container {
+  width: 50%;
+}
+
+.ja-en-container.show-japanese .japanese-container {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* トグル（下） */
@@ -41,7 +68,7 @@
   bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999;
+  z-index: 200;
 }
 
 .language-toggle-btn div {
@@ -53,9 +80,16 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
-.language-toggle-btn .active {
+.btn-colored {
+  background: #28c2c2;
+  color: white;
+}
+
+.japanese-btn.active {
   background: #28c2c2;
   color: white;
 }

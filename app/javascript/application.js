@@ -5,7 +5,10 @@ import * as bootstrap from "bootstrap"
 import "./swiper"
 import './modal'
 import './header'
-import './language_toggle'
+import './languageToggle'
 import './likeBtn'
 import './checkBtn'
+import './audioPlayer'
+import './sidebar'
+
 

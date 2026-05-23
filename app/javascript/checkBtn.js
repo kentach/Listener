@@ -1,16 +1,17 @@
 document.addEventListener("turbo:load", () => {
-  const checkBtn = document.querySelector(".check-btn");
+  const checkBtns = document.querySelectorAll(".check-btn");
 
-  if (!checkBtn) return;
+  if (!checkBtns) return;
 
-  checkBtn.addEventListener("click", () => {
-    checkBtn.classList.toggle("active");
-
-    if (checkBtn.classList.contains("active")) {
-      checkBtn.className = "fa-solid fa-circle-check check-btn active";
-    } else {
-      checkBtn.className = "fa-regular fa-circle-check check-btn";
-    }
-  });
-
+  checkBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+  
+      if (btn.classList.contains("active")) {
+        btn.className = "fa-solid fa-circle-check check-btn active";
+      } else {
+        btn.className = "fa-regular fa-circle-check check-btn";
+      }
+    });
+  }) 
 });

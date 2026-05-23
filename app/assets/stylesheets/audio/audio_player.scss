@@ -7,10 +7,8 @@
   padding: 14px 18px 20px;
   background: #fff;
   color: gray;
-
   border-top: 1px solid rgb(207, 207, 207);
-
-  z-index: 1000;
+  z-index: 5;
 }
 
 /* ===== 進捗バーエリア ===== */
@@ -29,10 +27,32 @@
   text-align: center;
 }
 
-/* ===== range ===== */
 .audio-progress {
-  flex: 1;
+  appearance: none;
+  width: 100%;
+  height: 4px;
   cursor: pointer;
+  background: transparent;
+}
+
+.audio-progress::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+
+  background: linear-gradient(
+    to right,
+    #28c2c2 var(--progress, 0%),
+    #ddd var(--progress, 0%)
+  );
+}
+
+.audio-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #28c2c2;
+  border-radius: 50%;
+  margin-top: -5px;
 }
 
 /* ===== コントロール ===== */
@@ -40,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
 }
 
 /* ===== ボタン共通 ===== */
@@ -51,7 +71,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
 
   transition: 0.2s;
@@ -64,23 +83,43 @@
 
 /* ===== 小ボタン ===== */
 .sub-btn {
-  width: 44px;
-  height: 44px;
-
+  font-size: 30px;
   background: transparent;
   color: rgb(77, 77, 77);
+}
 
-  border: 1px solid #666;
+.sub-btn.active,
+.three-seconds.active {
+  color: #28c2c2;
+}
+
+.three-seconds {
+  background: transparent;
+  color: rgb(77, 77, 77);
+  font-size: 20px;
 }
 
 /* ===== 再生ボタン ===== */
 .play-btn {
   width: 64px;
   height: 64px;
-
   background: #28c2c2;
   color: #fff;
+}
 
+.hidden {
+  display: none;
+}
+
+.stop-btn {
+  width: 64px;
+  height: 64px;
+  background: #28c2c2;
+  color: #fff;
+}
+
+.bi-pause-fill {
+  font-size: 34px;
 }
 
 /* ===== 再生アイコン ===== */
@@ -90,24 +129,30 @@
 
 /* ===== ループ ===== */
 .loop-btn {
-  width: 40px;
-  height: 40px;
-
+  width: 46px;
+  height: 26px;
+  font-size: 16px;
   background: transparent;
   color: rgb(68, 68, 68);
+  border-radius: 30px;
+  border: 2px solid #666;
+}
 
-  border: 1px solid #666;
+.loop-btn.active {
+  background-color: #28c2c2;
+  color: #fff;
+  border: 2px solid #28c2c2;
 }
 
 /* ===== speed select ===== */
 .speed-select {
-  width: 90px;
-  height: 40px;
-
-  border-radius: 8px;
-  border: 1px solid #666;
-
+  width: 60px;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 16px;
+  border: 2px solid #28c2c2;
   background: fff#2c2c2c;
-  color: rgb(68, 68, 68);
-  padding: 0 10px;
+  color: #28c2c2;
+  font-weight: bold;
+  padding: 0 4px;
 }
