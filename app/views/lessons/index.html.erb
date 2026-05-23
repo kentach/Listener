@@ -1,0 +1,5 @@
+<% @lessons.each do |lesson| %>
+  <%= link_to lesson.title,
+      textbook_lesson_path(@textbook, lesson),
+      class: "audio-nav-btn" %>
+<% end %>
