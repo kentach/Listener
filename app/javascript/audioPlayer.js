@@ -13,8 +13,9 @@ document.addEventListener('turbo:load', () => {
   const progress = document.getElementById('progress');
   const toggleBtn = document.getElementById("playBtn");
 
-  const currentAudioId = audio.dataset.currentAudioId;
+  if(!playBtn || !audio) return
 
+  const currentAudioId = audio.dataset.currentAudioId;
   const sideBarItems = [...document.querySelectorAll(".side-bar-item")];
   let currentIndex = 0;
 
@@ -27,8 +28,6 @@ document.addEventListener('turbo:load', () => {
     const sec = Math.floor(time % 60).toString().padStart(2, "0");
     return `${min}:${sec}`;
   };
-
-  if(!playBtn || !audio) return
 
   if (currentIndex >= 0) {
     sideBarItems[currentIndex].classList.add('active');

@@ -10,6 +10,6 @@ import './likeBtn'
 import './checkBtn'
 import './audioPlayer'
 import './sidebar'
-import './completedBtn'
+import './flash'
 
 

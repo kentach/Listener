@@ -1,5 +1,9 @@
 <% content_for :title, t('.title') %>
 
+<div id="flash">
+  <%= render "shared/my_list_toggle_flash" %>
+</div>
+
 <section class="audio-list">
   <%= link_to "＜戻る",
       textbook_path(@textbook),
