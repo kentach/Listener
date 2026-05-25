@@ -1,0 +1,18 @@
+  <section class="side-bar-toggle">
+    <h1>音声一覧 <i class="fa-solid fa-angle-down"></i></h1>
+  </section>
+
+  <section class="side-bar">
+    <h1>音声一覧 <i class="fa-solid fa-angle-up"></i></h1>
+
+    <div class="side-bar-container">
+    <% @audios.each do |audio| %>
+      <div
+        class="side-bar-item"
+        data-audio="/audio_files/<%= audio.file_name %>"
+        data-audio-id="<%= audio.id %>">
+        <%= audio.title %>
+      </div>
+    <% end %>
+  </div>
+  </section>

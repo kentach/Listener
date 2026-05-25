@@ -1,3 +1,5 @@
+<% content_for :title, t('.title') %>
+
 <section class="audio-list">
   <%= link_to "＜戻る",
       textbook_path(@textbook),
@@ -21,3 +23,4 @@
       <% end %>
   </div>
 </section>
+<%= render 'shared/navigation_bar' %>

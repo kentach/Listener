@@ -1,0 +1,51 @@
+.footer-bottom {
+  z-index: 100;
+  box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
+}
+
+.tab-menu {
+  font-size: 0.9rem;
+}
+
+.tab-item {
+  color: #6c757d; 
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0; 
+  transition: color 0.2s;
+}
+
+.tab-item i {
+  font-size: 1.3rem; 
+  line-height: 1;
+  margin-bottom: 2px; 
+}
+
+.tab-item span {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.tab-item.active {
+  color: #28c2c2;; /* text-primary */
+  border-bottom: 2px solid #28c2c2;;
+}
+
+.tab-item:hover {
+  color: #28c2c2;;
+}
+
+/* モバイル最適化 */
+@media (max-width: 576px) {
+  .tab-item i {
+    font-size: 1.4rem;
+  }
+  .tab-item span {
+    font-size: 0.7rem;
+  }
+  .tab-item {
+    padding: 8px 0;
+  }
+}

@@ -72,8 +72,11 @@
   </div>
 
   <!-- ===== audio ===== -->
-  <audio id="audio" preload="metadata">
-    <source src="/audio_files/<%= @audio.file_name %>" type="audio/mpeg">
+  <audio id="audio" 
+         preload="metadata"
+         data-current-audio-id="<%= @audio&.id %>"
+         src="<%= @audio ? "/audio_files/#{@audio.file_name}" : "" %>">
+         type="audio/mpeg">
   </audio>
 
 </div>
