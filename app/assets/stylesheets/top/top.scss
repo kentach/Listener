@@ -10,7 +10,7 @@ body {
 /* ================= CONTAINER ================= */
 
 .textbook-container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 20px 10px;
 }
@@ -32,7 +32,6 @@ body {
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 12px;
-
   scrollbar-width: none;
 }
 
@@ -44,8 +43,8 @@ body {
 
 .textbook-img {
   flex-shrink: 0;
-  width: 200px;
-  height: 280px;
+  width: 180px;
+  height: 250px;
   object-fit: cover;
   -webkit-user-drag: none;
   border-radius: 10px;

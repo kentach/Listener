@@ -1,3 +1,5 @@
+<% content_for :title, t('.title') %>
+
 <div class="modal-window" id="modal-window">
   <div class="modal-content">
       <div class="modal-my-list">
@@ -17,7 +19,7 @@
           class: 'textbook-show-img' %>
     </div>
     <div class="textbook-show-info">
-      <h2 class="textbook-name"><%= @textbook.name %></h2>
+      <h2 class="textbook-show-name"><%= @textbook.name %></h2>
       <p class="textbook-level">レベル: <%= @textbook.level %></p>
       <div class="my-list">
         マイリストに追加する      
@@ -27,3 +29,4 @@
   </div>
   <%= render 'textbooks/audio_nav' %>
 </div>
+<%= render 'shared/navigation_bar' %>
