@@ -1,0 +1,16 @@
+<div id="<%= dom_id(audio, :favorite_button) %>">
+
+  <%= button_to textbook_lesson_audio_favorite_path(audio.lesson.textbook, audio.lesson, audio, tab: 'お気に入り'),
+                method: current_user.favorite?(audio) ? :delete : :post,
+                class: "favorite-btn",
+                form: { data: { turbo: true } } do %>
+
+    <% if current_user.favorite?(audio) %>
+      <i class="fa-solid fa-heart"></i>
+    <% else %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
+
+  <% end %>
+
+</div>

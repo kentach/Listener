@@ -1,0 +1,22 @@
+
+.favorite-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  
+}
+
+.favorite-btn i {
+  color: rgb(224, 66, 66);
+  transition: 0.2s;
+  font-size: 25px;
+}
+
+.favorite-btn i.fa-regular {
+  color: #cbd5e1; 
+}
+
+.favorite-btn:active i {
+  transform: scale(0.85);
+}

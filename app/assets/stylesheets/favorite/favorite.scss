@@ -1,0 +1,95 @@
+/* ===== 全体 ===== */
+.favorite-page {
+  max-width: 620px;
+  margin: 0 auto;
+  height: 600px;           
+  display: flex;
+  flex-direction: column;
+}
+
+/* タイトル */
+.favorite-page__title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  flex-shrink: 0;           
+}
+
+.favorite-page__list {
+  flex: 1;                    
+  overflow-y: auto;         
+  padding: 0 16px;
+  scroll-behavior: smooth;
+}
+
+/* カード */
+.favorite-page__card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative; 
+  transition: transform 0.2s ease;
+}
+
+.favorite-page__card:hover {
+  transform: translateY(-2px);
+}
+
+/* ヘッダー */
+.favorite-page__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 画像 */
+.favorite-page__cover {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* テキスト */
+.favorite-page__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.favorite-page__name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.favorite-page__meta {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* アクション（ボタン） */
+.favorite-page__action {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* レスポンシブ */
+@media (max-width: 640px) {
+  .favorite-page {
+    padding: 12px 12px 120px;
+  }
+
+  .favorite-page__name {
+    font-size: 14px;
+  }
+}

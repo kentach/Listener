@@ -7,22 +7,11 @@
       <span>ホーム</span>
     <% end %>
 
-    <%= link_to root_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(root_path) ? 'active' : ''}" do %>
-      <i class="fa-regular fa-house fs-4 mb-2"></i>
-      <span>ホーム</span>
+    <%= link_to favorites_path, 
+        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(favorites_path) ? 'active' : ''}" do %>
+      <i class="fa-solid fa-heart-circle-check fs-4 mb-2"></i>
+      <span>マイリスト</span>
     <% end %>
 
-    <%= link_to root_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(root_path) ? 'active' : ''}" do %>
-      <i class="fa-regular fa-house fs-4 mb-2"></i>
-      <span>ホーム</span>
-    <% end %>
-
-    <%= link_to root_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(root_path) ? 'active' : ''}" do %>
-      <i class="fa-regular fa-house fs-4 mb-2"></i>
-      <span>ホーム</span>
-    <% end %>
   </div>
 </footer>
