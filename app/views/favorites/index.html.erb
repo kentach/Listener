@@ -1,0 +1,29 @@
+<div class="favorite-page">
+
+  <h2 class="favorite-page__title">お気に入り一覧</h2>
+
+  <div class="favorite-page__list">
+    <% @favorite_audios.each do |audio| %>
+      <div class="favorite-page__card">
+        <div class="favorite-page__header">
+
+          <div class="favorite-page__info">
+            <h3 class="favorite-page__name">
+              <%= audio.title %>
+            </h3>
+            <p class="favorite-page__meta">
+              <%= audio.lesson.textbook.name %>
+            </p>
+          </div>
+
+          <!-- お気に入りボタン -->
+          <div class="favorite-page__action">
+            <%= render "favorites/favorite_button", audio: audio %>
+          </div>
+
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<%= render "shared/navigation_bar" %>

@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
   resources :textbooks do
     resources :lessons, param: :learning_mode do
-      resources :audios
+      resources :audios, only: [:show] do
+        resource :favorite, only: [:create, :destroy]
+      end
     end
   end
+
+  resources :favorites, only: [:index]
+  
 end

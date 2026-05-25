@@ -10,25 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_22_072033) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_25_055953) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "audios", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
     t.string "title"
     t.string "file_name", null: false
+    t.integer "duration"
     t.text "script"
+    t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_audios_on_lesson_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "audio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["audio_id"], name: "index_favorites_on_audio_id"
+    t.index ["user_id", "audio_id"], name: "index_favorites_on_user_id_and_audio_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.bigint "textbook_id", null: false
     t.string "title", null: false
-    t.string "learning_mode", null: false
-    t.text "description"
+    t.string "mode", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["textbook_id"], name: "index_lessons_on_textbook_id"
@@ -58,5 +68,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_22_072033) do
   end
 
   add_foreign_key "audios", "lessons"
+  add_foreign_key "favorites", "audios"
+  add_foreign_key "favorites", "users"
   add_foreign_key "lessons", "textbooks"
 end

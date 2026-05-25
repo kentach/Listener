@@ -14,3 +14,10 @@ ja:
   audios:
     show:
       title: 音声スクリプト
+
+  favorites:
+    create: 
+      success: マイリストに登録しました
+
+    destroy:
+      success: マイリストから削除しました

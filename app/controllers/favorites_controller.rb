@@ -1,0 +1,36 @@
+class FavoritesController < ApplicationController
+  before_action :set_audio, except: :index
+
+  def index
+    @favorite_audios = current_user.favorite_audios
+  end
+
+  def create
+    current_user.favorites.find_or_create_by(audio: @audio)
+    #userモデルに has_many :favoritesと書いているからcurrent_user.favorites
+    #find_or_create_byメソッドを使って、「audio に @audio を入れる」
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html {redirect_back fallback_location: favorites_path}
+    end
+    
+  end
+
+  def destroy
+    favorite = current_user.favorites.find_by(audio: @audio)
+    favorite&.destroy  
+    # favoriteがあれば削除
+    
+    respond_to do |format|
+      format.turbo_stream
+      format.html {redirect_back fallback_location: favorites_path}
+    end
+  end
+
+  private
+
+  def set_audio
+    @audio = Audio.find(params[:audio_id])
+  end
+end
