@@ -9,8 +9,14 @@
 
     <%= link_to favorites_path, 
         class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(favorites_path) ? 'active' : ''}" do %>
-      <i class="fa-solid fa-heart-circle-check fs-4 mb-2"></i>
-      <span>マイリスト</span>
+      <i class="fa-solid fa-music fs-4 mb-2"></i>
+      <span>音声リスト</span>
+    <% end %>
+
+    <%= link_to booklists_path, 
+        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(booklists_path) ? 'active' : ''}" do %>
+      <i class="fa-solid fa-book-bookmark fs-4 mb-2"></i>
+      <span>マイテキスト</span>
     <% end %>
 
   </div>

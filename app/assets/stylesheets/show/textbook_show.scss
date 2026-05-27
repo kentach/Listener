@@ -9,43 +9,55 @@
   color: rgb(86, 86, 86);
 }
 
-.my-list {
-  align-items: center;
-  padding: 10px;
-  gap: 6px;
-  text-align: center;
-  border: 2px solid #ff5757;
-  border-radius: 8px;
-  color: #ff5757;
-  font-weight: bold;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: all .3s ease;
+.my-list-form {
+  margin: 0;
 }
 
-.my-list.active {
-  align-items: center;
-  padding: 10px;
-  border: none;
-  gap: 6px;
-  text-align: center;
+.my-list-btn {
+  width: 100%;
+
+  padding: 10px 16px;
+
+  border: 2px solid #ff5757;
   border-radius: 8px;
-  color:#fff;
-  background-color: #ff5757;
+
+  background: white;
+  color: #ff5757;
+
+  font-size: 14px;
+  font-weight: bold;
+
   cursor: pointer;
-  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+}
+
+.my-list-btn:hover {
+  background: #fff5f5;
+}
+
+.my-list-btn.active {
+  background-color: #ff5757;
+  color: white;
+  border: none;
 }
 
 .textbook-show-audio-container {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
+  align-items: center; 
+  gap: 20px;
 }
 
 .textbook-show-name {
-  width: 260px;
-  font-size: 30px;
+  margin: 0;         
+  line-height: 1.2;  
+}
+
+.textbook-show-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .textbook-show-img {

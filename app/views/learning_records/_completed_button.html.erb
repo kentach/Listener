@@ -1,0 +1,15 @@
+<div id="<%= dom_id(audio, :completed_button) %>">
+
+    <%= button_to textbook_lesson_audio_learning_records_path(audio.lesson.textbook, audio.lesson, audio, tab: '完了'),
+                  method: current_user.completed?(audio) ? :delete : :post,
+                  class: "completed-btn",
+                  form: {data: { turbo: true } } do %>
+
+      <% if current_user.completed?(audio) %>
+        <i class="fa-solid fa-square-check"></i>
+      <% else %>
+        <i class="fa-regular fa-square-check"></i>
+      <% end %>
+
+    <% end %>
+</div>

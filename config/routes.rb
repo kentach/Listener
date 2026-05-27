@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     resources :lessons, param: :learning_mode do
       resources :audios, only: [:show] do
         resource :favorite, only: [:create, :destroy]
+        resource :learning_records, only: [:create, :destroy]
       end
     end
   end
 
   resources :favorites, only: [:index]
-  
+  resources :booklists, only: [:index, :create, :destroy]
 end

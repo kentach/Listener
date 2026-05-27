@@ -1,0 +1,3 @@
+<%= turbo_stream.replace dom_id(@audio, :completed_button) do %>
+  <%= render 'learning_records/completed_button', audio: @audio %>
+<% end %>

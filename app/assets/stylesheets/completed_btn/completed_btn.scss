@@ -1,0 +1,20 @@
+.completed-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.completed-btn i {
+  color: rgb(31, 160, 65);
+  transition: 0.2s;
+  font-size: 25px;
+}
+
+.completed-btn i.fa-regular {
+  color: #cbd5e1; 
+}
+
+.completed-btn:active i {
+  transform: scale(0.85);
+}

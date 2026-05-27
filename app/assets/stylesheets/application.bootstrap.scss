@@ -10,9 +10,10 @@
 @import './audio/english-japanese';
 @import './audio/sidebar';
 
+@import './booklists/booklist';
+
 @import './favorite/favorite';
 @import './favorite/fav_button';
-@import './favorite/flash';
 
 @import './show/textbook_show';
 @import './show/mylist_modal';
@@ -22,6 +23,8 @@
 @import './devise/registration_edit';
 @import 'swiper';
 @import './header/header';
+
+@import './completed_btn/completed_btn';
 
 @import './before_login/before_login';
 @import './before_login/feature1';

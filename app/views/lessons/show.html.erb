@@ -1,9 +1,5 @@
 <% content_for :title, t('.title') %>
 
-<div id="flash">
-  <%= render "shared/my_list_toggle_flash" %>
-</div>
-
 <section class="audio-list">
   <%= link_to "＜戻る",
       textbook_path(@textbook),
@@ -15,13 +11,13 @@
       <% @lesson.audios.each do |audio| %>
         <div class="audio-item">
 
-          <%= link_to audio.title || audio.file_name,
+          <%= link_to audio.title,
               textbook_lesson_audio_path(@textbook, @lesson.learning_mode, audio),
               class: "audio-name" %>
 
           <div class="audio-icons">
-            <i class="fa-regular fa-circle-check check-btn"></i>
-            <%= render 'favorites/favorite_button', audio: audio %>
+            <%= render 'learning_records/completed_button', audio: audio %>
+            <%= render 'favorites/favorite_button', audio: audio %> <%# partial内の変数名 : 渡す値 %>
           </div>
         
 

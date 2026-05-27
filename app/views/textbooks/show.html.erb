@@ -13,20 +13,28 @@
   <%= link_to "＜戻る", root_path, class: "back-btn" %>
 
   <div class="textbook-show-audio-container">
+
     <div class="textbook-show-image-container">
       <%= image_tag @textbook.image,
           alt: @textbook.name,
-          class: 'textbook-show-img' %>
+          class: "textbook-show-img" %>
     </div>
+
     <div class="textbook-show-info">
       <h2 class="textbook-show-name"><%= @textbook.name %></h2>
-      <p class="textbook-level">レベル: <%= @textbook.level %></p>
-      <div class="my-list">
-        マイリストに追加する      
-      </div>
+      <p class="textbook-level">
+        レベル: <%= @textbook.level %>
+      </p>
+
+      <div id="booklist_button">
+        <%= render "booklists/button", textbook: @textbook %>
+      </div>  
+      
     </div>
 
   </div>
-  <%= render 'textbooks/audio_nav' %>
+
+  <%= render "textbooks/audio_nav" %>
 </div>
-<%= render 'shared/navigation_bar' %>
+
+<%= render "shared/navigation_bar" %>

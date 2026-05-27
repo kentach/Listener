@@ -1,4 +1,4 @@
-/* ===== 全体 ===== */
+
 .favorite-page {
   max-width: 620px;
   margin: 0 auto;
@@ -7,13 +7,13 @@
   flex-direction: column;
 }
 
-/* タイトル */
 .favorite-page__title {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 700;
   text-align: center;
-  margin: 20px 0;
-  flex-shrink: 0;           
+  margin: 40px 0 50px;
+  letter-spacing: 0.05em;
+  color: #222;      
 }
 
 .favorite-page__list {
@@ -23,12 +23,12 @@
   scroll-behavior: smooth;
 }
 
-/* カード */
+
 .favorite-page__card {
   background: #fff;
   border-radius: 10px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   position: relative; 
   transition: transform 0.2s ease;
@@ -38,52 +38,48 @@
   transform: translateY(-2px);
 }
 
-/* ヘッダー */
+
 .favorite-page__header {
   display: flex;
   align-items: center;
+  justify-content: space-between; 
   gap: 12px;
-}
-
-/* 画像 */
-.favorite-page__cover {
-  width: 60px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 6px;
-  flex-shrink: 0;
 }
 
 /* テキスト */
 .favorite-page__info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: 1;
+  text-decoration: none;
+  color: #333;
 }
 
-.favorite-page__name {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.favorite-page__meta {
-  font-size: 13px;
-  color: #666;
-  margin-top: 4px;
-}
-
-/* アクション（ボタン） */
+/* ボタン */
 .favorite-page__action {
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: static;
 }
 
-/* レスポンシブ */
+
+.favorite-page__name {
+  font-size: 18px;
+  padding-top: 10px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.favorite-page__meta {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+
 @media (max-width: 640px) {
   .favorite-page {
     padding: 12px 12px 120px;
