@@ -1,0 +1,45 @@
+<% content_for :title, t('.title') %>
+
+<h2 class="booklist-title">マイテキスト一覧</h2>
+
+<div class="booklists">
+
+  <% if @booklists.present? %>
+    <div class="booklist-container">
+
+      <% @booklists.each do |booklist| %>
+        <%= link_to textbook_path(booklist.textbook), class: "book-card" do %>
+
+          <div class="book-info">
+            <%= image_tag booklist.textbook.image, class: "booklist-image" %>
+
+            <div class="booklist-text-name">
+              <%= booklist.textbook.name %>
+            </div>
+
+            <p class="booklist-text-level">
+              レベル: <%= booklist.textbook.level %>
+            </p>
+          </div>
+
+        <% end %>
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <div class="text-center py-5">
+      <h5 class="text-secondary mb-2">マイテキストがありません</h5>
+      <p class="text-muted mb-3">
+        気になる教材を追加して学習を始めましょう
+      </p>
+
+      <%= link_to "教材を探す", root_path, class: "btn btn-dark btn-mg" %>
+    </div>
+
+  <% end %>
+
+</div>
+
+<%= render "shared/navigation_bar" %>

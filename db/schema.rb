@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_25_055953) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,16 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_25_055953) do
     t.index ["lesson_id"], name: "index_audios_on_lesson_id"
   end
 
+  create_table "booklists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "textbook_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["textbook_id"], name: "index_booklists_on_textbook_id"
+    t.index ["user_id", "textbook_id"], name: "index_booklists_on_user_id_and_textbook_id", unique: true
+    t.index ["user_id"], name: "index_booklists_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "audio_id", null: false
@@ -33,6 +43,20 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_25_055953) do
     t.index ["audio_id"], name: "index_favorites_on_audio_id"
     t.index ["user_id", "audio_id"], name: "index_favorites_on_user_id_and_audio_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "learning_records", force: :cascade do |t|
+    t.boolean "completed"
+    t.integer "study_time"
+    t.datetime "last_played_at"
+    t.integer "play_count"
+    t.bigint "user_id", null: false
+    t.bigint "audio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["audio_id"], name: "index_learning_records_on_audio_id"
+    t.index ["user_id", "audio_id"], name: "index_learning_records_on_user_id_and_audio_id", unique: true
+    t.index ["user_id"], name: "index_learning_records_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -67,8 +91,22 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_25_055953) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "writings", force: :cascade do |t|
+    t.string "title"
+    t.string "phrase"
+    t.string "question"
+    t.text "content"
+    t.date "published_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "audios", "lessons"
+  add_foreign_key "booklists", "textbooks"
+  add_foreign_key "booklists", "users"
   add_foreign_key "favorites", "audios"
   add_foreign_key "favorites", "users"
+  add_foreign_key "learning_records", "audios"
+  add_foreign_key "learning_records", "users"
   add_foreign_key "lessons", "textbooks"
 end

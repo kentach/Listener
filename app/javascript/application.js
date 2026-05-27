@@ -6,7 +6,6 @@ import * as bootstrap from "bootstrap"
 import './modal'
 import './header'
 import './languageToggle'
-import './likeBtn'
 import './checkBtn'
 import './audioPlayer'
 import './sidebar'

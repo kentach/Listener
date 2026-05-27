@@ -1,33 +1,44 @@
-<div id="flash">
-  <%= render "shared/my_list_toggle_flash" %>
-</div>
+<% content_for :title, t('.title') %>
 
 <div class="favorite-page">
+  <h2 class="favorite-page__title">音声リスト</h2>
 
-  <h2 class="favorite-page__title">お気に入り一覧</h2>
+    <div class="favorite-page__list">
+    <% if @favorite_audios.present? %>
+          <% @favorite_audios.each do |audio| %>
+            <div class="favorite-page__card">
+            
+              <div class="favorite-page__header">
+                <%= link_to textbook_lesson_audio_path(
+                            audio.lesson.textbook,
+                            audio.lesson.learning_mode,
+                            audio
+                          ), class: "favorite-page__info" do %>
+                  <h3 class="favorite-page__name">
+                    <%= audio.title %>
+                  </h3>
+                  <p class="favorite-page__meta">
+                    <%= audio.lesson.textbook.name %>
+                  </p>
+                <% end %>
 
-  <div class="favorite-page__list">
-    <% @favorite_audios.each do |audio| %>
-      <div class="favorite-page__card">
-        <div class="favorite-page__header">
+                <div class="favorite-page__action">
+                  <%= render "favorites/favorite_button", audio: audio %>
+                </div>
 
-          <div class="favorite-page__info">
-            <h3 class="favorite-page__name">
-              <%= audio.title %>
-            </h3>
-            <p class="favorite-page__meta">
-              <%= audio.lesson.textbook.name %>
-            </p>
-          </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
 
-          <!-- お気に入りボタン -->
-          <div class="favorite-page__action">
-            <%= render "favorites/favorite_button", audio: audio %>
-          </div>
+              <div class="text-center py-5">
+                <h5 class="text-secondary mb-2">音源がありません</h5>
+                <p class="text-muted mb-3">
+                  気になる教材を追加して学習を始めましょう
+                </p>
 
-        </div>
-      </div>
-  <% end %>
+                <%= link_to "教材を探す", root_path, class: "btn btn-dark btn-mg" %>
+              </div>
+        <% end %>
 </div>
-
 <%= render "shared/navigation_bar" %>

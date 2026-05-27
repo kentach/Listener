@@ -1,9 +1,3 @@
-<%= turbo_stream.replace "flash" do %>
-  <div id="flash">
-    <%= render "shared/my_list_toggle_flash" %>
-  </div>
-<% end %>
-
 <%= turbo_stream.replace dom_id(@audio, :favorite_button) do %>
-  <% render 'favorites/favorite_button', audio: @audio %>
+  <%= render 'favorites/favorite_button', audio: @audio %>
 <% end %>

@@ -6,4 +6,6 @@ class Textbook < ApplicationRecord
 
   has_many :lessons, dependent: :destroy
   has_many :audios, dependent: :destroy
+
+  has_many :booklists, dependent: :destroy
 end

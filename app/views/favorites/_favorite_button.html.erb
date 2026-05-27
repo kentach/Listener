@@ -1,6 +1,9 @@
 <div id="<%= dom_id(audio, :favorite_button) %>">
 
   <%= button_to textbook_lesson_audio_favorite_path(audio.lesson.textbook, audio.lesson, audio, tab: 'お気に入り'),
+                                                    #audioの情報を渡す。
+                                                    #Audioモデルには、belong_to ：lesson、
+                                                    #lessonモデルには :belong_to :textbookと書いてある。
                 method: current_user.favorite?(audio) ? :delete : :post,
                 class: "favorite-btn",
                 form: { data: { turbo: true } } do %>
