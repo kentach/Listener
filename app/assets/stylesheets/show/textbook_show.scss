@@ -4,6 +4,11 @@
   margin: 50px auto 100px;
 }
 
+.back-btn {
+  text-decoration: none;
+  color: #333;
+}
+
 .my-list-form {
   margin: 0;
 }
@@ -55,7 +60,7 @@
 }
 
 .textbook-show-img {
-  margin: 0px 0 10px;
+  margin: 0px 0 20px;
   flex-shrink: 0;
   width: 180px;
   height: 240px;
