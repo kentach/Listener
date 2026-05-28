@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
 
   def show
+
     @textbook = Textbook.find(params[:textbook_id]) 
     # textbook/:id/から渡ってくるからparams[:textbook_id]にする
 

@@ -3,8 +3,11 @@
 ========================= */
 .cta-section {
   padding: 140px 20px;
-  border-radius: 40px;
+
   margin: 80px 40px;
+
+  border-radius: 40px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +17,9 @@
 
 /* 中央 */
 .cta-section-inner {
+  width: 100%;
+  max-width: 900px;
+
   text-align: center;
 }
 
@@ -21,9 +27,13 @@
 .cta-title {
   font-size: 64px;
   font-weight: 900;
+
   line-height: 1.4;
+
   color: #fff;
+
   margin-bottom: 50px;
+
   font-family:
     'ヒラギノ角ゴ StdN',
     'Hiragino Kaku Gothic StdN',
@@ -36,19 +46,23 @@
 .cta-section-buttons {
   display: flex;
   justify-content: center;
+
   gap: 20px;
+
   flex-wrap: wrap;
 }
 
 /* 共通 */
 .cta-section-buttons .btn {
   min-width: 220px;
+
   transition: 0.25s;
 }
 
 /* hover */
 .cta-section-buttons .btn:hover {
   transform: translateY(-4px);
+
   box-shadow:
     0 16px 30px rgba(0,0,0,0.18);
 }
@@ -57,6 +71,7 @@
 .cta-section-buttons .btn-primary {
   background: #fff;
   color: #3b82f6;
+
   border: none;
 }
 
@@ -77,6 +92,7 @@
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
+
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -97,24 +113,54 @@
 @media (max-width: 768px) {
 
   .cta-section {
-    margin: 40px 20px;
-    padding: 90px 24px;
+    margin: 40px 16px;
+
+    padding: 80px 20px;
 
     border-radius: 28px;
   }
 
-  .cta-title {
-    font-size: 38px;
-    margin-bottom: 40px;
+  .cta-section-inner {
+    max-width: 100%;
   }
 
+  /* タイトル */
+  .cta-title {
+    font-size: 34px;
+
+    line-height: 1.5;
+
+    margin-bottom: 36px;
+  }
+
+  /* ボタン */
   .cta-section-buttons {
     flex-direction: column;
     align-items: center;
+
+    gap: 14px;
   }
 
   .cta-section-buttons .btn {
     width: 100%;
     max-width: 320px;
+
+    min-width: auto;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .cta-section {
+    margin: 28px 12px;
+
+    padding: 64px 16px;
+
+    border-radius: 22px;
+  }
+
+  .cta-title {
+    font-size: 28px;
   }
 }

@@ -1,32 +1,54 @@
+/* =========================
+  Signup Page
+========================= */
 
 /* 全体中央寄せ */
 .container {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 40px 16px;
+
+  box-sizing: border-box;
 }
 
-/* カード */
+/* =========================
+  Card
+========================= */
 .signup-card {
   width: 100%;
   max-width: 500px;
+
   background: #fff;
+
   padding: 40px 32px;
+
   border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* タイトル */
+/* =========================
+  Title
+========================= */
 .signup-title {
   text-align: center;
+
   font-size: 32px;
   font-weight: bold;
+
   margin-bottom: 32px;
+
   color: #222;
 }
 
-/* フォームグループ */
+/* =========================
+  Form
+========================= */
 .form-group {
   margin-bottom: 20px;
 }
@@ -34,8 +56,11 @@
 /* ラベル */
 .form-label {
   display: block;
+
   margin-bottom: 8px;
+
   font-weight: 600;
+
   color: #444;
 }
 
@@ -44,12 +69,18 @@
 .form-select {
   width: 100%;
   height: 48px;
+
   padding: 0 14px;
+
   border: 1px solid #d0d7de;
   border-radius: 12px;
+
   font-size: 16px;
+
   transition: 0.2s;
+
   box-sizing: border-box;
+
   background: white;
 }
 
@@ -57,48 +88,69 @@
 .form-control:focus,
 .form-select:focus {
   outline: none;
+
   border-color: #4f8cff;
-  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.15);
+
+  box-shadow:
+    0 0 0 4px rgba(79, 140, 255, 0.15);
 }
 
 /* パスワード補足 */
 .password-hint {
   display: inline-block;
+
   margin-bottom: 6px;
+
   font-size: 13px;
+
   color: #777;
 }
 
-/* ボタン */
+/* =========================
+  Button
+========================= */
 .signup-btn {
   width: 100%;
   height: 52px;
+
+  margin-top: 12px;
+
   border: none;
   border-radius: 999px;
+
   background: #0d6efd;
+
   color: white;
+
   font-size: 18px;
   font-weight: bold;
+
   cursor: pointer;
+
   transition: 0.2s;
-  margin-top: 12px;
 }
 
 /* hover */
 .signup-btn:hover {
   background: #0b5ed7;
+
   transform: translateY(-1px);
 }
 
-/* devise links */
+/* =========================
+  Auth Links
+========================= */
 .auth-links {
   text-align: center;
+
   margin-top: 24px;
 }
 
 .auth-links a {
   color: #0d6efd;
+
   text-decoration: none;
+
   font-size: 14px;
 }
 
@@ -106,22 +158,110 @@
   text-decoration: underline;
 }
 
-/* エラーメッセージ */
+/* =========================
+  Error
+========================= */
 #error_explanation {
   background: #fff2f2;
+
   border: 1px solid #ffcaca;
+
   color: #d60000;
+
   padding: 16px;
+
   border-radius: 12px;
+
   margin-bottom: 20px;
 }
 
 #error_explanation h2 {
   font-size: 16px;
+
   margin-bottom: 10px;
 }
 
 #error_explanation ul {
-  padding-left: 20px;
   margin: 0;
+  padding-left: 20px;
+}
+
+/* =========================
+  Responsive
+========================= */
+@media (max-width: 768px) {
+
+  .container {
+    align-items: flex-start;
+
+    padding: 24px 12px 40px;
+  }
+
+  .signup-card {
+    max-width: 100%;
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  /* タイトル */
+  .signup-title {
+    font-size: 26px;
+
+    margin-bottom: 26px;
+  }
+
+  /* フォーム */
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-control,
+  .form-select {
+    height: 46px;
+
+    font-size: 15px;
+  }
+
+  .password-hint {
+    font-size: 12px;
+  }
+
+  /* ボタン */
+  .signup-btn {
+    height: 48px;
+
+    font-size: 16px;
+  }
+
+  /* links */
+  .auth-links a {
+    font-size: 13px;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .signup-card {
+    padding: 24px 16px;
+  }
+
+  .signup-title {
+    font-size: 22px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    font-size: 15px;
+  }
 }

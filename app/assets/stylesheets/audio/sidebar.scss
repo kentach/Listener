@@ -1,12 +1,18 @@
 .side-bar {
   width: 300px;
+
   position: fixed;
   top: 80px;
   left: -300px;
+
   box-sizing: border-box;
+
   border-right: 1px solid #ddd;
   background: #fff;
+
   transition: left 0.5s ease;
+
+  z-index: 300;
 }
 
 .side-bar.open {
@@ -15,10 +21,15 @@
 
 .side-bar-toggle {
   position: fixed;
+
   top: 100px;
   left: 50px;
+
   font-size: 30px;
-  cursor:  pointer;
+
+  cursor: pointer;
+
+  z-index: 400;
 }
 
 .side-bar-toggle h1 {
@@ -36,27 +47,33 @@
 .side-bar-container {
   display: flex;
   flex-direction: column;
+
   max-height: 500px;
+
   overflow-y: auto;
+
   gap: 3px;
 }
 
 .side-bar-item {
   padding: 12px 20px;
+
   border-bottom: 1px solid #eee;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
 .side-bar-item:hover {
   transform: translateY(-2px);
-  background-color: #f3f0f0
+  background-color: #f3f0f0;
 }
 
 .side-bar-item.active {
   transform: translateY(-2px);
   color: rgb(224, 66, 66);
-  background-color: #f3f0f0
+  background-color: #f3f0f0;
 }
 
 .side-bar-container::-webkit-scrollbar {
@@ -72,4 +89,49 @@
 .fa-angle-up {
   cursor: pointer;
   font-size: 20px;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .side-bar {
+    width: 260px;
+
+    top: 70px;
+    left: -260px;
+
+    height: calc(100vh - 70px);
+
+    padding-bottom: 30px;
+
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .side-bar-toggle {
+    top: 82px;
+    left: 16px;
+
+    font-size: 24px;
+  }
+
+  .side-bar h1,
+  .side-bar-toggle h1 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .side-bar-container {
+    max-height: calc(100vh - 160px);
+    gap: 2px;
+  }
+
+  .side-bar-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .fa-angle-up {
+    font-size: 18px;
+  }
 }

@@ -1,20 +1,57 @@
 .completed-btn {
   border: none;
   background: transparent;
+
   padding: 0;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .completed-btn i {
-  color: rgb(31, 160, 65);
-  transition: 0.2s;
   font-size: 25px;
+
+  color: rgb(31, 160, 65);
+
+  transition:
+    transform 0.2s,
+    color 0.2s;
 }
 
 .completed-btn i.fa-regular {
-  color: #cbd5e1; 
+  color: #cbd5e1;
 }
 
 .completed-btn:active i {
   transform: scale(0.85);
+}
+
+/* hover */
+.completed-btn:hover i {
+  opacity: 0.8;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .completed-btn {
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .completed-btn i {
+    font-size: 22px;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .completed-btn i {
+    font-size: 20px;
+  }
 }

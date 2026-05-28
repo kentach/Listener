@@ -1,33 +1,54 @@
+/* =========================
+  Account Edit Page
+========================= */
 
 /* 全体中央 */
 .account-edit-page {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 40px 16px;
+
+  box-sizing: border-box;
 }
 
-/* カード */
+/* =========================
+  Card
+========================= */
 .account-card {
   width: 100%;
   max-width: 420px;
+
   background: #fff;
+
   padding: 36px 32px;
+
   border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* タイトル */
+/* =========================
+  Title
+========================= */
 .account-title {
   text-align: center;
+
   font-size: 28px;
   font-weight: bold;
+
   margin-bottom: 32px;
+
   color: #222;
 }
 
-/* フォーム */
+/* =========================
+  Form
+========================= */
 .form-group {
   margin-bottom: 20px;
 }
@@ -35,8 +56,11 @@
 /* ラベル */
 .form-label {
   display: block;
+
   margin-bottom: 8px;
+
   font-weight: 600;
+
   color: #444;
 }
 
@@ -44,67 +68,100 @@
 .form-control {
   width: 100%;
   height: 48px;
+
   padding: 0 14px;
+
   border: 1px solid #d0d7de;
   border-radius: 12px;
+
   font-size: 16px;
+
   transition: 0.2s;
+
   box-sizing: border-box;
 }
 
 /* focus */
 .form-control:focus {
   outline: none;
+
   border-color: #4f8cff;
-  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.15);
+
+  box-shadow:
+    0 0 0 4px rgba(79, 140, 255, 0.15);
 }
 
 /* 補足テキスト */
 .form-text {
   margin-top: 6px;
+
   font-size: 13px;
+
   color: #777;
+
   line-height: 1.5;
 }
 
-/* warning */
+/* =========================
+  Warning
+========================= */
 .alert-warning {
   background: #fff8e6;
+
   border: 1px solid #ffe08a;
+
   color: #7a5a00;
+
   padding: 14px;
+
   border-radius: 12px;
+
   margin-bottom: 20px;
+
   font-size: 14px;
 }
 
-/* 保存ボタン */
+/* =========================
+  Save Button
+========================= */
 .save-btn {
   width: 100%;
   height: 52px;
+
   border: none;
   border-radius: 999px;
+
   background: #0d6efd;
+
   color: white;
+
   font-size: 17px;
   font-weight: bold;
+
   cursor: pointer;
+
   transition: 0.2s;
 }
 
 .save-btn:hover {
   background: #0b5ed7;
+
   transform: translateY(-1px);
 }
 
-/* 区切り線 */
+/* =========================
+  Divider
+========================= */
 .divider {
   margin: 32px 0;
+
   border: none;
   border-top: 1px solid #e5e7eb;
 }
 
-/* 削除セクション */
+/* =========================
+  Delete Section
+========================= */
 .delete-section {
   text-align: center;
 }
@@ -112,21 +169,28 @@
 /* 削除タイトル */
 .delete-title {
   color: #dc3545;
+
   font-size: 15px;
   font-weight: bold;
+
   margin-bottom: 16px;
 }
 
 /* 削除ボタン */
 .delete-btn {
+  padding: 10px 18px;
+
   border: 1px solid #dc3545;
+  border-radius: 999px;
+
   background: transparent;
   color: #dc3545;
-  padding: 10px 18px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: 0.2s;
+
   font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .delete-btn:hover {
@@ -134,12 +198,18 @@
   color: white;
 }
 
-/* 戻るリンク */
+/* =========================
+  Back Link
+========================= */
 .back-link {
   display: inline-block;
+
   margin-top: 28px;
+
   color: #0d6efd;
+
   text-decoration: none;
+
   font-size: 14px;
 }
 
@@ -147,22 +217,128 @@
   text-decoration: underline;
 }
 
-/* エラー */
+/* =========================
+  Error
+========================= */
 #error_explanation {
   background: #fff2f2;
+
   border: 1px solid #ffcaca;
+
   color: #d60000;
+
   padding: 16px;
+
   border-radius: 12px;
+
   margin-bottom: 20px;
 }
 
 #error_explanation h2 {
   font-size: 16px;
+
   margin-bottom: 10px;
 }
 
 #error_explanation ul {
   margin: 0;
   padding-left: 20px;
+}
+
+/* =========================
+  Responsive
+========================= */
+@media (max-width: 768px) {
+
+  .account-edit-page {
+    align-items: flex-start;
+
+    padding: 24px 12px 40px;
+  }
+
+  .account-card {
+    max-width: 100%;
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  /* タイトル */
+  .account-title {
+    font-size: 24px;
+
+    margin-bottom: 26px;
+  }
+
+  /* フォーム */
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-control {
+    height: 46px;
+
+    font-size: 15px;
+  }
+
+  .form-text {
+    font-size: 12px;
+  }
+
+  /* warning */
+  .alert-warning {
+    font-size: 13px;
+
+    padding: 12px;
+  }
+
+  /* 保存ボタン */
+  .save-btn {
+    height: 48px;
+
+    font-size: 16px;
+  }
+
+  /* 削除 */
+  .delete-title {
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    width: 100%;
+
+    max-width: 240px;
+
+    font-size: 13px;
+  }
+
+  /* 戻る */
+  .back-link {
+    font-size: 13px;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .account-card {
+    padding: 24px 16px;
+  }
+
+  .account-title {
+    font-size: 22px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  .save-btn {
+    font-size: 15px;
+  }
 }

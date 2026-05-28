@@ -1,20 +1,29 @@
+/* =========================
+  Title
+========================= */
 .booklist-title {
   font-size: 30px;
   font-weight: 700;
+
   text-align: center;
+
   margin: 40px 0 50px;
+
   letter-spacing: 0.05em;
+
   color: #222;
 }
 
+/* =========================
+  Card Link
+========================= */
 .book-card {
-  text-decoration: none;
-  color: inherit;
   display: block;
   flex: 0 0 auto;
-}
 
-.book-card {
+  text-decoration: none;
+  color: inherit;
+
   transition: transform 0.2s ease;
 }
 
@@ -22,20 +31,31 @@
   transform: scale(0.98);
 }
 
+/* =========================
+  Wrapper
+========================= */
 .booklists {
-  max-width: 1100px;
   width: 100%;
+  max-width: 1100px;
+
   margin: 0 auto;
+
   padding: 0 24px 20px;
+
+  box-sizing: border-box;
 }
 
 .booklist-container {
   display: flex;
+
   gap: 16px;
+
   overflow-x: auto;
+
   padding: 10px 4px 20px;
 
   scroll-snap-type: x mandatory;
+
   -webkit-overflow-scrolling: touch;
 
   scrollbar-width: none;
@@ -45,51 +65,71 @@
   display: none;
 }
 
-/* カード */
+/* =========================
+  Card
+========================= */
 .book-info {
   flex: 0 0 auto;
+
   width: 210px;
   min-height: 290px;
+
+  padding: 22px 18px;
+
   background: #fff;
-  border-radius: 6px;
 
   border: 1px solid #eee;
-  padding: 22px 18px;
+  border-radius: 6px;
+
   text-align: center;
+
   cursor: pointer;
-  transition: .4s;
+
+  transition: 0.4s;
+
   scroll-snap-align: start;
 }
 
-/* ホバー（今より“浮く感じ”強め） */
+/* hover */
 .book-info:hover {
   border-color: #ddd;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* 画像 */
+/* =========================
+  Image
+========================= */
 .booklist-image {
   width: 110px;
   height: 140px;
+
   object-fit: cover;
 
-  border-radius: 2px;
   margin-bottom: 14px;
+
+  border-radius: 2px;
 
   background: #f5f5f5;
 }
 
-/* タイトル */
+/* =========================
+  Text
+========================= */
 .booklist-text-name {
   font-size: 15px;
   font-weight: 700;
+
   color: #222;
 
   margin-bottom: 6px;
 
   display: -webkit-box;
+
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
   overflow: hidden;
 }
 
@@ -97,4 +137,78 @@
 .booklist-text-level {
   font-size: 12px;
   color: #777;
+}
+
+/* =========================
+  Responsive
+========================= */
+@media (max-width: 768px) {
+
+  .booklist-title {
+    font-size: 24px;
+
+    margin: 28px 0 36px;
+  }
+
+  .booklists {
+    padding: 0 12px 16px;
+  }
+
+  .booklist-container {
+    gap: 12px;
+
+    padding: 6px 2px 16px;
+  }
+
+  /* カード */
+  .book-info {
+    width: 160px;
+    min-height: 240px;
+
+    padding: 18px 14px;
+  }
+
+  /* 画像 */
+  .booklist-image {
+    width: 90px;
+    height: 118px;
+
+    margin-bottom: 12px;
+  }
+
+  /* タイトル */
+  .booklist-text-name {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+  }
+
+  /* レベル */
+  .booklist-text-level {
+    font-size: 11px;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .booklist-title {
+    font-size: 20px;
+  }
+
+  .book-info {
+    width: 145px;
+    min-height: 220px;
+
+    padding: 16px 12px;
+  }
+
+  .booklist-image {
+    width: 82px;
+    height: 108px;
+  }
+
+  .booklist-text-name {
+    font-size: 13px;
+  }
 }

@@ -1,0 +1,29 @@
+<div class="learning-container">
+  <div class="learning-level">
+  
+    <div class="learning-header">
+      <div>
+        <h5>習得率</h5>
+        <span class="learning-subtitle">
+          Learning Progress
+        </span>
+      </div>
+      <div class="progress-percent">
+        <%= @progress %>%
+      </div>
+    </div>
+
+    <div class="progress-wrapper">
+      <div
+        class="progress-bar"
+        style="width: <%= @progress %>%;">
+      </div>
+    </div>
+
+    <div class="progress-labels">
+      <span>Start</span>
+      <span>Master</span>
+    </div>
+
+  </div>
+</div>

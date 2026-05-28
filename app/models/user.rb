@@ -28,5 +28,29 @@ class User < ApplicationRecord
   def completed?(audio)
     learning_records.exists?(audio: audio)
   end
+
+  def progress_for(textbook)
+    total_audios =
+      Audio.where(
+        lesson_id: textbook.lessons.ids
+      ).count
   
+    completed_audios =
+      learning_records
+        .joins(:audio)
+        .where(
+          audios: {
+            lesson_id: textbook.lessons.ids
+          }
+        )
+        .count
+  
+    return 0 if total_audios.zero?
+  
+    (completed_audios.to_f / total_audios * 100).round
+  end
+
+  def last_played_audio
+    learning_records.includes(:audio).order(last_played_at: :desc).first&.audio
+  end
 end
