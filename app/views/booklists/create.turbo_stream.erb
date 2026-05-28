@@ -1,5 +1,7 @@
 <%= turbo_stream.replace "booklist_button" do %>
   <div id="booklist_button">
-    <%= render "booklists/button", textbook: @textbook %>
+    <%= render "booklists/button",
+        textbook: @textbook,
+        booklist: @booklist %>
   </div>
 <% end %>

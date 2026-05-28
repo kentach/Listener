@@ -1,12 +1,7 @@
 .textbook-show-container {
   width: 100%;
   max-width: 500px;
-  margin: 40px auto 100px;
-}
-
-.back-btn {
-  text-decoration: none;
-  color: rgb(86, 86, 86);
+  margin: 50px auto 100px;
 }
 
 .my-list-form {
@@ -15,7 +10,6 @@
 
 .my-list-btn {
   width: 100%;
-
   padding: 10px 16px;
 
   border: 2px solid #ff5757;
@@ -61,13 +55,13 @@
 }
 
 .textbook-show-img {
-  margin: 20px 0;
+  margin: 0px 0 10px;
   flex-shrink: 0;
   width: 180px;
   height: 240px;
   object-fit: cover;
   -webkit-user-drag: none;
-  border-radius: 10px;
+  border-radius: 6px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition:

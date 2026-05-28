@@ -1,13 +1,9 @@
-<% booklist = current_user.booklists.find_by(textbook: textbook) %>
-
 <% if booklist %>
-  <%= button_to "マイリストに登録済み",
-      booklist_path(booklist),
-      method: :delete,
-      class: "my-list-btn active" %>
+  <%= render "booklists/unbooklist_button",
+      booklist: booklist,
+      textbook: textbook %>
 <% else %>
-  <%= button_to "マイリストに追加",
-      booklists_path(textbook_id: textbook.id),
-      method: :post,
-      class: "my-list-btn" %>
+  <%= render "booklists/add_booklist_button",
+      textbook: textbook,
+      booklist: booklist %>
 <% end %>

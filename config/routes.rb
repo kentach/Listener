@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   
   root 'static_pages#top' 
 
-  resources :textbooks do
-    resources :lessons, param: :learning_mode do
+  resources :textbooks, only: [:show] do
+    resources :lessons, param: :learning_mode, only: [:show] do
       resources :audios, only: [:show] do
         resource :favorite, only: [:create, :destroy]
         resource :learning_records, only: [:create, :destroy]
