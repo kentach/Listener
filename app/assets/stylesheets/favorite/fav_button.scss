@@ -1,22 +1,58 @@
-
 .favorite-btn {
   border: none;
   background: transparent;
+
   padding: 0;
+
   cursor: pointer;
-  
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .favorite-btn i {
-  color: rgb(224, 66, 66);
-  transition: 0.2s;
   font-size: 25px;
+
+  color: rgb(224, 66, 66);
+
+  transition:
+    transform 0.2s,
+    color 0.2s,
+    opacity 0.2s;
 }
 
 .favorite-btn i.fa-regular {
-  color: #cbd5e1; 
+  color: #cbd5e1;
 }
 
 .favorite-btn:active i {
   transform: scale(0.85);
+}
+
+/* hover */
+.favorite-btn:hover i {
+  opacity: 0.8;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .favorite-btn {
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .favorite-btn i {
+    font-size: 22px;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .favorite-btn i {
+    font-size: 20px;
+  }
 }

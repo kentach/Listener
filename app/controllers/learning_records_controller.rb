@@ -11,7 +11,6 @@ class LearningRecordsController < ApplicationController
 
   def destroy
     learning_record = current_user.learning_records.find_by(audio: @audio)
-  
     learning_record&.destroy
   
     respond_to do |format|

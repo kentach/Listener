@@ -1,17 +1,13 @@
 <% booklist = current_user.booklists.find_by(textbook: textbook) %>
 
-<% if booklist.present? %>
-
-  <%= button_to "マイテキストに登録済み",
+<% if booklist %>
+  <%= button_to "マイリストに登録済み",
       booklist_path(booklist),
       method: :delete,
       class: "my-list-btn active" %>
-
 <% else %>
-
-  <%= button_to "マイテキストに追加する",
+  <%= button_to "マイリストに追加",
       booklists_path(textbook_id: textbook.id),
       method: :post,
       class: "my-list-btn" %>
-
 <% end %>

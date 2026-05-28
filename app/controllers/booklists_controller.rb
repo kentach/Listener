@@ -1,5 +1,4 @@
 class BooklistsController < ApplicationController
-    before_action :set_textbook, only: :create
 
   def index
     @booklists = current_user.booklists.includes(:textbook)
@@ -8,18 +7,15 @@ class BooklistsController < ApplicationController
   end
   
   def create
-    current_user.booklists.find_or_create_by(textbook: @textbook)
+    textbook = Textbook.find(params[:textbook_id])
+    current_user.booklists.find_or_create_by(textbook: textbook)
+    @textbook = textbook
   end
-
+  
   def destroy
     booklist = current_user.booklists.find(params[:id])
-    booklist&.destroy
-  end
-
-  private 
-
-  def set_textbook
-    @textbook = Textbook.find(params[:textbook_id])
+    @textbook = booklist.textbook
+    booklist.destroy
   end
 
 end

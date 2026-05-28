@@ -9,25 +9,34 @@
 }
 
 .audio-nav-btn {
-  width: 70px;
-  height: 70px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
+  width: 88px;
+  height: 88px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  background: #fff;
 
   text-decoration: none;
-  color: #2a2a2a;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
 }
 
 .audio-nav-btn i {
-  font-size: 36px;
-  margin-bottom: 8px;
-  color: #2a2a2a;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #334155;
 
+  transition: color 0.2s;
 }
 
 .audio-nav-btn:hover {
@@ -35,56 +44,45 @@
 }
 
 .audio-nav-link {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
   margin: 0;
   line-height: 1;
-  text-decoration: none;
-  color: gray;
 }
 
-.audio-nav-btn i {
-  font-size: 1.4rem;
-  line-height: 1;
-}
+/* ================= SMARTPHONE ================= */
 
-.learning-time,
-.learning-level {
-  margin: 10px 0;
-  padding: 20px 18px;
-  width: 100%;
-  border-radius: 12px;
-  background-color: rgb(227, 226, 226);
+@media (max-width: 768px) {
 
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  box-sizing: border-box;
-}
+  .audio-nav {
+    gap: 10px;
+    overflow-x: auto; /* 横スクロール可能 */
+    padding-bottom: 4px;
 
-.learning-time h5,
-.learning-level h5 {
-  margin: 0;
-  min-width: 80px;
-}
+    -webkit-overflow-scrolling: touch;
+  }
 
-.progress-wrapper {
-  flex: 1;
-  height: 20px;
-  background: #eee;
-  border-radius: 20px;
-  overflow: hidden;
-}
+  .audio-nav::-webkit-scrollbar {
+    display: none;
+  }
 
-.progress-bar {
-  width: 0%;
-  height: 100%;
-  background: #a5a5a5;
-  color: #fff;
+  .audio-nav-btn {
+    min-width: 72px;
+    width: 72px;
+    height: 72px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border-radius: 14px;
+    gap: 6px;
 
-  font-weight: bold;
-  transition: width 0.3s;
+    flex-shrink: 0;
+  }
+
+  .audio-nav-btn i {
+    font-size: 1.2rem;
+  }
+
+  .audio-nav-link {
+    font-size: 11px;
+  }
 }
