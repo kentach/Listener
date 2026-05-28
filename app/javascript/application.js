@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-// import "./swiper"
+import "./swiper"
 import './modal'
 import './header'
 import './languageToggle'

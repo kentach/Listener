@@ -2,37 +2,98 @@
   CTA SECTION
 ========================= */
 .cta-section {
+  position: relative;
+
   padding: 140px 20px;
+  margin: 100px 40px;
 
-  margin: 80px 40px;
-
-  border-radius: 40px;
+  border-radius: 42px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #28c2c2 0%,
+      #1da1d2 100%
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.10);
 }
 
-/* 中央 */
+/* 背景演出 */
+.cta-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  right: -120px;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  filter: blur(10px);
+}
+
+.cta-section::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -100px;
+  left: -80px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  filter: blur(8px);
+}
+
+/* =========================
+  Inner
+========================= */
 .cta-section-inner {
+  position: relative;
+  z-index: 2;
+
   width: 100%;
   max-width: 900px;
 
   text-align: center;
 }
 
-/* タイトル */
+/* =========================
+  Title
+========================= */
 .cta-title {
-  font-size: 64px;
+  font-size: 68px;
   font-weight: 900;
-
-  line-height: 1.4;
+  line-height: 1.35;
 
   color: #fff;
 
-  margin-bottom: 50px;
+  margin-bottom: 54px;
+
+  letter-spacing: -0.03em;
+
+  text-shadow:
+    0 4px 12px rgba(0,0,0,0.12);
 
   font-family:
     'ヒラギノ角ゴ StdN',
@@ -46,17 +107,30 @@
 .cta-section-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   gap: 20px;
-
   flex-wrap: wrap;
 }
 
 /* 共通 */
 .cta-section-buttons .btn {
-  min-width: 220px;
+  min-width: 240px;
 
-  transition: 0.25s;
+  padding: 18px 34px !important;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  border-radius: 9999px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.10);
 }
 
 /* hover */
@@ -64,26 +138,51 @@
   transform: translateY(-4px);
 
   box-shadow:
-    0 16px 30px rgba(0,0,0,0.18);
+    0 18px 36px rgba(0,0,0,0.18);
 }
 
-/* 白ボタン */
+/* =========================
+  Primary
+========================= */
 .cta-section-buttons .btn-primary {
-  background: #fff;
-  color: #3b82f6;
+  background:
+    linear-gradient(
+      135deg,
+      #0f3d75 0%,
+      #0b2f5c 100%
+    );
+
+  color: #fff;
 
   border: none;
 }
 
-/* outline */
-.cta-section-buttons .btn-outline-primary {
-  border: 2px solid #fff;
+.cta-section-buttons .btn-primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #12498d 0%,
+      #0f3d75 100%
+    );
+
   color: #fff;
 }
 
+/* =========================
+  Outline
+========================= */
+.cta-section-buttons .btn-outline-primary {
+  background: rgba(255,255,255,0.95);
+
+  color: #0f3d75;
+
+  border: 2px solid transparent;
+}
+
 .cta-section-buttons .btn-outline-primary:hover {
-  background: #fff;
-  color: #3b82f6;
+  background: #0f3d75;
+
+  color: #fff;
 }
 
 /* =========================
@@ -91,9 +190,11 @@
 ========================= */
 .fade-up {
   opacity: 0;
+
   transform: translateY(24px);
 
-  animation: fadeUp 0.8s ease forwards;
+  animation:
+    fadeUp 0.8s ease forwards;
 }
 
 .delay-1 {
@@ -113,39 +214,34 @@
 @media (max-width: 768px) {
 
   .cta-section {
-    margin: 40px 16px;
+    margin: 48px 16px;
 
-    padding: 80px 20px;
+    padding: 84px 20px;
 
-    border-radius: 28px;
+    border-radius: 30px;
   }
 
-  .cta-section-inner {
-    max-width: 100%;
-  }
-
-  /* タイトル */
   .cta-title {
-    font-size: 34px;
+    font-size: 38px;
 
-    line-height: 1.5;
+    line-height: 1.45;
 
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
 
-  /* ボタン */
   .cta-section-buttons {
     flex-direction: column;
-    align-items: center;
 
-    gap: 14px;
+    gap: 16px;
   }
 
   .cta-section-buttons .btn {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
 
     min-width: auto;
+
+    font-size: 17px;
   }
 }
 
@@ -155,12 +251,16 @@
   .cta-section {
     margin: 28px 12px;
 
-    padding: 64px 16px;
+    padding: 68px 16px;
 
-    border-radius: 22px;
+    border-radius: 24px;
   }
 
   .cta-title {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .cta-section-buttons .btn {
+    padding: 16px 24px !important;
   }
 }

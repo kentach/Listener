@@ -23,8 +23,20 @@
   </head>
 
   <body>
-      <%= render 'shared/header' %>
-      <%= render 'shared/flash_message' %>
+    <%= render 'shared/header' %>
+    <%= render 'shared/flash_message' %>
+
+    <% if controller_name == "static_pages" &&
+          action_name == "top" &&
+          !user_signed_in? %>
+      <!-- コントローラ名が「static_pages」でかつ、
+          アクション名がトップアクションで、
+          Userがサインインしてなければ、
+          before_loginページを出す -->
+
+      <%= render "static_pages/before_login" %>
+    <% else %>
       <%= yield %>
+    <% end %>
   </body>
 </html>
