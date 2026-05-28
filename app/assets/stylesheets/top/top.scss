@@ -32,7 +32,11 @@ body {
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 12px;
+
   scrollbar-width: none;
+
+  /* スマホで横スクロールを滑らかに */
+  -webkit-overflow-scrolling: touch;
 }
 
 .textbook-img-container::-webkit-scrollbar {
@@ -43,14 +47,21 @@ body {
 
 .textbook-img {
   flex-shrink: 0;
+
   width: 180px;
   height: 250px;
+
   object-fit: cover;
+
   -webkit-user-drag: none;
-  border-radius: 7px;
+
+  border-radius: 10px;
   background: #fff;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
   cursor: pointer;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -65,17 +76,30 @@ body {
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
+
+  .textbook-container {
+    padding: 0 14px 10px;
+  }
+
   .textbook-title,
   .rhythmas-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin: 16px 0 18px;
+  }
+
+  .textbook-img-container {
+    gap: 14px;
+    padding-bottom: 8px;
   }
 
   .textbook-img {
-    width: 160px;
-    height: 220px;
+    width: 135px;
+    height: 190px;
+
+    border-radius: 8px;
   }
 
-  .slide {
-    min-width: 100%;
+  .textbook-img:hover {
+    transform: none;
   }
 }

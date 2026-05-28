@@ -83,3 +83,59 @@
     background-color: #0b5ed7;
     transform: translateY(-2px);
   }
+
+  /* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .modal-background {
+    padding: 20px;
+  }
+
+  .modal-inner {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 24px 20px;
+
+    border-radius: 16px;
+  }
+
+  .modal-image {
+    width: 180px;
+    height: 250px;
+
+    margin-bottom: 20px;
+  }
+
+  .textbook-name {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .textbook-level {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .modal-button {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .modal-button:hover {
+    transform: none;
+  }
+
+  .fa-x {
+    top: 18px;
+    right: 18px;
+
+    font-size: 22px;
+  }
+}

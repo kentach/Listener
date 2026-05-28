@@ -23,9 +23,6 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-    <%= render 'shared/flash_message' %>
-
     <% if controller_name == "static_pages" &&
           action_name == "top" &&
           !user_signed_in? %>
@@ -36,6 +33,9 @@
 
       <%= render "static_pages/before_login" %>
     <% else %>
+
+      <%= render 'shared/header' %>
+      <%= render 'shared/flash_message' %>
       <%= yield %>
     <% end %>
   </body>
