@@ -93,3 +93,51 @@
 
   color: #94a3b8;
 }
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .learning-container {
+    margin-top: 16px;
+  }
+
+  .learning-level {
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  .learning-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+  }
+
+  .learning-header h5 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .learning-subtitle {
+    font-size: 11px;
+  }
+
+  .progress-percent {
+    font-size: 24px;
+    align-self: flex-end;
+  }
+
+  .progress-wrapper {
+    height: 12px;
+  }
+
+  .progress-labels {
+    margin-top: 8px;
+
+    font-size: 11px;
+  }
+}

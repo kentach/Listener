@@ -81,11 +81,45 @@
 
 
 @media (max-width: 640px) {
+
   .favorite-page {
-    padding: 12px 12px 120px;
+    padding:
+      16px
+      12px
+      calc(110px + env(safe-area-inset-bottom));
+  }
+
+  .favorite-page__title {
+    font-size: 24px;
+
+    margin: 18px 0 28px;
+  }
+
+  .favorite-page__list {
+    padding: 0;
+  }
+
+  .favorite-page__card {
+    padding: 14px 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+  }
+
+  .favorite-page__header {
+    gap: 10px;
   }
 
   .favorite-page__name {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .favorite-page__meta {
+    font-size: 12px;
+  }
+
+  .favorite-page__card:hover {
+    transform: none;
   }
 }
