@@ -3,12 +3,14 @@ class FavoritesController < ApplicationController
 
   def index
     @favorite_audios = current_user.favorite_audios
+    #userモデルにhas_many: favorite_audiosと書いてある。
   end
 
   def create
     current_user.favorites.find_or_create_by(audio: @audio)
     #userモデルに has_many :favoritesと書いているからcurrent_user.favorites
     #find_or_create_byメソッドを使って、「audio に @audio を入れる」
+    #お気に入りにするのはaudioだからね。
 
     respond_to do |format|
       format.turbo_stream

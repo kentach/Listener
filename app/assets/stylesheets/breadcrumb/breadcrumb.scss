@@ -1,0 +1,39 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-weight:bold;
+  font-family: 'Helvetica','Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic' 
+sans-serif;
+
+  color: #333;
+}
+
+.breadcrumb li + li::before {
+  content: ">";
+  margin: 0 8px;
+  color: #999;
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #000;
+  text-decoration: underline;
+}

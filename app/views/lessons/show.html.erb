@@ -1,11 +1,9 @@
 <% content_for :title, t('.title') %>
+<% breadcrumb :audios, @lesson %>
 
 <section class="audio-list">
-  <%= link_to "＜戻る",
-      textbook_path(@textbook),
-      class: "back-btn" %>
+<%= render 'shared/breadcrumb' %>
 
-  <h5 class="audio-title">音声一覧</h5>
   <div class="audio-list-wrapper">
 
       <% @lesson.audios.each do |audio| %>
