@@ -1,5 +1,5 @@
 Favorite.delete_all
-Learning_record.delete_all
+LearningRecord.delete_all
 Booklist.delete_all
 Audio.delete_all
 Lesson.delete_all
