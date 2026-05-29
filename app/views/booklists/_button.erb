@@ -1,9 +1,11 @@
 <% if booklist %>
-  <%= render "booklists/unbooklist_button",
-      booklist: booklist,
-      textbook: textbook %>
+  <%= button_to "マイテキストから削除",
+      booklist_path(booklist),
+      method: :delete,
+      class: "my-list-btn active" %>
 <% else %>
-  <%= render "booklists/add_booklist_button",
-      textbook: textbook,
-      booklist: booklist %>
+  <%= button_to "マイテキストに追加",
+      booklists_path(textbook_id: textbook.id),
+      method: :post,
+      class: "my-list-btn" %>
 <% end %>

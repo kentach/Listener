@@ -9,7 +9,7 @@ class BooklistsController < ApplicationController
   def create
     @textbook = Textbook.find(params[:textbook_id])
     #どのテキストブックに対して、ブックリストを作るかを指定する。
-    current_user.booklists.find_or_create_by(textbook: @textbook)
+    @booklist = current_user.booklists.find_or_create_by(textbook: @textbook)
     # find_by(カラム名: 値)で条件に一致する1件を取得し、あれば作らないしなければ作る。
     
     respond_to do |format|
