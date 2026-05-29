@@ -1,23 +1,23 @@
-<section id="footer" class="footer-bottom bg-white border-top fixed-bottom py-3">
-  <div class="tab-menu d-flex justify-content-center">
+<section id="footer" class="footer-bottom">
+  <div class="tab-menu">
 
-    <%= link_to root_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(root_path) ? 'active' : ''}" do %>
-      <i class="fa-regular fa-house fs-4 mb-2"></i>
+    <%= link_to root_path,
+        class: "tab-item #{current_page?(root_path) ? 'active' : ''}" do %>
+      <i class="fa-regular fa-house"></i>
       <span>ホーム</span>
     <% end %>
 
-    <%= link_to favorites_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(favorites_path) ? 'active' : ''}" do %>
-      <i class="fa-solid fa-music fs-4 mb-2"></i>
+    <%= link_to favorites_path,
+        class: "tab-item #{current_page?(favorites_path) ? 'active' : ''}" do %>
+      <i class="fa-solid fa-music"></i>
       <span>音声リスト</span>
     <% end %>
 
-    <%= link_to booklists_path, 
-        class: "tab-item d-flex flex-column align-items-center mx-5 #{current_page?(booklists_path) ? 'active' : ''}" do %>
-      <i class="fa-solid fa-book-bookmark fs-4 mb-2"></i>
+    <%= link_to booklists_path,
+        class: "tab-item #{current_page?(booklists_path) ? 'active' : ''}" do %>
+      <i class="fa-solid fa-book-bookmark"></i>
       <span>マイテキスト</span>
     <% end %>
 
   </div>
-</footer>
+</section>

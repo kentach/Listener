@@ -1,3 +1,384 @@
+/* ================= SIDEBAR ================= */
+
+.side-bar {
+  width: 300px;
+  height: calc(100vh - 80px);
+
+  position: fixed;
+  top: 80px;
+  left: -300px;
+
+  box-sizing: border-box;
+
+  border-right: 1px solid #ddd;
+  background: #fff;
+
+  transition: left 0.5s ease;
+
+  z-index: 300;
+
+  overflow: hidden;
+}
+
+.side-bar.open {
+  left: 0;
+}
+
+/* サイドバー開閉ボタン */
+.side-bar-toggle {
+  position: fixed;
+
+  top: 100px;
+  left: 50px;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  z-index: 400;
+}
+
+.side-bar-toggle h1 {
+  font-size: 20px;
+  text-align: center;
+
+  margin: 0;
+  padding: 10px 14px;
+
+  border-radius: 12px;
+  background: #fff;
+
+  box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.18);
+}
+
+.side-bar-toggle h1.hide {
+  display: none;
+}
+
+/* サイドバータイトル */
+.side-bar h1 {
+  font-size: 20px;
+  text-align: center;
+
+  margin: 0;
+  padding: 18px 12px;
+
+  border-bottom: 1px solid #eee;
+
+  background: #fff;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+}
+
+/* 音声一覧 */
+.side-bar-container {
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(100vh - 170px);
+
+  overflow-y: auto;
+
+  gap: 3px;
+}
+
+.side-bar-item {
+  padding: 12px 20px;
+
+  border-bottom: 1px solid #eee;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+}
+
+.side-bar-item:hover {
+  transform: translateY(-2px);
+  background-color: #f3f0f0;
+}
+
+.side-bar-item.active {
+  transform: translateY(-2px);
+
+  color: rgb(224, 66, 66);
+  background-color: #f3f0f0;
+}
+
+/* スクロールバー */
+.side-bar-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side-bar-container::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 999px;
+}
+
+/* アイコン */
+.fa-angle-up,
+.fa-angle-down {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================= TEXT AREA ================= */
+
+.text-container {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 40px auto 0;
+  padding: 0 16px 180px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 英語・日本語表示エリア */
+.ja-en-container {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 220px;
+}
+
+.english-container,
+.japanese-container {
+  overflow-y: auto;
+  max-height: 400px;
+
+  line-height: 1.8;
+
+  box-sizing: border-box;
+
+  transition:
+    flex 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.english-container {
+  width: 100%;
+
+  padding-right: 10px;
+
+  transition: width 0.4s ease;
+}
+
+.japanese-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50%;
+
+  padding-left: 20px;
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* 日本語表示ON */
+.ja-en-container.show-japanese .english-container {
+  width: 50%;
+}
+
+.ja-en-container.show-japanese .japanese-container {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ================= LANGUAGE TOGGLE ================= */
+
+.language-toggle-btn {
+  display: flex;
+
+  width: 700px;
+  max-width: calc(100% - 24px);
+
+  height: 44px;
+
+  background: #ddd;
+
+  border-radius: 999px;
+  overflow: hidden;
+
+  position: fixed;
+
+  bottom: 170px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 200;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.language-toggle-btn div {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+}
+
+.btn-colored,
+.japanese-btn.active {
+  background: #28c2c2;
+  color: white;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .side-bar {
+    width: 260px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    position: fixed;
+  
+    top: 60px;
+    left: -260px;
+  
+    height: 620px;
+  
+    background: #fff;
+  
+    overflow: hidden;
+  
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+  }
+
+
+  .side-bar-toggle {
+    position: fixed;
+  
+    right: 12px;
+    bottom: 190px;
+  
+    left: auto;
+    top: auto;
+  
+    font-size: 20px;
+    z-index: 400;
+  }
+
+  /* サイドバータイトル */
+  .side-bar h1 {
+    font-size: 18px;
+
+    padding: 14px 10px;
+  }
+
+  /* 音声一覧 */
+  .side-bar-container {
+    flex: 1;
+  
+    overflow-y: auto;
+  
+    display: flex;
+    flex-direction: column;
+  
+    gap: 2px;
+  }
+
+  .side-bar-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  /* テキスト */
+  .text-container {
+    margin-top: 24px;
+    padding: 0 12px 220px;
+  }
+
+  .english-container,
+  .japanese-container {
+    max-height: none;
+
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* スマホ時は縦表示 */
+  .ja-en-container.show-japanese {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ja-en-container.show-japanese .english-container {
+    width: 100%;
+  }
+
+  .japanese-container {
+    position: static;
+
+    width: 100%;
+
+    padding-left: 0;
+
+    transform: translateX(0);
+
+    opacity: 0;
+
+    max-height: 0;
+
+    overflow: hidden;
+  }
+
+  .ja-en-container.show-japanese .japanese-container {
+    opacity: 1;
+    max-height: 1000px;
+  }
+
+  /* 言語切替ボタン */
+  .language-toggle-btn {
+    width: calc(100% - 24px);
+
+    height: 40px;
+
+    bottom: 130px;
+  }
+
+  .language-toggle-btn div {
+    font-size: 14px;
+  }
+
+  /* アイコン */
+  .fa-angle-up,
+  .fa-angle-down {
+    font-size: 16px;
+  }
+}
+
 /* ===== プレーヤー全体 ===== */
 .audio-player {
   position: fixed;
@@ -12,7 +393,7 @@
 
   border-top: 1px solid rgb(207, 207, 207);
 
-  z-index: 5;
+  z-index: 500;
 
   box-sizing: border-box;
 }
@@ -31,6 +412,8 @@
   font-size: 13px;
   min-width: 40px;
   text-align: center;
+
+  flex-shrink: 0;
 }
 
 .audio-progress {
@@ -71,6 +454,8 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+
+  flex-wrap: wrap;
 }
 
 /* ===== ボタン共通 ===== */
@@ -85,6 +470,8 @@
   cursor: pointer;
 
   transition: 0.2s;
+
+  flex-shrink: 0;
 }
 
 /* hover */
@@ -165,6 +552,8 @@
   font-weight: bold;
 
   padding: 0 4px;
+
+  flex-shrink: 0;
 }
 
 /* ================= SMARTPHONE ================= */

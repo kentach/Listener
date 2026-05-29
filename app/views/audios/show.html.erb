@@ -1,27 +1,126 @@
 <% content_for :title, t('.title') %>
 
 <section class="text-container">
-  <%= link_to '＜戻る', textbook_lesson_path(@textbook, @lesson.learning_mode), class: "back-btn" %>
+    <%= link_to '＜戻る', textbook_lesson_path(@textbook, @lesson.learning_mode), class: "back-btn" %>
+    <h5 class="audio-title">音声スクリプト</h5>
+    
+    <section class="ja-en-container">
+        <div class="english-container">
+        Learning a new language is not something that can be achieved overnight. 
+        </div>
 
-  <h5 class="audio-title">音声スクリプト</h5>
-  <section class="ja-en-container">
-      <div class="english-container">
-      Learning a new language is not something that can be achieved overnight. 
-      </div>
+        <div class="japanese-container">
+          新しい言語を学ぶことは、一晩で達成できるものではありません。 
+          そこには忍耐力、継続力、そして途中で失敗を受け入れる姿勢が必要です。 
+        </div>
+    </section>
 
-      <div class="japanese-container">
-        新しい言語を学ぶことは、一晩で達成できるものではありません。 
-        そこには忍耐力、継続力、そして途中で失敗を受け入れる姿勢が必要です。 
-      </div>
+    <!-- ===== 英語日本語の切り替えボタン ===== -->
+    <div class="language-toggle-btn">
+      <div class="english-btn btn-colored">英語</div>
+      <div class="japanese-btn">日本語</div>
+    </div>
+
+  <section class="side-bar-toggle">
+    <h1>音声一覧 <i class="fa-solid fa-angle-down"></i></h1>
   </section>
 
-  <div class="language-toggle-btn">
-    <div class="english-btn btn-colored">英語</div>
-    <div class="japanese-btn">日本語</div>
-  </div>
+  <section class="side-bar">
+    <h1>音声リスト<i class="fa-solid fa-xmark"></i></h1>
 
-  <%= render 'audios/sidebar' %>
+    <div class="side-bar-container">
+    <% @audios.each do |audio| %>
+      <div
+        class="side-bar-item"
+        data-audio="/audio_files/<%= audio.file_name %>"
+        data-audio-id="<%= audio.id %>">
+        <%= audio.title %>
+      </div>
+    <% end %>
+  </div>
+  </section>
   
 </section>
 
-<%= render 'audios/audio_player' %>
+
+<div class="audio-player">
+  <!-- ===== 進捗バー ===== -->
+  <div class="audio-progress-area">
+    <span id="currentTime" class="time-text">
+      0:00
+    </span>
+
+    <input
+      type="range"
+      id="progress"
+      class="audio-progress"
+      min="0"
+      max="100"
+      value="0"
+    >
+    <span id="duration" class="time-text">
+      0:00
+    </span>
+  </div>
+
+  <!-- ===== コントロール ===== -->
+  <div class="audio-controls">
+
+    <!-- 戻る -->
+    <button class="audio-btn sub-btn" id="rewind">
+      <i class="fa-solid fa-backward-step"></i>
+    </button>
+
+    <!-- 3秒戻し -->
+    <button class="audio-btn three-seconds" id="threeSecondsBack">
+    <i class="fa-solid fa-arrow-rotate-left"></i>
+    </button>
+
+    <!-- 再生 -->
+    <button class="audio-btn play-btn" id="playBtn">
+      <i id="playIcon"
+          class="bi bi-play-fill play-icon"></i>
+    </button>
+
+    <!-- 一時停止 -->
+    <button class="audio-btn stop-btn hidden" id="stopBtn">
+      <i id="stopIcon" 
+          class="bi-pause-fill"></i>
+    </button>
+    
+    <!-- 3秒進める -->
+    <button class="audio-btn three-seconds" id="threeSecondsForward">
+      <i class="fa-solid fa-arrow-rotate-right"></i>
+    </button>
+
+    <!-- スキップ -->
+    <button class="audio-btn sub-btn" id="forward">
+      <i class="fa-solid fa-forward-step"></i>
+    </button>
+
+    <!-- ループ -->
+    <button class="audio-btn loop-btn" id="loopBtn">
+      <i class="fa-solid fa-repeat"></i>
+    </button>
+
+    <!-- 再生速度 -->
+    <select id="speedControl" class="speed-select">
+      <% [0.7,0.8,0.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0].each do |speed| %>
+        <option value="<%= speed %>"
+          <%= "selected" if speed == 1 %>>
+          x<%= speed %>
+        </option>
+      <% end %>
+    </select>
+
+  </div>
+
+  <!-- ===== audio ===== -->
+  <audio id="audio" 
+         preload="metadata"
+         data-current-audio-id="<%= @audio&.id %>"
+         src="<%= @audio ? "/audio_files/#{@audio.file_name}" : "" %>">
+         type="audio/mpeg">
+  </audio>
+
+</div>
