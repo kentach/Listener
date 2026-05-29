@@ -8,11 +8,14 @@ class BooklistsController < ApplicationController
   
   def create
     @textbook = Textbook.find(params[:textbook_id])
-    #テキストブックに対して、ブックリストを作成するからね。
+    #どのテキストブックに対して、ブックリストを作るかを指定する。
     current_user.booklists.find_or_create_by(textbook: @textbook)
-    # find_by(カラム名: 値)で条件に一致する1件を取得する。
+    # find_by(カラム名: 値)で条件に一致する1件を取得し、あれば作らないしなければ作る。
     
-    redirect_back fallback_location: root_path
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_back fallback_location: textbook_path(@textbook) }
+    end
   end
   
   def destroy
@@ -23,7 +26,7 @@ class BooklistsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_back fallback_location: root_path }
+      format.html { redirect_back fallback_location: textbook_path(@textbook) }
     end
   end
 

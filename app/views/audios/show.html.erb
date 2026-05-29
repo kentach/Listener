@@ -6,12 +6,10 @@
     
     <section class="ja-en-container">
         <div class="english-container">
-        Learning a new language is not something that can be achieved overnight. 
         </div>
 
         <div class="japanese-container">
-          新しい言語を学ぶことは、一晩で達成できるものではありません。 
-          そこには忍耐力、継続力、そして途中で失敗を受け入れる姿勢が必要です。 
+          
         </div>
     </section>
 
@@ -26,7 +24,7 @@
   </section>
 
   <section class="side-bar">
-    <h1>音声リスト<i class="fa-solid fa-xmark"></i></h1>
+    <h1>音声リスト <i class="fa-solid fa-xmark"></i></h1>
 
     <div class="side-bar-container">
     <% @audios.each do |audio| %>
@@ -44,6 +42,8 @@
 
 
 <div class="audio-player">
+<!-- ===== 音声名 ===== -->
+  <p></p>
   <!-- ===== 進捗バー ===== -->
   <div class="audio-progress-area">
     <span id="currentTime" class="time-text">

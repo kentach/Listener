@@ -14,9 +14,8 @@ class FavoritesController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.html {redirect_back fallback_location: favorites_path}
+      format.html {redirect_back fallback_location: textbook_lesson_path(@textbook, @lesson)}
     end
-    
   end
 
   def destroy
@@ -25,7 +24,7 @@ class FavoritesController < ApplicationController
   
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_back fallback_location: favorites_path }
+      format.html { redirect_back fallback_location: textbook_lesson_path(@textbook, @lesson) }
     end
   end
 
@@ -33,5 +32,7 @@ class FavoritesController < ApplicationController
 
   def set_audio
     @audio = Audio.find(params[:audio_id])
+    @lesson = @audio.lesson
+    @textbook = @lesson.textbook
   end
 end

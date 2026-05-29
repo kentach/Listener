@@ -2,21 +2,16 @@
 
 .side-bar {
   width: 300px;
-  height: calc(100vh - 80px);
-
+  height: calc(100vh - 120px);
+  padding-bottom: 10px;
+  box-sizing: border-box;
   position: fixed;
   top: 80px;
   left: -300px;
-
-  box-sizing: border-box;
-
   border-right: 1px solid #ddd;
   background: #fff;
-
   transition: left 0.5s ease;
-
   z-index: 300;
-
   overflow: hidden;
 }
 
@@ -27,27 +22,20 @@
 /* サイドバー開閉ボタン */
 .side-bar-toggle {
   position: fixed;
-
   top: 100px;
   left: 50px;
-
   font-size: 30px;
-
   cursor: pointer;
-
   z-index: 400;
 }
 
 .side-bar-toggle h1 {
   font-size: 20px;
   text-align: center;
-
   margin: 0;
   padding: 10px 14px;
-
   border-radius: 12px;
   background: #fff;
-
   box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.18);
 }
 
@@ -59,37 +47,35 @@
 .side-bar h1 {
   font-size: 20px;
   text-align: center;
-
   margin: 0;
   padding: 18px 12px;
-
   border-bottom: 1px solid #eee;
-
   background: #fff;
-
   position: sticky;
   top: 0;
-
   z-index: 10;
+  transition: .4s;
+  cursor:pointer;
+}
+
+.side-bar h1:hover {
+  background-color: #eaeaea;
 }
 
 /* 音声一覧 */
 .side-bar-container {
   display: flex;
   flex-direction: column;
-
-  max-height: calc(100vh - 170px);
-
-  overflow-y: auto;
-
+  height: 100%;
   gap: 3px;
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 160px;
 }
 
 .side-bar-item {
   padding: 12px 20px;
-
   border-bottom: 1px solid #eee;
-
   cursor: pointer;
 
   transition:
@@ -158,9 +144,7 @@
 .japanese-container {
   overflow-y: auto;
   max-height: 400px;
-
   line-height: 1.8;
-
   box-sizing: border-box;
 
   transition:
@@ -170,9 +154,7 @@
 
 .english-container {
   width: 100%;
-
   padding-right: 10px;
-
   transition: width 0.4s ease;
 }
 
@@ -180,14 +162,10 @@
   position: absolute;
   top: 0;
   right: 0;
-
   width: 50%;
-
   padding-left: 20px;
-
   transform: translateX(100%);
   opacity: 0;
-
   transition:
     transform 0.4s ease,
     opacity 0.4s ease;
@@ -207,20 +185,14 @@
 
 .language-toggle-btn {
   display: flex;
-
   width: 700px;
   max-width: calc(100% - 24px);
-
   height: 44px;
-
   background: #ddd;
-
   border-radius: 999px;
   overflow: hidden;
-
   position: fixed;
-
-  bottom: 170px;
+  bottom: 190px;
   left: 50%;
 
   transform: translateX(-50%);
@@ -257,31 +229,23 @@
 
   .side-bar {
     width: 260px;
-  
     display: flex;
     flex-direction: column;
-  
     position: fixed;
-  
     top: 60px;
     left: -260px;
-  
+    
     height: 620px;
-  
     background: #fff;
-  
     overflow: hidden;
-  
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
   }
 
 
   .side-bar-toggle {
     position: fixed;
-  
     right: 12px;
-    bottom: 190px;
-  
+    bottom: 230px;
     left: auto;
     top: auto;
   
@@ -292,7 +256,6 @@
   /* サイドバータイトル */
   .side-bar h1 {
     font-size: 18px;
-
     padding: 14px 10px;
   }
 
@@ -301,10 +264,9 @@
     flex: 1;
   
     overflow-y: auto;
-  
     display: flex;
     flex-direction: column;
-  
+    padding-bottom: 40px;
     gap: 2px;
   }
 
@@ -365,7 +327,7 @@
 
     height: 40px;
 
-    bottom: 130px;
+    bottom: 170px;
   }
 
   .language-toggle-btn div {
@@ -396,6 +358,11 @@
   z-index: 500;
 
   box-sizing: border-box;
+}
+
+.audio-player p {
+ text-align: center;
+ color: rgb(68, 68, 68);
 }
 
 /* ===== 進捗バーエリア ===== */
