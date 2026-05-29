@@ -2,6 +2,8 @@
 Audio.delete_all
 Lesson.delete_all
 Textbook.delete_all
+Favorite.delete_all
+Booklist.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!('textbooks')
 
 ActiveRecord::Base.transaction do
