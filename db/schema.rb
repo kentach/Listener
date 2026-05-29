@@ -15,11 +15,11 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
   enable_extension "plpgsql"
 
   create_table "audios", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
     t.string "title"
     t.string "file_name", null: false
-    t.integer "duration"
-    t.text "script"
-    t.bigint "lesson_id", null: false
+    t.text "ja_script"
+    t.text "en_script"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_audios_on_lesson_id"
@@ -47,8 +47,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
 
   create_table "learning_records", force: :cascade do |t|
     t.boolean "completed"
-    t.integer "study_time"
-    t.datetime "last_played_at"
     t.integer "play_count"
     t.bigint "user_id", null: false
     t.bigint "audio_id", null: false
@@ -62,7 +60,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
   create_table "lessons", force: :cascade do |t|
     t.bigint "textbook_id", null: false
     t.string "title", null: false
-    t.string "mode", null: false
+    t.string "learning_mode", null: false
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["textbook_id"], name: "index_lessons_on_textbook_id"
@@ -89,16 +88,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "writings", force: :cascade do |t|
-    t.string "title"
-    t.string "phrase"
-    t.string "question"
-    t.text "content"
-    t.date "published_on"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "audios", "lessons"

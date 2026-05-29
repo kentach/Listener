@@ -2,8 +2,6 @@ class CreateLearningRecords < ActiveRecord::Migration[7.2]
   def change
     create_table :learning_records do |t|
       t.boolean :completed
-      t.integer :study_time
-      t.datetime :last_played_at
       t.integer :play_count
       t.references :user, null: false, foreign_key: :true
       t.references :audio, null: false, foreign_key: :true

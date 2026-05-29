@@ -4,7 +4,8 @@ class CreateAudios < ActiveRecord::Migration[7.2]
       t.references :lesson, null: false, foreign_key: true
       t.string :title
       t.string :file_name, null: false
-      t.text :script
+      t.text :ja_script #日本語のスクリプト
+      t.text :en_script #英語のスクリプト
       
       t.timestamps
     end
