@@ -35,6 +35,10 @@ document.addEventListener('turbo:load', () => {
   }
 
   function setAudio (item) {
+    //テキストの音声名を動的に替える。
+    const currentAudioName = document.querySelector('.audio-player p');
+    currentAudioName.textContent = item.textContent;
+
     const audioPath = item.dataset.audio;
       audio.src = audioPath;
   };
@@ -76,13 +80,26 @@ document.addEventListener('turbo:load', () => {
     stopBtn.addEventListener('click', () => {
       pauseAudio () 
     });
-
-    //終わったら最初に戻る
+  
+    //終わったら次の音源に行く
     audio.addEventListener("ended", () => {
+      
+      sideBarItems.forEach(item => {
+        item.classList.remove('active')
+      })
+
       audio.currentTime = 0;
-    
-      playBtn.classList.remove("hidden");
-      stopBtn.classList.add("hidden");
+
+      if (currentIndex >= sideBarItems.length - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+
+      const currentItem = sideBarItems[currentIndex];
+      currentItem.classList.add('active');
+      setAudio(currentItem)
+      playAudio();
     
       progress.value = 0;
       progress.style.setProperty("--progress", "0%");
