@@ -5,10 +5,8 @@
 <%= render 'shared/breadcrumb' %>
 
   <div class="audio-list-wrapper">
-
       <% @lesson.audios.each do |audio| %>
         <div class="audio-item">
-
           <%= link_to audio.title,
               textbook_lesson_audio_path(@textbook, @lesson.learning_mode, audio),
               class: "audio-name" %>

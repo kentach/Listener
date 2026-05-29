@@ -5,7 +5,6 @@
   <%= render 'shared/breadcrumb' %>
   
   <div class="textbook-show-audio-container">
-
     <div class="textbook-show-image-container">
       <%= image_tag @textbook.image,
           alt: @textbook.name,
@@ -19,6 +18,7 @@
       </p>
 
       <div id="booklist_button">
+        <!-- ===== turboは、idの'booklist_button'で探す   ===== -->
         <%= render "booklists/button", textbook: @textbook, booklist: @booklist %>
       </div>
       <!-- ===== パーシャルに@textbookをtextbook:で渡す。

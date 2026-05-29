@@ -4,13 +4,15 @@
     <%= link_to '＜戻る', textbook_lesson_path(@textbook, @lesson.learning_mode), class: "back-btn" %>
     <h5 class="audio-title">音声スクリプト</h5>
     
+    <!-- ===== 英語と日本語のスクリプトの部分 ===== -->
     <section class="ja-en-container">
-        <div class="english-container">
-        </div>
+      <div class="english-container">
+        <div id="en-script"></div>
+      </div>
 
-        <div class="japanese-container">
-          
-        </div>
+      <div class="japanese-container">
+        <div id="ja-script"></div>
+      </div>
     </section>
 
     <!-- ===== 英語日本語の切り替えボタン ===== -->
@@ -32,6 +34,7 @@
         class="side-bar-item"
         data-audio="/audio_files/<%= audio.file_name %>"
         data-audio-id="<%= audio.id %>">
+        <!-- ===== 各音声のパスとidをdata属性に保存し、JavaScriptから取得できるようにする ===== -->
         <%= audio.title %>
       </div>
     <% end %>
@@ -43,7 +46,8 @@
 
 <div class="audio-player">
 <!-- ===== 音声名 ===== -->
-  <p></p>
+  <p class="current-audio-name"></p>
+  
   <!-- ===== 進捗バー ===== -->
   <div class="audio-progress-area">
     <span id="currentTime" class="time-text">
@@ -116,11 +120,18 @@
   </div>
 
   <!-- ===== audio ===== -->
-  <audio id="audio" 
-         preload="metadata"
-         data-current-audio-id="<%= @audio&.id %>"
-         src="<%= @audio ? "/audio_files/#{@audio.file_name}" : "" %>">
-         type="audio/mpeg">
-  </audio>
+<audio id="audio" 
+        preload="metadata"
+        data-current-audio-id="<%= @audio&.id %>"
+        src="<%= @audio ? "/audio_files/#{@audio.file_name}" : "" %>">
+        type="audio/mpeg">
+</audio>
 
 </div>
+
+<script>
+  window.audios = <%= @audios.to_json(only: [:id, :ja_script, :en_script]).html_safe %>;
+  //window.audios はブラウザ全体で使える音声データの取得。
+  //to_jsonは、オブジェクトをJSON形式に変換してくれるメソッド
+  //onlyメソッドで取得するデータを指定。
+</script>
