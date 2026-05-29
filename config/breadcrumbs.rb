@@ -12,7 +12,7 @@ crumb :textbook do |textbook|
 end
 
 crumb :audios do |lesson|
-  link '音声一覧', textbook_lesson_path(lesson.textbook, lesson.learning_mode) #必ず引数のlessonに合わせること。
+  link "#{lesson.learning_mode}", textbook_lesson_path(lesson.textbook, lesson.learning_mode) #必ず引数のlessonに合わせること。
   parent :textbook, lesson.textbook
 end
 

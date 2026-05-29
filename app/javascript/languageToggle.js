@@ -14,16 +14,16 @@
   function displayEnglish() {
     englishBtn.addEventListener('click', () => {
       container.classList.remove('show-japanese');
-      japaneseBtn.classList.toggle('btn-colored');
-      englishBtn.classList.toggle('btn-colored');
+      japaneseBtn.classList.remove('btn-colored');
+      englishBtn.classList.add('btn-colored');
     });
   }
 
   function displayJapanese() {
     japaneseBtn.addEventListener('click', () => {
       container.classList.add('show-japanese');
-      englishBtn.classList.toggle('btn-colored');
-      japaneseBtn.classList.toggle('btn-colored');
+      englishBtn.classList.remove('btn-colored');
+      japaneseBtn.classList.add('btn-colored');
     });    
   }
 });

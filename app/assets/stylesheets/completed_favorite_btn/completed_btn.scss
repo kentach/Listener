@@ -1,0 +1,109 @@
+/* =========================
+  お気に入りと完了ボタンの共通化
+========================= */
+
+.favorite-btn,
+.completed-btn {
+  border: none;
+  background: transparent;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  min-width: 40px;
+  min-height: 40px;
+
+  transition: opacity 0.2s ease;
+}
+
+/* icon */
+
+.favorite-btn i,
+.completed-btn i {
+  font-size: 24px;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* favorite */
+
+.favorite-btn i {
+  color: rgb(224, 66, 66);
+}
+
+.favorite-btn i.fa-regular {
+  color: #cbd5e1;
+}
+
+/* completed */
+
+.completed-btn i {
+  color: rgb(31, 160, 65);
+}
+
+.completed-btn i.fa-regular {
+  color: #cbd5e1;
+}
+
+/* active */
+
+.favorite-btn:active i,
+.completed-btn:active i {
+  transform: scale(0.88);
+}
+
+/* hover */
+
+.favorite-btn:hover i,
+.completed-btn:hover i {
+  opacity: 0.8;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .favorite-btn,
+  .completed-btn {
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .favorite-btn i,
+  .completed-btn i {
+    font-size: 21px;
+  }
+
+  /* スマホhover無効 */
+
+  .favorite-btn:hover i,
+  .completed-btn:hover i {
+    opacity: 1;
+  }
+}
+
+/* 小さいスマホ */
+
+@media (max-width: 480px) {
+
+  .favorite-btn,
+  .completed-btn {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .favorite-btn i,
+  .completed-btn i {
+    font-size: 19px;
+  }
+}

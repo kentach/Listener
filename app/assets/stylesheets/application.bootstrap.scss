@@ -7,17 +7,12 @@
 @import './audio/audio_player';
 @import './audio/audio_list';
 @import './audio/audio_nav';
-@import './audio/english-japanese';
-@import './audio/sidebar';
 
 @import './booklists/booklist';
 
 @import './favorite/favorite';
-@import './favorite/fav_button';
 
 @import './progress_bar/progress_bar';
-
-@import './last_audio/last_played_audio';
 
 @import './show/textbook_show';
 
@@ -26,10 +21,10 @@
 @import './devise/session_new';
 @import './devise/registration_new';
 @import './devise/registration_edit';
-@import './swiper';
+@import './swiper/swiper';
 @import './header/header';
 
-@import './completed_btn/completed_btn';
+@import './completed_favorite_btn/completed_btn';
 
 @import './before_login/before_login';
 @import './before_login/feature1';
