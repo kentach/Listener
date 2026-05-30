@@ -3,6 +3,8 @@ document.addEventListener('turbo:load', () => {
   const hamburgerButton = document.getElementById("hamburger-btn");
   const overlay = document.getElementById("menu-overlay");
 
+  if (!hamburgerButton || !overlay) return
+
   hamburgerButton.addEventListener('click', () => {
       hamburgerMenu.classList.toggle('open');
       overlay.classList.toggle('active');
