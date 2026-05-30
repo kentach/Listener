@@ -1,23 +1,45 @@
 <% content_for :title, t('.title') %>
-<% breadcrumb :audios, @lesson %>
+<% if @lesson %>
+  <% breadcrumb :audios, @lesson %>
+<% end %>
 
-<section class="audio-list">
-<%= render 'shared/breadcrumb' %>
+<% if @lesson&.audios.present? %>
+<!-- レッスンがあって、かつ音声データがある場合だけ表示させる -->
+      <section class="audio-list">
+        <%= render 'shared/breadcrumb' %>
+        <div class="audio-list-wrapper">
+          <% @lesson.audios.each do |audio| %>
+            <div class="audio-item">
+              <%= link_to audio.title,
+                  textbook_lesson_audio_path(@textbook, @lesson.learning_mode, audio),
+                  class: "audio-name" %>
 
-  <div class="audio-list-wrapper">
-      <% @lesson.audios.each do |audio| %>
-        <div class="audio-item">
-          <%= link_to audio.title,
-              textbook_lesson_audio_path(@textbook, @lesson.learning_mode, audio),
-              class: "audio-name" %>
-
-          <div class="audio-icons">
-            <%= render 'learning_records/completed_button', audio: audio %>
-            <%= render 'favorites/favorite_button', audio: audio %> <%# partial内の変数名 : 渡す値 %>
-          </div>
-
+              <div class="audio-icons">
+                <%= render 'learning_records/completed_button', audio: audio %>
+                <%= render 'favorites/favorite_button', audio: audio %> <%# partial内の変数名 : 渡す値 %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </section>
+
+  <% else %>
+  <div class="card mt-5 text-center shadow-sm">
+  <div class="card-body py-5">
+
+    <h5 class="card-title mb-3 text-muted">
+      音声がまだ登録されていません
+    </h5>
+
+    <p class="card-text text-secondary mb-4">
+      音トレ初段のみご利用いただけます。
+    </p>
+
+  <%= link_to "ホームへ",
+      root_path,
+      class: "btn btn-secondary" %>
+
   </div>
-</section>
-<%= render 'shared/navigation_bar' %>
+</div>
+  <% end %>
+  <%= render 'shared/navigation_bar' %>
