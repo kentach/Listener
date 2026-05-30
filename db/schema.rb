@@ -16,10 +16,9 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
 
   create_table "audios", force: :cascade do |t|
     t.bigint "lesson_id", null: false
-    t.string "title"
+    t.string "title", null: false
     t.string "file_name", null: false
-    t.text "ja_script"
-    t.text "en_script"
+    t.text "script"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_audios_on_lesson_id"
