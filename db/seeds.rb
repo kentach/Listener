@@ -96,39 +96,57 @@ ActiveRecord::Base.transaction do
       },
       {
         title: "TOPIC6",
-        file_name: "ontre_1dan/TOPIC6.mp3"
+        file_name: "ontre_1dan/TOPIC6.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC7",
-        file_name: "ontre_1dan/TOPIC7.mp3"
+        file_name: "ontre_1dan/TOPIC7.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC8",
-        file_name: "ontre_1dan/TOPIC8.mp3"
+        file_name: "ontre_1dan/TOPIC8.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC9",
-        file_name: "ontre_1dan/TOPIC9.mp3"
+        file_name: "ontre_1dan/TOPIC9.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC10",
-        file_name: "ontre_1dan/TOPIC10.mp3"
+        file_name: "ontre_1dan/TOPIC10.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC11",
-        file_name: "ontre_1dan/TOPIC11.mp3"
+        file_name: "ontre_1dan/TOPIC11.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC12",
-        file_name: "ontre_1dan/TOPIC12.mp3"
+        file_name: "ontre_1dan/TOPIC12.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC13",
-        file_name: "ontre_1dan/TOPIC13.mp3"
+        file_name: "ontre_1dan/TOPIC13.mp3",
+        ja_script:"#",
+        en_script:"#"
       },
       {
         title: "TOPIC14",
-        file_name: "ontre_1dan/TOPIC14.mp3"
+        file_name: "ontre_1dan/TOPIC14.mp3",
+        ja_script:"#",
+        en_script:"#"
       }
     ]
   },
@@ -137,18 +155,18 @@ ActiveRecord::Base.transaction do
     learning_mode: "listening",
     title: "Scene1",
     audio_files: [
-      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3" },
-      { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3" },
-      { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3" },
-      { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3" },
-      { title: "SCENE1 Q1", file_name: "ontre_1dan/音トレ初段SCENE1_Q1.mp3" },
-      { title: "SCENE1 Q2", file_name: "ontre_1dan/音トレ初段SCENE1_Q2.mp3" },
-      { title: "SCENE1 Q3", file_name: "ontre_1dan/音トレ初段SCENE1_Q3.mp3" },
-      { title: "SCENE1 Q4", file_name: "ontre_1dan/音トレ初段SCENE1_Q4.mp3" },
-      { title: "SCENE1 Q5", file_name: "ontre_1dan/音トレ初段SCENE1_Q5.mp3" },
-      { title: "SCENE1 Q6", file_name: "ontre_1dan/音トレ初段SCENE1_Q6.mp3" },
-      { title: "SCENE1 Q7", file_name: "ontre_1dan/音トレ初段SCENE1_Q7.mp3" },
-      { title: "SCENE1 Q8", file_name: "ontre_1dan/音トレ初段SCENE1_Q8.mp3" }
+      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script:"#", en_script:"#"},
+      { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3", ja_script:"#", en_script:"#"},
+      { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q1", file_name: "ontre_1dan/音トレ初段SCENE1_Q1.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q2", file_name: "ontre_1dan/音トレ初段SCENE1_Q2.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q3", file_name: "ontre_1dan/音トレ初段SCENE1_Q3.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q4", file_name: "ontre_1dan/音トレ初段SCENE1_Q4.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q5", file_name: "ontre_1dan/音トレ初段SCENE1_Q5.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q6", file_name: "ontre_1dan/音トレ初段SCENE1_Q6.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q7", file_name: "ontre_1dan/音トレ初段SCENE1_Q7.mp3", ja_script:"#", en_script:"#" },
+      { title: "SCENE1 Q8", file_name: "ontre_1dan/音トレ初段SCENE1_Q8.mp3", ja_script:"#", en_script:"#" }
     ]
   }
 ]

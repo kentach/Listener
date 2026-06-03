@@ -7,7 +7,6 @@ class Lesson < ApplicationRecord
   enum learning_mode: {
     reading: "reading",
     listening: "listening",
-    shadowing: "shadowing"
   }
 
 end
