@@ -1,5 +1,6 @@
 class LearningRecordsController < ApplicationController
   before_action :set_audio
+  before_action :authenticate_user!
 
   def create
     current_user.learning_records.find_or_create_by(audio: @audio)

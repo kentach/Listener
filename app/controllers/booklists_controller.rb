@@ -1,4 +1,5 @@
 class BooklistsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @booklists = current_user.booklists.includes(:textbook)

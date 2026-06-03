@@ -1,4 +1,4 @@
-.audio-container {
+.audio-nav-container {
   width: 100%;
   margin: 0 auto;
 }
@@ -11,7 +11,6 @@
 .audio-nav-btn {
   width: 88px;
   height: 88px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +53,6 @@
 /* ================= SMARTPHONE ================= */
 
 @media (max-width: 768px) {
-
   .audio-nav {
     gap: 10px;
     overflow-x: auto; /* 横スクロール可能 */

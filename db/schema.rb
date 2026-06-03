@@ -18,7 +18,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_27_065526) do
     t.bigint "lesson_id", null: false
     t.string "title", null: false
     t.string "file_name", null: false
-    t.text "script"
+    t.text "ja_script"
+    t.text "en_script"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_audios_on_lesson_id"

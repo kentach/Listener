@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 550px;
+  max-height: 580px;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -45,7 +45,6 @@
   background: #fff;
   cursor: pointer;
   border-bottom: solid #ccc 1px;
-
   transition: 0.2s;
 }
 
@@ -57,7 +56,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
 
   text-decoration: none;

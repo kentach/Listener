@@ -1,35 +1,57 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-@import './top/top';
-@import './top/modal';
-@import './top/navigation_bar';
 
-@import './audio/audio_player';
-@import './audio/audio_list';
-@import './audio/audio_nav';
+//テキストの一覧画面
+@import './textbook_index/top';
+@import './textbook_index/modal';
 
-@import './booklists/booklist';
+//テキスト詳細画面
+@import './textbook_show/textbook_show';
+@import './textbook_show/audio_nav'; //音読練習・リスニングのナブボタン
 
-@import './favorite/favorite';
+//レッスン詳細画面
+@import './lesson/audio_list'; //音声の一覧
 
-@import './progress_bar/progress_bar';
+//音声詳細画面
+@import './audio/audio_player'; //オーディオプレイヤー
+@import './audio/audio_script'; //スクリプト
+@import './audio/sidebar'; //サイドバー
 
-@import './show/textbook_show';
+// 共通部分
+@import './shared/navigation_bar';
+@import './shared/header';
 
-@import './breadcrumb/breadcrumb';
-
-@import './devise/session_new';
-@import './devise/registration_new';
-@import './devise/registration_edit';
-@import './swiper/swiper';
-@import './header/header';
-
-@import './completed_favorite_btn/completed_btn';
-
+//ログイン前　LP
+@import './before_login/swiper';
 @import './before_login/before_login';
 @import './before_login/feature1';
 @import './before_login/feature2';
 @import './before_login/signup';
+
+// Devise
+@import './devise/session_new';
+@import './devise/registration_new';
+@import './devise/registration_edit';
+
+//ブックリスト一覧ページ
+@import './booklists/booklist';
+
+//お気に入りボタン
+@import './completed_favorite_btn/favorite';
+@import './completed_favorite_btn/completed_btn';
+
+// プログレスバー
+@import './progress_bar/progress_bar';
+
+//ぱんくず
+@import './breadcrumb/breadcrumb';
+
+
+
+
+
+
+
 
 
 

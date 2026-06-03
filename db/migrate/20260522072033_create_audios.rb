@@ -4,7 +4,8 @@ class CreateAudios < ActiveRecord::Migration[7.2]
       t.references :lesson, null: false, foreign_key: true
       t.string :title, null: false
       t.string :file_name, null: false
-      t.text :script
+      t.text :ja_script
+      t.text :en_script
       
       t.timestamps
     end

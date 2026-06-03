@@ -1,0 +1,149 @@
+/* ================= TEXT AREA ================= */
+.text-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto 0;
+  padding: 0 16px 180px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.ja-en-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.english-container,
+.japanese-container {
+  overflow-y: auto;
+  max-height: 400px;
+  line-height: 1.8;
+  margin: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.english-container {
+  width: 100%;
+  transition: width 0.4s ease;
+}
+
+.japanese-container {
+  position: static;
+  width: 50%;
+  opacity: 0;
+  transform: translateX(20px);
+  max-height: 400px;
+  overflow-y: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* 日本語表示ON */
+.ja-en-container.show-japanese .english-container {
+  width: 50%;
+}
+
+.ja-en-container.show-japanese .japanese-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================= LANGUAGE TOGGLE ================= */
+
+.language-toggle-btn {
+  display: flex;
+  width: 700px;
+  max-width: calc(100% - 24px);
+  height: 44px;
+  background: #ddd;
+  border-radius: 999px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.language-toggle-btn div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-colored,
+.japanese-btn.active {
+  background: #28c2c2;
+  color: white;
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  /* テキスト */
+  .text-container {
+    margin-top: 24px;
+    padding: 0 12px 220px;
+  }
+
+  .ja-en-container {
+    flex-direction: column;
+  }
+
+  .english-container,
+  .japanese-container {
+    width: 100%;
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  
+  .japanese-container {
+    position: static;
+    width: 100%;
+    padding-left: 0;
+    opacity: 0;
+    transform: translateX(30px);
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
+  }
+  
+  
+  .ja-en-container.show-japanese .english-container {
+    width: 100%;
+  }
+  
+  .ja-en-container.show-japanese .japanese-container {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+
+  /* 言語切替ボタン */
+  .language-toggle-btn {
+    width: calc(100% - 24px);
+    height: 40px;
+    bottom: 170px;
+  }
+
+  .language-toggle-btn div {
+    font-size: 14px;
+  }
+
+  /* アイコン */
+  .fa-angle-up,
+  .fa-angle-down {
+    font-size: 16px;
+  }
+}
