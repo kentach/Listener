@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :set_audio, except: :index
+  before_action :authenticate_user!
 
   def index
     @favorite_audios = current_user.favorite_audios

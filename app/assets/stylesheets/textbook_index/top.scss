@@ -7,7 +7,7 @@ body {
   font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
 }
 
-/* ================= CONTAINER ================= */
+/* ================= 全体のコンテイナー ================= */
 
 .textbook-container {
   max-width: 1250px;
@@ -15,7 +15,7 @@ body {
   padding: 0 20px 10px;
 }
 
-/* ================= TITLE ================= */
+/* ================= 各テキストのタイトル ================= */
 
 .textbook-title,
 .rhythmas-title {
@@ -25,16 +25,14 @@ body {
   color: #1e293b;
 }
 
-/* ================= TEXTBOOK AREA ================= */
+/* ================= テキストのイメージ画像 ================= */
 
 .textbook-img-container {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: auto; 
   padding-bottom: 12px;
-
   scrollbar-width: none;
-
   /* スマホで横スクロールを滑らかに */
   -webkit-overflow-scrolling: touch;
 }
@@ -43,25 +41,18 @@ body {
   display: none;
 }
 
-/* ================= CARD IMAGE ================= */
+/* ================= テキストイメージ一個一個================= */
 
 .textbook-img {
   flex-shrink: 0;
-
   width: 180px;
   height: 250px;
-
   object-fit: cover;
-
   -webkit-user-drag: none;
-
   border-radius: 10px;
   background: #fff;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
   cursor: pointer;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -69,12 +60,11 @@ body {
 
 .textbook-img:hover {
   transform: translateY(-6px);
-
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* ================= MOBILE ================= */
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .textbook-container {

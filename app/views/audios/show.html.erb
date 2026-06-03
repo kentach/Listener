@@ -7,11 +7,10 @@
     <!-- ===== 英語と日本語のスクリプトの部分 ===== -->
     <section class="ja-en-container">
       <div class="english-container">
-        <div id="en-script"></div>
+        <div id="en-script"><%= simple_format(@audio.en_script) %></div>
       </div>
-
       <div class="japanese-container">
-        <div id="ja-script"></div>
+        <div id="ja-script"><%= simple_format(@audio.ja_script) %></div>
       </div>
     </section>
 
