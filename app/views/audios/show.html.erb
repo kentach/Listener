@@ -5,18 +5,22 @@
     
     <!-- ===== 英語と日本語のスクリプトの部分 ===== -->
     <section class="ja-en-container">
+      <p>音声スクリプト</p>
       <div class="english-container">
         <div id="en-script"><%= simple_format(@audio.en_script) %></div>
       </div>
       <div class="japanese-container">
-        <div id="ja-script"><%= simple_format(@audio.ja_script) %></div>
+        【日本語訳】
+        <div id="ja-script">
+          <%= simple_format(@audio.ja_script) %>
+        </div>
       </div>
     </section>
 
     <!-- ===== 英語日本語の切り替えボタン ===== -->
     <div class="language-toggle-btn">
       <div class="english-btn btn-colored">英語</div>
-      <div class="japanese-btn">日本語</div>
+      <div class="japanese-btn">日本語訳を表示する</div>
     </div>
 
   <section class="side-bar-toggle">
