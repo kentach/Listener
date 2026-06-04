@@ -2,23 +2,22 @@ crumb :textbooks_all do |textbook|
   link "教材一覧", root_path
 end
 
-                  # do |引数|
-crumb :textbook do |textbook|
+crumb :textbook do |textbook| # do |引数|
   link textbook.name, textbook_path(textbook)
-  #link リンク名, pathを書く
+  # link リンク名, pathを書く
 
   parent :textbooks_all, textbook
-  #parent :親の名前, 親に渡すデータ
+  # parent :親の名前, 親に渡すデータ
 end
 
 crumb :audios do |lesson|
-  link "#{lesson.learning_mode}", textbook_lesson_path(lesson.textbook, lesson.learning_mode) #必ず引数のlessonに合わせること。
+  link "#{lesson.learning_mode}", textbook_lesson_path(lesson.textbook, lesson.learning_mode) # 必ず引数のlessonに合わせること。
   parent :textbook, lesson.textbook
 end
 
 
 crumb :script do |audio|
-  link '音声スクリプト', textbook_lesson_audio_path(audio.lesson.textbook, audio.lesson.learning_mode, audio)
+  link "音声スクリプト", textbook_lesson_audio_path(audio.lesson.textbook, audio.lesson.learning_mode, audio)
   parent :audios, audio.lesson.textbook
 end
 

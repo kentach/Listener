@@ -8,7 +8,7 @@ class CreateBooklists < ActiveRecord::Migration[7.2]
     end
 
     add_index :booklists,
-      [:user_id, :textbook_id],
+      [ :user_id, :textbook_id ],
       unique: true
   end
 end

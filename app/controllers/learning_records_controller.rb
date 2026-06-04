@@ -7,7 +7,7 @@ class LearningRecordsController < ApplicationController
     # current_userのlearning_recordsの名からaudio:（条件キー）に合致するaudioを探す。なければ作る。
     respond_to do |format|
       format.turbo_stream
-      format.html {redirect_back fallback_location: root_path}
+      format.html { redirect_back fallback_location: root_path }
     end
   end
 
@@ -16,7 +16,6 @@ class LearningRecordsController < ApplicationController
     # current_userのlearning_recordsの中からaudio:（条件キー）に合致するaudioを探してくる。
     learning_record&.destroy
     # もし左がnilでなければ、右側を実行する。もしnilなら何もしません。
-  
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_back fallback_location: root_path }

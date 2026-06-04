@@ -3,13 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
   has_many :favorites, dependent: :destroy
   has_many :favorite_audios, through: :favorites, source: :audio
-
   has_many :booklists, dependent: :destroy
   has_many :saved_textbooks, through: :booklists, source: :textbook
-
   has_many :learning_records, dependent: :destroy
   has_many :learning_records_audio, through: :learning_records, source: :audio
 
@@ -34,7 +31,6 @@ class User < ApplicationRecord
       Audio.where(
         lesson_id: textbook.lessons.ids
       ).count
-  
     completed_audios =
       learning_records
         .joins(:audio)
@@ -44,9 +40,7 @@ class User < ApplicationRecord
           }
         )
         .count
-  
     return 0 if total_audios.zero?
-  
     (completed_audios.to_f / total_audios * 100).round
   end
 

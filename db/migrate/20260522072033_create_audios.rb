@@ -6,7 +6,6 @@ class CreateAudios < ActiveRecord::Migration[7.2]
       t.string :file_name, null: false
       t.text :ja_script
       t.text :en_script
-      
       t.timestamps
     end
   end
