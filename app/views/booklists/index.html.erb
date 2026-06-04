@@ -3,10 +3,10 @@
 <h2 class="booklist-title">マイテキスト一覧</h2>
 <div class="booklists">
 
-  <% if @booklists %>
+  <% if @favorite_booklists.present? %>
 
     <div class="booklist-container">
-      <% @booklists.each do |booklist| %>
+      <% @favorite_booklists.each do |booklist| %>
         <%= link_to textbook_path(booklist.textbook), class: "book-card" do %>
           <div class="book-info">
             <%= image_tag booklist.textbook.image, class: "booklist-image" %>

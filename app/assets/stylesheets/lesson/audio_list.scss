@@ -1,10 +1,15 @@
+
 /* ================= SECTION ================= */
 .audio-list {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 50px auto;
-  padding: 0px; 
+  padding: 0 0 80px; 
   box-sizing: border-box;
+}
+
+.audio-list h5 {
+ margin-top: 15px;
 }
 
 /* ================= TITLE ================= */
@@ -22,6 +27,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-top:18px;
   max-height: 580px;
   overflow-y: auto;
   padding-right: 4px;
