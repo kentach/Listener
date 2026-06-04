@@ -2,13 +2,20 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-import "./swiper"
-import './modal'
-import './header'
-import './languageToggle'
-import './checkBtn'
+
+import "./accordion"
 import './audioPlayer'
+import './checkBtn'
+import './header'
+import './modal'
 import './sidebar'
-import './flash'
+import './swiper'
+
+
+
+
+
+
+
 
 
