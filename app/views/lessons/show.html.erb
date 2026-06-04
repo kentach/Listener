@@ -7,7 +7,11 @@
 <% if @lesson&.audios.present? %>
   <section class="audio-list">
     <%= render 'shared/breadcrumb' %>
-    <%= render 'lessons/reading_tips' %>
+    <% if @lesson.learning_mode === 'reading' %>
+      <%= render 'lessons/reading_tips' %>
+    <% else %>
+      <%= render 'lessons/listening_tips' %>
+    <% end %>
 
     <h5>音声一覧</h5>
     <div class="audio-list-wrapper">

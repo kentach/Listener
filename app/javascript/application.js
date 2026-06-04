@@ -8,7 +8,6 @@ import './audioPlayer'
 import './checkBtn'
 import './header'
 import './modal'
-import './sidebar'
 import './swiper'
 
 

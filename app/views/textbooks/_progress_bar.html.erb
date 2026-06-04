@@ -1,29 +1,31 @@
-<div class="learning-container">
+<div class="learning-progress-container">
   <div class="learning-level">
-  
-    <div class="learning-header">
-      <div>
-        <h5>あなたの習得率</h5>
-        <span class="learning-subtitle">
-          Learning Progress
-        </span>
-      </div>
-      <div class="progress-percent">
-        <%= @progress %>%
+
+    <div
+      class="progress-circle"
+      style="--progress: <%= @progress %>;"
+    >
+      <div class="progress-circle-inner">
+        <span><%= @progress %>%</span>
       </div>
     </div>
 
-    <div class="progress-wrapper">
-      <div
-        class="progress-bar"
-        style="width: <%= @progress %>%;">
-      </div>
-    </div>
+    <div class="learning-info">
+      <% if current_user.name.present? %>
+        <h5><%= current_user.name %>さんの習得率</h5>
+      <% else %>
+        <h5>Userの習得率</h5>
+      <% end %>
 
-    <div class="progress-labels">
-      <span>Start</span>
-      <span>Master</span>
+      <p>
+        <% if @progress >= 80 %>
+          素晴らしいです！この調子で続けましょう。
+        <% elsif @progress >= 50 %>
+          順調に成長しています。
+        <% else %>
+          毎日の積み重ねが大切です。
+        <% end %>
+      </p>
     </div>
-
   </div>
 </div>
