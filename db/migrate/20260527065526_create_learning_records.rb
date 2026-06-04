@@ -9,6 +9,6 @@ class CreateLearningRecords < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :learning_records, [:user_id, :audio_id], unique: true
+    add_index :learning_records, [ :user_id, :audio_id ], unique: true
   end
 end

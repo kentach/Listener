@@ -12,17 +12,15 @@ class FavoritesController < ApplicationController
     # userモデルに has_many :favoritesと書いているからcurrent_user.favorites
     # find_or_create_byメソッドを使って、「audio に @audio を入れる」
     # お気に入りにするのはaudioだからね。
-
     respond_to do |format|
       format.turbo_stream
-      format.html {redirect_back fallback_location: textbook_lesson_path(@textbook, @lesson)}
+      format.html { redirect_back fallback_location: textbook_lesson_path(@textbook, @lesson) }
     end
   end
 
   def destroy
     favorite = current_user.favorites.find_by(audio: @audio)
     favorite&.destroy
-  
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_back fallback_location: textbook_lesson_path(@textbook, @lesson) }
