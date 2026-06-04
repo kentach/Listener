@@ -3,11 +3,10 @@
   width: 100%;
   max-width: 700px;
   margin: 40px auto 0;
-  padding: 0 16px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding-bottom: 250px;
+  padding: 0 16px 250px;
 }
 
 .ja-en-container {
@@ -41,18 +40,16 @@
   font-size: 14px;
   opacity: 0;
   transform: translateX(20px);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
 
+  will-change: transform, opacity;
 
-/* 日本語表示ON */
-.ja-en-container.show-japanese .english-container {
-  width: 100%;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
 }
 
 .ja-en-container.show-japanese .japanese-container {
   opacity: 1;
-  transform: translateX(0);
 }
 
 /* ================= LANGUAGE TOGGLE ================= */
@@ -94,9 +91,8 @@
 
 @media (max-width: 768px) {
 
-  /* テキスト */
   .text-container {
-    margin-top: 24px;
+    margin-top: 15px;
     padding: 0 12px 220px;
   }
 
@@ -105,26 +101,17 @@
   }
 
   .english-container {
-    width: 100%;
-    padding-top: 20px;
+    padding-top: 16px;
     font-size: 16px;
   }
   
   .japanese-container {
     font-size: 14px;
-    position: static;
     width: 100%;
     padding: 12px 16px;
     opacity: 0;
     transform: translateX(30px);
-    transition:
-      transform 0.4s ease,
-      opacity 0.4s ease;
-  }
-  
-  
-  .ja-en-container.show-japanese .english-container {
-    width: 100%;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
   
   .ja-en-container.show-japanese .japanese-container {
@@ -132,8 +119,6 @@
     transform: translateX(0);
   }
 
-
-  /* 言語切替ボタン */
   .language-toggle-btn {
     width: calc(100% - 24px);
     height: 40px;
@@ -144,9 +129,8 @@
     font-size: 14px;
   }
 
-  /* アイコン */
   .fa-angle-up,
   .fa-angle-down {
     font-size: 16px;
   }
-}
+}1

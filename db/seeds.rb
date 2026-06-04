@@ -74,7 +74,7 @@ ActiveRecord::Base.transaction do
         ja_script: "すみません、次のショーは何時ですか？ 5時30分です。 わかりました。いくらですか？ 5ドルです。 チケットは何枚必要ですか？  2枚お願いします。
                      どの席がいいですか？前ですか、後ろですか？ 前でお願いします。 はい、どうぞ。10ドルです。 ありがとうございます。トイレはどこですか？     あちらです。",
       en_script: "Excuse me, what time is the next show?  It's at 5:30.  Okay. How much is it? It's 5 dollars. How many tickets do you want? 2 tickets, please.
-                   Which seats do you want, font or back? Front, please.  Okay. Here you are. It's 10 dollars. Thank you. And where is the restroom? It's over there. ",
+                   Which seats do you want, front or back? Front, please.  Okay. Here you are. It's 10 dollars. Thank you. And where is the restroom? It's over there. ",
 
       },
       {
@@ -155,10 +155,10 @@ ActiveRecord::Base.transaction do
     learning_mode: "listening",
     title: "Scene1",
     audio_files: [
-      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script: "メアリー、あなたの誕生日は7月ですか？ いいえ、6月です。 質問：メアリーの誕生日はいつですか？", en_script:"Is your birthday in July, Mary? No, it's in June. \n Question: When is Mary7s birthday?"},
-      { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3", ja_script:"ジョージ、あなたの家族は何人ですか？ 母、父、姉（妹）、そして私です。 質問：ジョージの家族は何人ですか？", en_script:"How many people are there in your family, George? \n My mom, my dad, my sister and me.\n Question: How many people are there in George's family?"},
-      { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3", ja_script:"メグ、あなたはにんじんが好きですか？ いいえ、好きではありません。 私はトマトが好きです。 質問：メグはどんな野菜が好きですか？", en_script:"Do you like carrots, Meg? No, I don't. \n I like tomato. \n Question:  What vegetables does Meg like?" },
-      { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3", ja_script:"ショウゴ、あなたはどこの出身ですか？ 大阪出身ですが、今は東京に住んでいます。 質問：ショウゴは今どこに住んでいますか？", en_script:"Where are you from, Shogo? \nI'm from Osaka, but now I live in Tokyo. \n Question: Where does Shogo live now?" },
+      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script: "メアリー、あなたの誕生日は7月ですか？ いいえ、6月です。 質問：メアリーの誕生日はいつですか？", en_script:"Is your birthday in July, Mary? No, it's in June. \n 【Question】: When is Mary7s birthday?"},
+      { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3", ja_script:"ジョージ、あなたの家族は何人ですか？ 母、父、姉（妹）、そして私です。 質問：ジョージの家族は何人ですか？", en_script:"How many people are there in your family, George? \n My mom, my dad, my sister and me.\n 【Question】: How many people are there in George's family?"},
+      { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3", ja_script:"メグ、あなたはにんじんが好きですか？ いいえ、好きではありません。 私はトマトが好きです。 質問：メグはどんな野菜が好きですか？", en_script:"Do you like carrots, Meg? No, I don't. \n I like tomato. \n 【Question】:  What vegetables does Meg like?" },
+      { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3", ja_script:"ショウゴ、あなたはどこの出身ですか？ 大阪出身ですが、今は東京に住んでいます。 質問：ショウゴは今どこに住んでいますか？", en_script:"Where are you from, Shogo? \nI'm from Osaka, but now I live in Tokyo. \n 【Question】: Where does Shogo live now?" },
       { title: "SCENE1 Q1", file_name: "ontre_1dan/音トレ初段SCENE1_Q1.mp3", ja_script:"こんにちは、ジェーン。今日は元気ですか？ 1. 元気です、ありがとう。 2. あなたもね。 3. 自転車で。", en_script:"Hi Jane. How are you today? \n1. Fine, thanks. \n2. You, too. \n3. By bike." },
       { title: "SCENE1 Q2", file_name: "ontre_1dan/音トレ初段SCENE1_Q2.mp3", ja_script:"ジョンはシドニー出身ですか？ 1. 彼は親切です。 2. 彼はサッカーをします。 3. はい、そうです。", en_script:"Is John from Sydney? \n1. He's kind. \n2. He plays soccer. \n3. Yes, he is." },
       { title: "SCENE1 Q3", file_name: "ontre_1dan/音トレ初段SCENE1_Q3.mp3", ja_script:"あなたはバスケットボールが好きですか？ 1. はい、とても楽しいスポーツです。 2. 4月16日です。 3. いいえ、それは公園にあります。", en_script:"Do you like basketball? \n1. Yes, it's a fun sport. \n2. on April 16th. \n3. No, it's in the park." },
