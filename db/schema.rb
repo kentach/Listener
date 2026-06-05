@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_03_084901) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_05_025558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_03_084901) do
 
   create_table "learning_records", force: :cascade do |t|
     t.boolean "completed"
-    t.integer "play_count"
     t.bigint "user_id", null: false
     t.bigint "audio_id", null: false
     t.datetime "created_at", null: false
@@ -61,7 +60,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_03_084901) do
     t.bigint "textbook_id", null: false
     t.string "title", null: false
     t.string "learning_mode", null: false
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["textbook_id"], name: "index_lessons_on_textbook_id"

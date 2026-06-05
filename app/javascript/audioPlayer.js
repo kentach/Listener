@@ -27,7 +27,7 @@ document.addEventListener('turbo:load', () => {
   const sideBar = document.querySelector('.side-bar')
   const sideBarCloseBtn = document.querySelector('.side-bar h1')
   const BackgroundContainer = document.querySelector('.ja-en-container');
-  const closeBtn = document.querySelector('.fa-angle-up');
+
   const openBtn = document.querySelector('.side-bar-toggle');
   const AudioBtn = document.querySelector('.side-bar-toggle h1');
 
