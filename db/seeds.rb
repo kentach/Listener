@@ -147,7 +147,7 @@ ActiveRecord::Base.transaction do
     learning_mode: "listening",
     title: "Scene1",
     audio_files: [
-      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script: "メアリー、あなたの誕生日は7月ですか？ いいえ、6月です。 \n質問：メアリーの誕生日はいつですか？", en_script: "Is your birthday in July, Mary? No, it's in June. \n 【Question】: When is Mary7s birthday?" },
+      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script: "メアリー、あなたの誕生日は7月ですか？ いいえ、6月です。 \n質問：メアリーの誕生日はいつですか？", en_script: "Is your birthday in July, Mary? No, it's in June. \n 【Question】: When is Mary's birthday?" },
       { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3", ja_script: "ジョージ、あなたの家族は何人ですか？ 母、父、姉（妹）、そして私です。 \n質問：ジョージの家族は何人ですか？", en_script: "How many people are there in your family, George? \n My mom, my dad, my sister and me.\n 【Question】: How many people are there in George's family?" },
       { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3", ja_script: "メグ、あなたはにんじんが好きですか？ いいえ、好きではありません。 私はトマトが好きです。 \n質問：メグはどんな野菜が好きですか？", en_script: "Do you like carrots, Meg? No, I don't. \n I like tomato. \n 【Question】:  What vegetables does Meg like?" },
       { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3", ja_script: "ショウゴ、あなたはどこの出身ですか？ 大阪出身ですが、今は東京に住んでいます。 \n質問：ショウゴは今どこに住んでいますか？", en_script: "Where are you from, Shogo? \nI'm from Osaka, but now I live in Tokyo. \n 【Question】: Where does Shogo live now?" },
