@@ -107,8 +107,8 @@
 }
 
 /* アイコン */
-.fa-angle-up,
-.fa-angle-down {
+.fa-xmark,
+.fa-list-ul {
   cursor: pointer;
   font-size: 18px;
 }
@@ -151,7 +151,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding-bottom: 130px;
+    padding-bottom: 160px;
     gap: 2px;
   }
 
