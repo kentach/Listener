@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Textbook, type: :model do 
-  describe 'バリデーション' do 
+RSpec.describe Textbook, type: :model do
+  describe 'バリデーション' do
     it '有効なファクトリであること' do
       expect(build(:textbook)).to be_valid # 記述方法：expect(テスト対象の値).to マッチャー(期待する値)
     end
