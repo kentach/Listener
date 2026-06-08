@@ -1,0 +1,2 @@
+class AllowedStudent < ApplicationRecord
+end

@@ -12,23 +12,6 @@
 
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <!-- メール -->
-      <div class="form-group">
-        <%= f.label :email, "メールアドレス", class: "form-label" %>
-
-        <%= f.email_field :email,
-          autocomplete: "email",
-          class: "form-control" %>
-      </div>
-
-      <!-- confirmable -->
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div class="alert-warning">
-          確認待ちのメールアドレス：
-          <strong><%= resource.unconfirmed_email %></strong>
-        </div>
-      <% end %>
-
       <!-- 新パスワード -->
       <div class="form-group">
         <%= f.label :password,
