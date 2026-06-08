@@ -2,10 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :rememberable, :validatable
+         :rememberable, :validatable,
+         authentication_keys: [ :student_id ] # Userだけstudent_idを使う
 
   validates :student_id, presence: true, uniqueness: true
   validates :eiken_level, presence: true
+  validates :name, presence: :true
+
   validate :student_id_must_be_allowed
   validates :password, presence: true, length: { minimum: 6 }, on: :create
   validates :password_confirmation, presence: true, on: :create
@@ -28,7 +31,6 @@ class User < ApplicationRecord
   def will_save_change_to_email?
     false
   end
-
 
   def favorite(audio)
     favorite_audios << audio
@@ -57,5 +59,21 @@ class User < ApplicationRecord
     unless AllowedStudent.exists?(student_id: student_id)
       errors.add(:student_id, "は登録が許可されていません")
     end
+  end
+
+  def active_for_authentication?
+    super && AllowedStudent.exists?(student_id: student_id)
+  end
+
+  def inactive_message
+    AllowedStudent.exists?(student_id: student_id) ? super : :not_allowed
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[id student_id name eiken_level created_at updated_at]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
   end
 end
