@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [ :index ]
   resources :booklists, only: [ :index, :create, :destroy ]
+  resources :eiken_records, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
 end

@@ -1,0 +1,172 @@
+/* app/assets/stylesheets/eiken_records/eiken_new.scss */
+
+$bg: #F7F9FC;
+$white: #FFFFFF;
+$border: #E4EAF2;
+$text: #2C3E50;
+$text-muted: #8A99AD;
+$primary: #2C3E50;
+$accent: #3B82F6;
+$radius: 12px;
+
+.eiken-new-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 16px 100px;
+  min-height: 100vh;
+}
+
+.eiken-new-card {
+  background: $white;
+  border-radius: $radius;
+  border: 1px solid $border;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ===== ヘッダー ===== */
+.eiken-new-header {
+  background: $primary;
+  padding: 24px;
+  color: $white;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+}
+
+/* ===== フォーム ===== */
+.eiken-new-form {
+  padding: 24px;
+}
+
+.form-section {
+  margin-bottom: 28px;
+
+  .section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $border;
+  }
+}
+
+.form-group {
+  margin-bottom: 16px;
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: $text;
+    margin-bottom: 6px;
+  }
+
+  .form-control,
+  .form-select {
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: $text;
+    background: $white;
+    transition: border 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      border-color: $accent;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($accent, 0.15);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  .memo-field {
+    height: 100px;
+    resize: vertical;
+  }
+}
+
+/* ===== スコアグリッド ===== */
+.score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.score-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.score-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: $white;
+
+  &.speaking  { background: #3B82F6; }
+  &.reading   { background: #10B981; }
+  &.listening { background: #F59E0B; }
+  &.writing   { background: #8B5CF6; }
+}
+
+/* ===== ボタン ===== */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+
+  .cancel-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $text-muted;
+    border: 1px solid $border;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    &:hover {
+      background: $bg;
+    }
+  }
+
+  .submit-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background: $accent;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: darken($accent, 10%);
+    }
+  }
+}

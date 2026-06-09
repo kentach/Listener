@@ -1,0 +1,61 @@
+<%# app/views/eiken_records/show.html.erb %>
+<div class="eiken-show-container">
+  <div class="eiken-show-card">
+
+    <div class="eiken-show-header">
+      <span class="show-level-badge"><%= @eiken_record.level %></span>
+      <p class="show-exam-date"><%= @eiken_record.exam_date&.strftime("%Y年%m月%d日") %></p>
+    </div>
+
+    <div class="eiken-show-body">
+
+      <%# スコアセクション %>
+      <div class="show-section">
+        <h3 class="show-section-title">スコア</h3>
+        <div class="score-cards">
+          <div class="score-card reading">
+            <span class="score-card-label">Reading</span>
+            <span class="score-card-value"><%= @eiken_record.reading_score || "-" %></span>
+          </div>
+          <div class="score-card listening">
+            <span class="score-card-label">Listening</span>
+            <span class="score-card-value"><%= @eiken_record.listening_score || "-" %></span>
+          </div>
+          <div class="score-card writing">
+            <span class="score-card-label">Writing</span>
+            <span class="score-card-value"><%= @eiken_record.writing_score || "-" %></span>
+          </div>
+          <div class="score-card speaking">
+            <span class="score-card-label">Speaking</span>
+            <span class="score-card-value"><%= @eiken_record.speaking_score || "-" %></span>
+          </div>
+        </div>
+
+        <div class="total-score-row">
+          <span class="total-score-label">合計スコア</span>
+          <span class="total-score-value"><%= @eiken_record.total_score %></span>
+        </div>
+      </div>
+
+      <%# メモセクション %>
+      <% if @eiken_record.memo.present? %>
+        <div class="show-section">
+          <h3 class="show-section-title">メモ</h3>
+          <p class="show-memo"><%= @eiken_record.memo %></p>
+        </div>
+      <% end %>
+
+      <%# アクション %>
+      <div class="show-actions">
+        <%= link_to "編集", edit_eiken_record_path(@eiken_record), class: "edit-btn" %>
+        <%= link_to "削除", eiken_record_path(@eiken_record),
+            class: "delete-btn",
+            data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+        <%= link_to "一覧に戻る", eiken_records_path, class: "back-btn" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "shared/navigation_bar" %>

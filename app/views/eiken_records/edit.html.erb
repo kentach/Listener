@@ -1,0 +1,84 @@
+<div class="eiken-new-container">
+  <div class="eiken-new-card">
+
+    <div class="eiken-new-header">
+      <h2>英検スコアの編集</h2>
+      <p>英検の受験結果を記録しましょう</p>
+    </div>
+
+    <%= form_with model: @eiken_record, data: { turbo: false }, class: "eiken-new-form" do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <div class="form-section">
+        <h3 class="section-title">基本情報</h3>
+        <div class="form-group">
+          <%= f.label :level, "受験級", class: "form-label" %>
+          <%= f.select :level,
+              User::EIKEN_LEVELS,
+              { include_blank: "選択してください" },
+              class: "form-select" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :exam_date, "受験日", class: "form-label" %>
+          <%= f.date_field :exam_date, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">スコア **記録するスコアがなければ未記入のままにしてください。</h3>
+
+        <div class="score-grid">
+
+          <div class="form-group">
+            <div class="score-label-wrapper">
+              <span class="score-icon reading">R</span>
+              <%= f.label :reading_score, "Reading", class: "form-label" %>
+            </div>
+            <%= f.number_field :reading_score, min: 0, class: "form-control", placeholder: "例: 600" %>
+          </div>
+
+          <div class="form-group">
+            <div class="score-label-wrapper">
+              <span class="score-icon listening">L</span>
+              <%= f.label :listening_score, "Listening", class: "form-label" %>
+            </div>
+            <%= f.number_field :listening_score, min: 0, class: "form-control", placeholder: "例: 600" %>
+          </div>
+
+          <div class="form-group">
+            <div class="score-label-wrapper">
+              <span class="score-icon writing">W</span>
+              <%= f.label :writing_score, "Writing", class: "form-label" %>
+            </div>
+            <%= f.number_field :writing_score, min: 0, class: "form-control", placeholder: "例: 600" %>
+          </div>
+
+          <div class="form-group">
+            <div class="score-label-wrapper">
+              <span class="score-icon speaking">S</span>
+              <%= f.label :speaking_score, "Speaking", class: "form-label" %>
+            </div>
+            <%= f.number_field :speaking_score, min: 0, class: "form-control", placeholder: "例: 600" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">メモ</h3>
+        <div class="form-group">
+          <%= f.text_area :memo,
+              class: "form-control memo-field",
+              placeholder: "次回に向けての目標や感想など" %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= link_to "キャンセル", eiken_records_path, class: "cancel-btn" %>
+        <%= f.submit "更新する", class: "submit-btn" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/navigation_bar" %>
