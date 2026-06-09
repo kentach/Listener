@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  level: MyString
+  speaking_score: 1
+  reading_score: 1
+  listening_score: 1
+  writing_score: 1
+  exam_date: 2026-06-09
+  memo: MyText
+
+two:
+  user: two
+  level: MyString
+  speaking_score: 1
+  reading_score: 1
+  listening_score: 1
+  writing_score: 1
+  exam_date: 2026-06-09
+  memo: MyText

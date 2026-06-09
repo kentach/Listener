@@ -19,6 +19,7 @@ class User < ApplicationRecord
   has_many :saved_textbooks, through: :booklists, source: :textbook
   has_many :learning_records, dependent: :destroy
   has_many :learning_records_audio, through: :learning_records, source: :audio
+  has_many :eiken_records, dependent: :destroy
 
   def email_required?
     false
@@ -76,4 +77,6 @@ class User < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     []
   end
+
+  EIKEN_LEVELS = [ "英検5級", "英検4級", "英検3級", "英検準2級", "英検準2級プラス", "英検2級", "英検準1級", "英検1級" ]
 end

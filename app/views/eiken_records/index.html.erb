@@ -1,0 +1,75 @@
+<%# app/views/eiken_records/index.html.erb %>
+<div class="eiken-records-container">
+  <div class="eiken-records-header">
+    <h2><%= current_user.name %>さんの英検スコア</h2>
+    <%= link_to "+ 英検スコアを追加する", new_eiken_record_path, class: "new-record-btn" %>
+  </div>
+
+  <% if @eiken_records.empty? %>
+    <div class="eiken-records-empty">
+      <p>まだ受験記録がありません</p>
+      <%= link_to "+ 最初の英検スコアを追加する", new_eiken_record_path, class: "new-record-btn" %>
+    </div>
+  <% else %>
+    <div class="eiken-records-table-wrapper">
+      <table class="eiken-records-table">
+        <thead>
+          <tr>
+            <th>受験日</th>
+            <th>英検級</th>
+            <th>Reading</th>
+            <th>Listening</th>
+            <th>Writing</th>
+            <th>Speaking</th>
+            <th>合計</th>
+            <th>結果</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @eiken_records.each do |record| %>
+              <tr>
+                <td><%= record.exam_date&.strftime("%Y/%m/%d") %></td>
+                <td>
+                  <span class="level-badge">
+                    <%= record.level %>
+                  </span>
+                </td>
+                <td class="<%= record.reading_score ? '' : 'no-score' %>">
+                  <%= record.reading_score || "-" %>
+                </td>
+                <td class="<%= record.listening_score ? '' : 'no-score' %>">
+                  <%= record.listening_score || "-" %>
+                </td>
+                <td class="<%= record.writing_score ? '' : 'no-score' %>">
+                  <%= record.writing_score || "-" %>
+                </td>
+                <td class="<%= record.speaking_score ? '' : 'no-score' %>">
+                  <%= record.speaking_score || "-" %>
+                </td>
+                <td class="total-score"><%= record.total_score %></td>
+                <td>
+                  <% if record.passed.nil? %>
+                    <span class="badge-unknown">-</span>
+                  <% elsif record.passed %>
+                    <span class="badge-pass">合格</span>
+                  <% else %>
+                    <span class="badge-fail">不合格</span>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "詳細", eiken_record_path(record), class: "show-btn" %>
+                  <%= link_to "編集", edit_eiken_record_path(record), class: "edit-btn" %>
+                  <%= link_to "削除", eiken_record_path(record),
+                      class: "delete-btn",
+                      data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/navigation_bar" %>

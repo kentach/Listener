@@ -19,5 +19,11 @@
       <span>マイテキスト</span>
     <% end %>
 
+    <%= link_to eiken_records_path,
+        class: "tab-item #{current_page?(eiken_records_path) ? 'active' : ''}" do %>
+      <i class="fa-solid fa-flag-checkered"></i>
+      <span>目標設定</span>
+    <% end %>
+
   </div>
 </section>

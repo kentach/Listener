@@ -47,13 +47,7 @@
 //ぱんくず
 @import './breadcrumb/breadcrumb';
 
-
-
-
-
-
-
-
-
-
-
+//英検記録ページ
+@import "./eiken_records/eiken_records_index";
+@import "./eiken_records/eiken_records_show";
+@import "./eiken_records/eiken_records_new";

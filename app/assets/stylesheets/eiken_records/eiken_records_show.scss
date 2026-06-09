@@ -1,0 +1,166 @@
+$bg: #F7F9FC;
+$white: #FFFFFF;
+$border: #E4EAF2;
+$text: #2C3E50;
+$text-muted: #8A99AD;
+$radius: 12px;
+
+.eiken-show-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px 100px;
+  min-height: 100vh;
+}
+
+.eiken-show-card {
+  background: $white;
+  border-radius: $radius;
+  border: 1px solid $border;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ===== ヘッダー ===== */
+.eiken-show-header {
+  padding: 24px 24px 0 24px;
+  text-align: center;
+
+  .show-level-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .show-exam-date {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+/* ===== ボディ ===== */
+.eiken-show-body {
+  padding: 24px;
+}
+
+.show-section {
+  margin-bottom: 28px;
+
+  .show-section-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $border;
+  }
+}
+
+/* ===== スコアカード ===== */
+.score-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.score-card {
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.speaking  { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
+  &.reading   { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); }
+  &.listening { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); }
+  &.writing   { background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); }
+
+  .score-card-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: $text-muted;
+    text-transform: uppercase;
+  }
+
+  .score-card-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: $text;
+  }
+}
+
+/* ===== 合計スコア ===== */
+.total-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F0F5FF;
+  border-radius: 10px;
+  padding: 14px 20px;
+  border: 1px solid #DBEAFE;
+
+  .total-score-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: $text;
+  }
+
+  .total-score-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3B82F6;
+  }
+}
+
+/* ===== メモ ===== */
+.show-memo {
+  font-size: 14px;
+  color: $text;
+  line-height: 1.7;
+  background: $bg;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid $border;
+}
+
+/* ===== アクション ===== */
+.show-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 8px;
+
+  a {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.85; }
+  }
+
+  .edit-btn {
+    background:#3B82F6;
+    color: white;
+  }
+
+  .delete-btn {
+    background: #EF4444;
+    color: white;
+  }
+
+  .back-btn {
+    background: $bg;
+    color: $text;
+    border: 1px solid $border;
+  }
+}

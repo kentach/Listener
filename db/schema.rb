@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_08_075154) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_09_083802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,21 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_08_075154) do
     t.index ["textbook_id"], name: "index_booklists_on_textbook_id"
     t.index ["user_id", "textbook_id"], name: "index_booklists_on_user_id_and_textbook_id", unique: true
     t.index ["user_id"], name: "index_booklists_on_user_id"
+  end
+
+  create_table "eiken_records", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "level"
+    t.integer "speaking_score"
+    t.integer "reading_score"
+    t.integer "listening_score"
+    t.integer "writing_score"
+    t.date "exam_date"
+    t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "passed"
+    t.index ["user_id"], name: "index_eiken_records_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -124,6 +139,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_08_075154) do
   add_foreign_key "audios", "lessons"
   add_foreign_key "booklists", "textbooks"
   add_foreign_key "booklists", "users"
+  add_foreign_key "eiken_records", "users"
   add_foreign_key "favorites", "audios"
   add_foreign_key "favorites", "users"
   add_foreign_key "learning_records", "audios"
