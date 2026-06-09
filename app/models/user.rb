@@ -21,6 +21,34 @@ class User < ApplicationRecord
   has_many :learning_records_audio, through: :learning_records, source: :audio
   has_many :eiken_records, dependent: :destroy
 
+  def progress_for(textbook)
+    total_audios = Audio.where(lesson_id: textbook.lessons.ids).count # Audioテーブルのlesson_idがtextbookが持っているlessonのidを全て取得
+    completed_audios = learning_records.joins(:audio).where(audios: { lesson_id: textbook.lessons.ids }).count
+    # learning_recordsには、Audio〇〇の学習記録
+    # joinメソッドは、どのAudioの記録かわかるようにlearning_records と audio をつなげる
+    return 0 if total_audios.zero?
+    (completed_audios.to_f / total_audios * 100).round
+    # to_fは、数字を小数（Float）に変換する
+    # roundは、四捨五入するメソッド
+  end
+
+  def progress_message(textbook)
+    progress = progress_for(textbook)
+    if progress == 100
+      "🎉 完璧です！全て完了しました！"
+    elsif progress >= 80
+      "🔥 素晴らしいです！あと少しで完了です！"
+    elsif progress >= 60
+      "📈 順調に成長しています。この調子で続けましょう！"
+    elsif progress >= 40
+      "💪 半分近く達成！引き続き頑張りましょう。"
+    elsif progress >= 20
+      "🌱 少しずつ進んでいます。毎日の積み重ねが大切です。"
+    else
+      "📚 まだ始めたばかりです。一歩一歩進みましょう！"
+    end
+  end
+
   def email_required?
     false
   end
@@ -47,13 +75,6 @@ class User < ApplicationRecord
 
   def completed?(audio)
     learning_records.exists?(audio: audio)
-  end
-
-  def progress_for(textbook)
-    total_audios = Audio.where(lesson_id: textbook.lessons.ids).count
-    completed_audios = learning_records.joins(:audio).where(audios: { lesson_id: textbook.lessons.ids }).count
-    return 0 if total_audios.zero?
-    (completed_audios.to_f / total_audios * 100).round
   end
 
   def student_id_must_be_allowed

@@ -13,7 +13,10 @@ $radius: 12px;
 .eiken-records-container {
   width: 100%;
   max-width: 990px;
+  height:100%;
+  overflow-y: auto;
   margin: 0 auto;
+  margin-bottom: 100px;
   padding: 0 24px 20px;
   box-sizing: border-box;
 }
@@ -23,7 +26,6 @@ $radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
 
   h2 {
     font-size: 30px;
@@ -55,6 +57,7 @@ $radius: 12px;
   background: $white;
   border-radius: $radius;
   border: 1px solid $border;
+  margin-bottom: 30px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -198,4 +201,8 @@ $radius: 12px;
 .badge-unknown {
   color: #8A99AD;
   font-size: 14px;
+}
+
+.eiken_chart {
+  margin: 0 auto;
 }
