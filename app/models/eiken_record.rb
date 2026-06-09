@@ -3,7 +3,7 @@ class EikenRecord < ApplicationRecord
 
   validates :exam_date, presence: :true
   validates :level, presence: :true
-  validates :passed, presence: :true
+  validates :passed, inclusion: { in: [true, false] }
 
   def total_score
     [ speaking_score, reading_score, listening_score, writing_score ].compact.sum
