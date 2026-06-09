@@ -18,13 +18,7 @@
       <% end %>
 
       <p>
-        <% if @progress >= 80 %>
-          素晴らしいです！この調子で続けましょう。
-        <% elsif @progress >= 50 %>
-          順調に成長しています。
-        <% else %>
-          毎日の積み重ねが大切です。
-        <% end %>
+      <%= current_user.progress_message(@textbook) %>
       </p>
     </div>
   </div>

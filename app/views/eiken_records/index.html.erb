@@ -6,11 +6,14 @@
   </div>
 
   <% if @eiken_records.empty? %>
+
     <div class="eiken-records-empty">
-      <p>まだ受験記録がありません</p>
-      <%= link_to "+ 最初の英検スコアを追加する", new_eiken_record_path, class: "new-record-btn" %>
+      <h5>まだ受験記録がありません。</h5>
+      <h5>右上の「英検スコアを追加する」からご登録ください。</h5>
     </div>
+
   <% else %>
+
     <div class="eiken-records-table-wrapper">
       <table class="eiken-records-table">
         <thead>
@@ -70,6 +73,6 @@
       </table>
     </div>
   <% end %>
+  <%= render "eiken_records/result_chart" %>
 </div>
-
 <%= render "shared/navigation_bar" %>

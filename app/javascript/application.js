@@ -9,6 +9,7 @@ import './checkBtn'
 import './header'
 import './modal'
 import './swiper'
+import "chartkick/chart.js"
 
 
 

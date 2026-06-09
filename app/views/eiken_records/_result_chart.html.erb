@@ -1,0 +1,10 @@
+<% if @eiken_records.count >= 2 %>
+  <%= line_chart @score_data,
+      height: "300px",
+      color: "#3B82F6",
+      points: true,
+      min: 0,
+      title: "英検スコア推移" %>
+<% else %>
+  <p class="eiken_chart">グラフを表示するには2件以上の記録が必要です</p>
+<% end %>
