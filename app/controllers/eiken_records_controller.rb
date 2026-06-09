@@ -2,7 +2,7 @@ class EikenRecordsController < ApplicationController
   def index
     @eiken_records = current_user.eiken_records.order(exam_date: :desc)
 
-    @score_data = @eiken_records.map { |record| [record.exam_date, record.total_score] }
+    @score_data = @eiken_records.map { |record| [ record.exam_date, record.total_score ] }
   end
 
   def show

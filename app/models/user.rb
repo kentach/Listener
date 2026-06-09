@@ -31,7 +31,7 @@ class User < ApplicationRecord
     # to_fは、数字を小数（Float）に変換する
     # roundは、四捨五入するメソッド
   end
-  
+
   def progress_message(textbook)
     progress = progress_for(textbook)
     if progress == 100
