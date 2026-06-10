@@ -1,7 +1,7 @@
 ## サービス名 
 ### [LISTENER2.0](https://listener-2026.onrender.com/)
 
-|[![Image from Gyazo](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d.png)](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d)
+[![Image from Gyazo](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d.png/thumb/300#.jpg)](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d)
 
 
 ## 開発者の生い立ち
