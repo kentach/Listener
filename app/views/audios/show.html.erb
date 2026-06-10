@@ -5,7 +5,9 @@
     
     <!-- ===== 英語と日本語のスクリプトの部分 ===== -->
     <section class="ja-en-container">
-      <p>音声スクリプト</p>
+      <!-- ===== 音声名 ===== -->
+      <p class="current-audio-name"></p>
+      
       <div class="english-container">
         <div id="en-script"><%= simple_format(@audio.en_script) %></div>
       </div>
@@ -47,9 +49,6 @@
 
 
 <div class="audio-player">
-<!-- ===== 音声名 ===== -->
-  <p class="current-audio-name"></p>
-  
   <!-- ===== 進捗バー ===== -->
   <div class="audio-progress-area">
     <span id="currentTime" class="time-text">

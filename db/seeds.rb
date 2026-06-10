@@ -164,7 +164,11 @@ ActiveRecord::Base.transaction do
 ]
   create_lessons_for("音トレ道場初段", lesson_data1)
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.find_or_create_by(email: 'admin@example.com') do |admin|
+  admin.password = 'password'
+  admin.password_confirmation = 'password'
+end
 
 AllowedStudent.find_or_create_by(student_id: "saiei3181")
 
