@@ -7,6 +7,7 @@ ja:
       send_paranoid_instructions: "ご登録のメールアドレスが存在する場合、確認用のメールを数分以内に送信します。"
 
     failure:
+      not_allowed:
       already_authenticated: "すでにログインしています。"
       inactive: "アカウントはまだ有効化されていません。"
       invalid: "%{authentication_keys} またはパスワードが正しくありません。"
