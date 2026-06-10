@@ -1,7 +1,7 @@
 ## サービス名 
 ### [LISTENER2.0](https://listener-2026.onrender.com/)
 
-[![Image from Gyazo](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d.png/thumb/300#.jpg)](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d)
+[![Image from Gyazo](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d.png)](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d)
 
 
 ## 開発者の生い立ち
@@ -69,16 +69,18 @@
 |全ての音声に日英スクリプトがついている|リピート再生・速度調整・スキップ機能|
 |:-------------|:-------------|
 |[![Image from Gyazo](https://i.gyazo.com/e50399c4b2919a10973139b4e85ac5d5.gif)](https://i.gyazo.com/e50399c4b2919a10973139b4e85ac5d5)|[![Image from Gyazo](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87.gif)](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87)|
-|英語のスクリプトに加えて日本語訳も確認できるので安心！|学習者のレベルに合わせて音声の速度を変換できます。繰り返し練習したい時は、リピートモードに|
+|英語のスクリプトに加えて日本語訳も確認できるので安心！|学習者のレベルに合わせて音声の速度を変換できる|
 
 |完了・未完了で進捗度合いを確認|音声のお気に入り登録|
 |:-------------|:-------------|
 |[![Image from Gyazo](https://i.gyazo.com/e5f89099bf357a74c078739947065751.gif)](https://i.gyazo.com/e5f89099bf357a74c078739947065751)|[![Image from Gyazo](https://i.gyazo.com/9b5812c3b0b5703ffb388b0cf5fb0122.gif)](https://i.gyazo.com/9b5812c3b0b5703ffb388b0cf5fb0122)|
-|学習記録の可視化をできます。|練習したい音声をお気に入りに入れてすぐにアクセス！|
+|学習記録の可視化|練習したい音声をお気に入りに入れてすぐにアクセスしよう|
 
-|英検スコアの記録|
+|英検スコアの記録|テキストのブックリスト登録|
+|:-------------|:-------------|
 |[![Image from Gyazo](https://i.gyazo.com/7f3c7d5b4ad86865d10ab91e324c6c39.png)](https://i.gyazo.com/7f3c7d5b4ad86865d10ab91e324c6c39)
-|自分の英検スコアの推移を可視化できる|
+|[![Image from Gyazo](https://i.gyazo.com/2d84734cef1b4f3ba3449a2290b30cfc.gif)](https://i.gyazo.com/2d84734cef1b4f3ba3449a2290b30cfc)|
+|自分の英検スコアの推移を可視化|ブックリストに追加してすぐ学習できる|
 
 ## 3. 本当に解決したい課題は何か
 - 
