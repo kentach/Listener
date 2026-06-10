@@ -216,9 +216,7 @@
   /* FEATURE番号 */
   .feature02-number {
     font-size: 12px;
-
     letter-spacing: 2px;
-
     margin-bottom: 18px;
   }
 
@@ -229,9 +227,7 @@
   /* タイトル */
   .feature02-title {
     font-size: 34px;
-
     line-height: 1.5;
-
     margin-bottom: 20px;
   }
 
@@ -244,15 +240,15 @@
 
   /* カード */
   .feature02-icon-area {
-    gap: 10px;
+    gap: 8px;
     display:flex;
     justify-content:center;
   }
 
   .feature02-icon-wrapper {
     width: 50%;
-    max-width: 120px;
-    padding: 22px 10px;
+    max-width: 100px;
+    padding: 22px 8px;
     border-radius: 22px;
   }
 
