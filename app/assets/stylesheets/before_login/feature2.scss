@@ -206,7 +206,7 @@
 @media (max-width: 768px) {
 
   .feature02-section {
-    padding: 80px 16px;
+    padding: 40px 16px;
   }
 
   .feature02-inner {
@@ -238,23 +238,21 @@
   /* 説明 */
   .feature02-subtitle {
     font-size: 18px;
-
     line-height: 1.8;
-
     margin-bottom: 44px;
   }
 
   /* カード */
   .feature02-icon-area {
-    gap: 18px;
+    gap: 10px;
+    display:flex;
+    justify-content:center;
   }
 
   .feature02-icon-wrapper {
-    width: 100%;
-    max-width: 320px;
-
-    padding: 32px 20px;
-
+    width: 50%;
+    max-width: 120px;
+    padding: 22px 10px;
     border-radius: 22px;
   }
 
@@ -272,7 +270,7 @@
 
   /* ラベル */
   .feature02-icon-label {
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 

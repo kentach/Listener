@@ -61,11 +61,13 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to "詳細", eiken_record_path(record), class: "show-btn" %>
-                  <%= link_to "編集", edit_eiken_record_path(record), class: "edit-btn" %>
-                  <%= link_to "削除", eiken_record_path(record),
-                      class: "delete-btn",
-                      data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+                  <div class="action-menu">
+                    <%= link_to "詳細", eiken_record_path(record), class: "show-btn"%>
+                    <%= link_to "編集", edit_eiken_record_path(record), class: "edit-btn"%>
+                    <%= link_to "削除", eiken_record_path(record),
+                        class: "delete-btn",
+                        data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+                  </div>
                 </td>
               </tr>
             <% end %>

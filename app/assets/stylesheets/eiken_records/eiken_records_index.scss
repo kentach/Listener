@@ -13,11 +13,11 @@ $radius: 12px;
 .eiken-records-container {
   width: 100%;
   max-width: 990px;
-  height:100%;
+  height: 100%;
   overflow-y: auto;
   margin: 0 auto;
   margin-bottom: 100px;
-  padding: 0 24px 20px;
+  padding: 0 16px 20px;
   box-sizing: border-box;
 }
 
@@ -26,14 +26,21 @@ $radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 
   h2 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     text-align: center;
-    margin: 40px 0 50px;
+    margin: 24px 0 24px;
     letter-spacing: 0.05em;
     color: #222;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+      margin: 16px 0;
+    }
   }
 
   .new-record-btn {
@@ -43,8 +50,10 @@ $radius: 12px;
     padding: 8px 16px;
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 10px;
     text-decoration: none;
     transition: background 0.2s;
+    white-space: nowrap;
 
     &:hover {
       background: darken($accent, 10%);
@@ -52,19 +61,23 @@ $radius: 12px;
   }
 }
 
-/* ===== テーブル ===== */
+/* ===== テーブルラッパー（スマホでスクロール） ===== */
 .eiken-records-table-wrapper {
   background: $white;
   border-radius: $radius;
   border: 1px solid $border;
   margin-bottom: 30px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: visible;  /* ← hiddenからvisibleに変更 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  -webkit-overflow-scrolling: touch;
 }
 
 .eiken-records-table {
   width: 100%;
+  min-width: 600px;  
   border-collapse: collapse;
+  overflow: visible;
 
   thead {
     background: $primary;
@@ -76,6 +89,12 @@ $radius: 12px;
       font-weight: 600;
       text-align: center;
       white-space: nowrap;
+
+      @media (max-width: 768px) {
+        padding: 10px 8px;
+        font-size: 11px;
+        
+      }
     }
   }
 
@@ -98,30 +117,33 @@ $radius: 12px;
       font-size: 14px;
       color: $text;
       text-align: center;
+
+      @media (max-width: 768px) {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
     }
   }
 
-  /* 合計スコア強調 */
   .total-score {
     font-weight: bold;
     color: $accent;
     font-size: 15px;
   }
 
-  /* スコアなしの場合 */
   .no-score {
     color: $text-muted;
   }
 
-  /* 削除ボタン */
   .delete-btn {
     background: $danger;
     color: $white;
     border-radius: 6px;
-    padding: 8px 10px;
+    padding: 6px 8px;
     font-size: 12px;
     text-decoration: none;
     transition: background 0.2s;
+    white-space: nowrap;
 
     &:hover {
       background: darken($danger, 10%);
@@ -133,11 +155,12 @@ $radius: 12px;
   background: #3B82F6;
   color: white;
   border-radius: 6px;
-  padding: 8px 10px;
+  padding: 6px 8px;
   font-size: 12px;
   text-decoration: none;
-  margin-right: 6px;
+  margin-right: 4px;
   transition: background 0.2s;
+  white-space: nowrap;
 
   &:hover {
     background: darken(#3B82F6, 10%);
@@ -148,11 +171,12 @@ $radius: 12px;
   background: #2cd153;
   color: white;
   border-radius: 6px;
-  padding: 8px 10px;
+  padding: 6px 8px;
   font-size: 12px;
   text-decoration: none;
-  margin-right: 6px;
+  margin-right: 4px;
   transition: background 0.2s;
+  white-space: nowrap;
 
   &:hover {
     background: darken(#2cd153, 10%);
@@ -166,6 +190,7 @@ $radius: 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 /* ===== 空の状態 ===== */
@@ -180,6 +205,7 @@ $radius: 12px;
   }
 }
 
+/* ===== 合否バッジ ===== */
 .badge-pass {
   background: #10B981;
   color: white;
@@ -187,6 +213,7 @@ $radius: 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .badge-fail {
@@ -196,6 +223,7 @@ $radius: 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .badge-unknown {
@@ -203,6 +231,13 @@ $radius: 12px;
   font-size: 14px;
 }
 
+/* ===== グラフ ===== */
 .eiken_chart {
   margin: 0 auto;
+  width: 100%;
+}
+
+.action-menu {
+  display:flex;
+  justify-content:center;
 }
