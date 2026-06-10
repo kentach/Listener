@@ -1,0 +1,171 @@
+/* app/assets/stylesheets/devise/session_new.scss */
+
+$primary: #1da1d2;
+$primary-dark: #0f3d75;
+$white: #FFFFFF;
+$bg: #F7F9FC;
+$border: #E4EAF2;
+$text: #2C3E50;
+$text-muted: #8A99AD;
+$danger: #EF4444;
+$radius: 16px;
+
+/* ===== コンテナ ===== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* ===== カード ===== */
+.login-card {
+  background: $white;
+  border-radius: $radius;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 480px) {
+    padding: 32px 24px;
+  }
+}
+
+/* ===== タイトル ===== */
+.login-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: $text;
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
+
+/* ===== フォームグループ ===== */
+.form-group {
+  margin-bottom: 20px;
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: 8px;
+  }
+
+  input.form-label,
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1.5px solid $border;
+    border-radius: 10px;
+    background: $bg;
+    color: $text;
+    box-sizing: border-box;
+    transition: border 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      border-color: $primary;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+      background: $white;
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}
+
+/* ===== Remember me ===== */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  .form-check-input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: $primary;
+  }
+
+  .form-check-label {
+    font-size: 13px;
+    color: $text-muted;
+    cursor: pointer;
+  }
+}
+
+/* ===== ログインボタン ===== */
+.login-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $white;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-bottom: 24px;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* ===== フラッシュメッセージ ===== */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+
+  &.alert-alert {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: $danger;
+  }
+
+  &.alert-notice {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
+  }
+}
+
+/* ===== 認証リンク ===== */
+.auth-links {
+  text-align: center;
+  font-size: 13px;
+  color: $text-muted;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
