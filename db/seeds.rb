@@ -166,7 +166,11 @@ ActiveRecord::Base.transaction do
 end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
+AllowedStudent.find_or_create_by(student_id: "saiei3181")
+
 User.find_or_create_by(student_id: "saiei3181") do |user|
   user.password = "saiei3181"
   user.password_confirmation = "saiei3181"
+  user.name = "サイエイ太郎"
+  user.eiken_level = "英検5級"
 end
