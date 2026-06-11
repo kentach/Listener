@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [ :student_id, :name, :eiken_level, :password, :password_confirmation ])
     devise_parameter_sanitizer.permit(:account_update, keys: [ :student_id, :name, :eiken_level, :password, :password_confirmation ])
   end
+
+  def hide_header # Audioのページのみヘッダーをなしにする
+    controller_name == "audios" && action_name == "show"
+  end
 end

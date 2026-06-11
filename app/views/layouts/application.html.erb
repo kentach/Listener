@@ -25,14 +25,14 @@
     <% if controller_name == "static_pages" &&
           action_name == "top" &&
           !user_signed_in? %>
-      <!-- コントローラ名が「static_pages」でかつ、
-          アクション名がトップアクションで、
-          Userがサインインしてなければ、
-          before_loginページを出す -->
+      <!-- コントローラ名が「static_pages」でかつ、アクション名がトップアクションで、
+          Userがサインインしてなければ、before_loginページを出す -->
 
       <%= render "static_pages/before_login" %>
     <% else %>
-      <%= render 'shared/header' %>
+      <% unless controller_name == "audios" && action_name == "show" %>
+        <%= render 'shared/header' %>
+      <% end %>
       <%= render 'shared/flash_message' %>
       <%= yield %>
     <% end %>

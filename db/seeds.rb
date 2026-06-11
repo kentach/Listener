@@ -68,10 +68,10 @@ ActiveRecord::Base.transaction do
       {
         title: "TOPIC3",
         file_name: "ontre_1dan/TOPIC3.mp3",
-        ja_script: "すみません、次のショーは何時ですか？ 5時30分です。 わかりました。いくらですか？ 5ドルです。 チケットは何枚必要ですか？  2枚お願いします。
-                    どの席がいいですか？前ですか、後ろですか？ 前でお願いします。はい、どうぞ。10ドルです。ありがとうございます。トイレはどこですか？あちらです。",
-      en_script: "Excuse me, what time is the next show?  It's at 5:30. Okay. How much is it? It's 5 dollars. How many tickets do you want? 2 tickets, please.
-                  Which seats do you want, front or back? Front, please. Okay. Here you are. It's 10 dollars. Thank you. And where is the restroom? It's over there. "
+        ja_script: "すみません、次のショーは何時ですか？\n5時30分です。\nわかりました。いくらですか？\n5ドルです。\nチケットは何枚必要ですか？ \n2枚お願いします。
+        \nどの席がいいですか？前ですか、後ろですか？\n前でお願いします。\nはい、どうぞ。10ドルです。\nありがとうございます。\nトイレはどこですか？あちらです。",
+      en_script: "Excuse me, what time is the next show?  \nIt's at 5:30. \nOkay. How much is it? \nIt's 5 dollars. \nHow many tickets do you want? 2 tickets, please.
+        \nWhich seats do you want, front or back? Front, please. \nOkay. Here you are. It's 10 dollars. \nThank you. And where is the restroom? \nIt's over there. "
 
       },
       {
@@ -85,60 +85,6 @@ ActiveRecord::Base.transaction do
         file_name: "ontre_1dan/TOPIC5.mp3",
         ja_script: "「ボブ、家ではいつも何をしているの？」 「だいたい4時ごろに家に帰るよ。いつもまず宿題をするんだ。」 「わあ、それはいいね。お兄さん（弟さん）はどうなの？」 「兄はいつも帰りが遅いんだ。いつも忙しくて疲れているよ。僕たちは一緒に夕食を食べることが全然ないんだ。」 \n「週末はお兄さん（弟さん）と何をするの？」 \n「よく公園でサッカーをするよ。時々テニスもするんだ。」 \n「いいね。今週末はいっしょにテニスをしようよ。」",
         en_script: "What do you usually do at home, Bob?  I usually get home at around 4. I always do my homework first. Wow. That’s good. How about your brother? He always comes home late. He’s always busy and tired. We never eat dinner together. What do you do with your brother on weekends?  We often play soccer in the park. We sometimes play tennis. Great. Let’s play tennis together this weekend."
-      },
-      {
-        title: "TOPIC6",
-        file_name: "ontre_1dan/TOPIC6.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC7",
-        file_name: "ontre_1dan/TOPIC7.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC8",
-        file_name: "ontre_1dan/TOPIC8.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC9",
-        file_name: "ontre_1dan/TOPIC9.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC10",
-        file_name: "ontre_1dan/TOPIC10.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC11",
-        file_name: "ontre_1dan/TOPIC11.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC12",
-        file_name: "ontre_1dan/TOPIC12.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC13",
-        file_name: "ontre_1dan/TOPIC13.mp3",
-        ja_script: "#",
-        en_script: "#"
-      },
-      {
-        title: "TOPIC14",
-        file_name: "ontre_1dan/TOPIC14.mp3",
-        ja_script: "#",
-        en_script: "#"
       }
     ]
   },
