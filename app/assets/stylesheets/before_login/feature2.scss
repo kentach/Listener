@@ -240,7 +240,7 @@
 
   /* カード */
   .feature02-icon-area {
-    gap: 8px;
+    gap: 10px;
     display:flex;
     justify-content:center;
   }
@@ -248,15 +248,14 @@
   .feature02-icon-wrapper {
     width: 50%;
     max-width: 100px;
-    padding: 22px 8px;
+    padding: 22px 6px;
     border-radius: 22px;
   }
 
   /* アイコン */
   .feature02-icon-circle {
-    width: 72px;
-    height: 72px;
-
+    width: 65px;
+    height: 65px;
     margin-bottom: 18px;
   }
 
@@ -266,7 +265,7 @@
 
   /* ラベル */
   .feature02-icon-label {
-    font-size: 13px;
+    font-size: 10px;
   }
 }
 
