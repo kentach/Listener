@@ -1,9 +1,5 @@
-/* =========================
-  FEATURE 02
-========================= */
 .feature02-section {
   padding: 50px 20px 100px;
-
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -31,7 +27,7 @@
 
   letter-spacing: 3px;
 
-  color: #54c9de;
+  color: var(--primary-color);
 
   margin-bottom: 24px;
 }
@@ -78,11 +74,8 @@
 ========================= */
 .feature02-subtitle {
   font-size: 30px;
-
   line-height: 1.9;
-
   color: #1e1e1e;
-
   margin-bottom: 80px;
 
   font-family:
@@ -106,9 +99,7 @@
 /* カード */
 .feature02-icon-wrapper {
   width: 220px;
-
   padding: 40px 24px;
-
   background: #fff;
 
   border-radius: 28px;
