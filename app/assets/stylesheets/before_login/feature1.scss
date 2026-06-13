@@ -1,4 +1,3 @@
-
 /* =========================
   SECTION
 ========================= */
@@ -22,7 +21,7 @@
 }
 
 /* =========================
-  ANIMATION（統一のみ）
+  ANIMATION
 ========================= */
 @keyframes floatIn {
   to {
@@ -31,21 +30,15 @@
   }
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* fade-up（既存維持） */
+/* [修正1] fadeUp を floatIn に統一して削除
+   fade-up クラスも floatIn を使用するよう変更 */
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
-  animation: fadeUp 0.8s ease forwards;
+  animation: floatIn 0.8s ease forwards;
 }
 
-/* delay（重複OKだが整理済み） */
+/* delay */
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.35s; }
 .delay-3 { animation-delay: 0.5s; }
@@ -86,7 +79,7 @@
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
-  color:#fff;
+  color: #fff;
   margin-bottom: 24px;
 }
 
@@ -106,9 +99,10 @@
   color: #fff;
 }
 
+/* [修正4] font-size を 40px → 26px に変更してタイポグラフィ階層を明確化 */
 .feature-one-subtitle {
   font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 1.9;
   color: #1e1e1e;
   margin-bottom: 80px;
@@ -126,6 +120,7 @@
 }
 
 /* CARD */
+/* [修正2] will-change: transform を追加してホバー競合を安定化 */
 .feature-one-icon-wrapper {
   width: 220px;
   padding: 40px 24px;
@@ -140,7 +135,14 @@
   box-shadow: 0 10px 30px rgba(84, 201, 222, 0.08);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
+
+/* [修正5] delay-* クラスが上書きされる問題を :nth-child で解決 */
+.feature-one-icon-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.feature-one-icon-wrapper:nth-child(2) { animation-delay: 0.25s; }
+.feature-one-icon-wrapper:nth-child(3) { animation-delay: 0.4s; }
+.feature-one-icon-wrapper:nth-child(4) { animation-delay: 0.55s; }
 
 /* hover（PCのみ） */
 @media (hover: hover) {
@@ -162,7 +164,7 @@
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(135deg,#54c9de 0%,#3b82f6 100%);
+  background: linear-gradient(135deg, #54c9de 0%, #3b82f6 100%);
   color: #fff;
 }
 
@@ -187,6 +189,13 @@
 
   .feature-one-inner {
     max-width: 100%;
+  }
+
+  /* [修正3] .three-features h1 のレスポンシブを追加 */
+  .three-features h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
   }
 
   .feature-one-number {
@@ -215,7 +224,6 @@
     gap: 12px;
   }
 
-  /* ❗UI維持：ただし安定化 */
   .feature-one-icon-wrapper {
     width: calc(50% - 10px);
     max-width: 160px;
@@ -246,8 +254,14 @@
 
 @media (max-width: 480px) {
 
+  /* [修正6] padding-top を 70px → 40px に修正（768px以下の値より大きくなっていた逆転を解消） */
   .feature-one-section {
-    padding: 70px 14px;
+    padding: 40px 14px;
+  }
+
+  /* [修正3] 480px以下でさらに縮小 */
+  .three-features h1 {
+    font-size: 24px;
   }
 
   .feature-one-title {
