@@ -1,157 +1,157 @@
-.feature-title-section {
-  padding: 140px 20px;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .feature-title-section {
+//   padding: 140px 20px;
+//   background: #ffffff;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-/* 中央コンテナ */
-.section-inner {
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-}
+// /* 中央コンテナ */
+// .section-inner {
+//   width: 100%;
+//   max-width: 1000px;
+//   text-align: center;
+// }
 
-/* FEATURE 01 */
-.feature-number {
-  font-size: 15px;
-  font-weight: 700;
+// /* FEATURE 01 */
+// .feature-number {
+//   font-size: 15px;
+//   font-weight: 700;
 
-  letter-spacing: 3px;
-  color: var(--primary-color);
-  margin-bottom: 24px;
-}
+//   letter-spacing: 3px;
+//   color: var(--primary-color);
+//   margin-bottom: 24px;
+// }
 
-.feature-number span {
-  font-size: 34px;
-  font-weight: 900;
-  margin-left: 10px;
-}
+// .feature-number span {
+//   font-size: 34px;
+//   font-weight: 900;
+//   margin-left: 10px;
+// }
 
-/* メインタイトル */
-.feature-title {
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 1.3;
+// /* メインタイトル */
+// .feature-title {
+//   font-size: 60px;
+//   font-weight: 900;
+//   line-height: 1.3;
 
-  color: #fff;
-  background-color: var(--primary-color);
+//   color: #fff;
+//   background-color: var(--primary-color);
 
-  margin-bottom: 50px;
+//   margin-bottom: 50px;
 
-  padding: 16px 24px;
+//   padding: 16px 24px;
 
-  border-radius: 20px;
+//   border-radius: 20px;
 
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
-}
+//   font-family:
+//     'ヒラギノ角ゴ StdN',
+//     'Hiragino Kaku Gothic StdN',
+//     sans-serif;
+// }
 
-/* サブタイトル */
-.feature-subtitle {
-  margin-top: 50px;
-  font-size: 50px;
-  line-height: 2;
-  color: #111111;
+// /* サブタイトル */
+// .feature-subtitle {
+//   margin-top: 50px;
+//   font-size: 50px;
+//   line-height: 2;
+//   color: #111111;
 
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
-}
+//   font-family:
+//     'ヒラギノ角ゴ StdN',
+//     'Hiragino Kaku Gothic StdN',
+//     sans-serif;
+// }
 
-/* =========================
-  アニメーション
-========================= */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeUp 0.8s ease forwards;
-}
+// /* =========================
+//   アニメーション
+// ========================= */
+// .fade-up {
+//   opacity: 0;
+//   transform: translateY(24px);
+//   animation: fadeUp 0.8s ease forwards;
+// }
 
-.delay-1 {
-  animation-delay: 0.2s;
-}
+// .delay-1 {
+//   animation-delay: 0.2s;
+// }
 
-.delay-2 {
-  animation-delay: 0.4s;
-}
+// .delay-2 {
+//   animation-delay: 0.4s;
+// }
 
-.delay-3 {
-  animation-delay: 0.6s;
-}
+// .delay-3 {
+//   animation-delay: 0.6s;
+// }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+// @keyframes fadeUp {
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
 
 
-@media (max-width: 768px) {
+// @media (max-width: 768px) {
 
-  .feature-title-section {
-    padding: 40px 16px;
-  }
+//   .feature-title-section {
+//     padding: 40px 16px;
+//   }
 
-  .section-inner {
-    max-width: 100%;
-  }
+//   .section-inner {
+//     max-width: 100%;
+//   }
 
-  /* FEATURE */
-  .feature-number {
-    font-size: 12px;
+//   /* FEATURE */
+//   .feature-number {
+//     font-size: 12px;
 
-    letter-spacing: 2px;
+//     letter-spacing: 2px;
 
-    margin-bottom: 18px;
-  }
+//     margin-bottom: 18px;
+//   }
 
-  .feature-number span {
-    font-size: 24px;
+//   .feature-number span {
+//     font-size: 24px;
 
-    margin-left: 6px;
-  }
+//     margin-left: 6px;
+//   }
 
-  /* タイトル */
-  .feature-title {
-    font-size: 32px;
+//   /* タイトル */
+//   .feature-title {
+//     font-size: 32px;
 
-    line-height: 1.5;
+//     line-height: 1.5;
 
-    margin-bottom: 32px;
+//     margin-bottom: 32px;
 
-    padding: 14px 16px;
+//     padding: 14px 16px;
 
-    border-radius: 16px;
-  }
+//     border-radius: 16px;
+//   }
 
-  /* サブタイトル */
-  .feature-subtitle {
-    margin-top: 28px;
+//   /* サブタイトル */
+//   .feature-subtitle {
+//     margin-top: 28px;
 
-    font-size: 22px;
+//     font-size: 22px;
 
-    line-height: 1.8;
-  }
-}
+//     line-height: 1.8;
+//   }
+// }
 
-/* 小さいスマホ */
-@media (max-width: 480px) {
+// /* 小さいスマホ */
+// @media (max-width: 480px) {
 
-  .feature-title-section {
-    padding: 40px 14px;
-  }
+//   .feature-title-section {
+//     padding: 40px 14px;
+//   }
 
-  .feature-title {
-    font-size: 26px;
-  }
+//   .feature-title {
+//     font-size: 26px;
+//   }
 
-  .feature-subtitle {
-    font-size: 18px;
-  }
-}
+//   .feature-subtitle {
+//     font-size: 18px;
+//   }
+// }
