@@ -1,12 +1,13 @@
-/* =========================
-  Base Layout
-========================= */
 
+/* =========================
+  SECTION
+========================= */
 .feature-one-section {
   padding: 80px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 
   opacity: 0;
@@ -16,15 +17,43 @@
 
 .feature-one-inner {
   width: 100%;
-  max-width: 1100px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 /* =========================
-  Three Features Section
+  ANIMATION（統一のみ）
 ========================= */
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* fade-up（既存維持） */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* delay（重複OKだが整理済み） */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.35s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.65s; }
+
+/* =========================
+  THREE FEATURES
+========================= */
 .three-features {
   background: #15c3d3;
   width: 100%;
@@ -37,11 +66,11 @@
   align-items: center;
 
   padding: 80px 40px;
-
-  border-radius: 300px 300px 0 0;
+  border-radius: 500px 500px 0 0;
 }
 
 .three-features h1 {
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 50px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -50,10 +79,10 @@
 }
 
 /* =========================
-  Feature Text
+  TEXT
 ========================= */
-
 .feature-one-number {
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -69,6 +98,7 @@
 }
 
 .feature-one-title {
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 60px;
   font-weight: 900;
   line-height: 1.4;
@@ -77,6 +107,7 @@
 }
 
 .feature-one-subtitle {
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 40px;
   line-height: 1.9;
   color: #1e1e1e;
@@ -85,9 +116,8 @@
 }
 
 /* =========================
-  Icon Area
+  ICON AREA
 ========================= */
-
 .feature-one-icon-area {
   display: flex;
   justify-content: center;
@@ -95,11 +125,12 @@
   flex-wrap: wrap;
 }
 
-/* Card */
+/* CARD */
 .feature-one-icon-wrapper {
   width: 220px;
   padding: 40px 24px;
   background: #fff;
+
   border-radius: 28px;
 
   opacity: 0;
@@ -107,22 +138,26 @@
   animation: floatIn 0.7s ease-out forwards;
 
   box-shadow: 0 10px 30px rgba(84, 201, 222, 0.08);
-  transition: all 0.3s ease;
-  will-change: transform;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-one-icon-wrapper:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(84, 201, 222, 0.25);
+/* hover（PCのみ） */
+@media (hover: hover) {
+  .feature-one-icon-wrapper:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(84, 201, 222, 0.25);
+  }
 }
 
-/* Icon circle */
+/* ICON */
 .feature-one-icon-circle {
   width: 90px;
   height: 90px;
-  margin: 0 auto 24px;
 
+  margin: 0 auto 24px;
   border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +170,6 @@
   font-size: 40px;
 }
 
-/* Label */
 .feature-one-icon-label {
   font-size: 18px;
   font-weight: 700;
@@ -143,54 +177,48 @@
 }
 
 /* =========================
-  Animation
+  RESPONSIVE
 ========================= */
-
-@keyframes floatIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* delay */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.35s; }
-.delay-3 { animation-delay: 0.5s; }
-.delay-4 { animation-delay: 0.65s; }
-
-/* =========================
-  Responsive (Tablet)
-========================= */
-
 @media (max-width: 768px) {
 
   .feature-one-section {
     padding: 40px 16px;
   }
 
-  .three-features {
-    padding: 60px 20px;
-    border-radius: 120px 120px 0 0;
+  .feature-one-inner {
+    max-width: 100%;
   }
 
-  .three-features h1 {
-    font-size: 28px;
+  .feature-one-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+
+  .feature-one-number span {
+    font-size: 24px;
   }
 
   .feature-one-title {
     font-size: 34px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
 
   .feature-one-subtitle {
     font-size: 18px;
-    margin-bottom: 40px;
+    line-height: 1.8;
+    margin-bottom: 44px;
   }
 
-  /* Cards */
+  .feature-one-icon-area {
+    gap: 12px;
+  }
+
+  /* ❗UI維持：ただし安定化 */
   .feature-one-icon-wrapper {
-    flex: 1 1 calc(50% - 10px);
-    max-width: 140px;
+    width: calc(50% - 10px);
+    max-width: 160px;
     padding: 22px 10px;
   }
 
@@ -204,10 +232,10 @@
   }
 
   .feature-one-icon-label {
-    font-size: 12px;
+    font-size: 10px;
   }
 
-  /* アニメ軽量化 */
+  /* スマホではアニメ軽量化 */
   .feature-one-section,
   .feature-one-icon-wrapper {
     animation: none;
@@ -216,11 +244,11 @@
   }
 }
 
-/* =========================
-  Small Mobile
-========================= */
-
 @media (max-width: 480px) {
+
+  .feature-one-section {
+    padding: 70px 14px;
+  }
 
   .feature-one-title {
     font-size: 28px;
@@ -231,7 +259,6 @@
   }
 
   .feature-one-icon-wrapper {
-    flex: 1 1 100%;
-    max-width: 160px;
+    padding: 28px 18px;
   }
 }

@@ -1,32 +1,35 @@
 
 /* =========================
-  SECTION TITLE AREA
+  TITLE SECTION
 ========================= */
 .features-title-section {
   padding: 80px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
 
+/* =========================
+  TITLE
+========================= */
 .features {
   text-align: center;
-  font-size: clamp(24px, 4vw, 44px);
-  font-weight: 700;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+  font-size: 44px;
+  font-weight: bold;
   margin-bottom: 40px;
-  line-height: 1.4;
 }
 
 /* =========================
-  INNER WRAPPER
+  INNER
 ========================= */
 .features-section-inner {
   width: 100%;
-  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
-  padding: 60px 16px;
+  padding: 60px 0px;
 }
 
 /* =========================
@@ -37,46 +40,30 @@
   width: 100%;
 
   padding: 60px;
-  min-height: 700px;
 
   display: flex;
   justify-content: center;
   gap: 40px;
-  align-items: stretch;
+  align-items: center;
 
-  border-radius: 20px;
+  flex-wrap: wrap; /* 安定化 */
 }
 
 /* =========================
-  CARD
+  ITEM
 ========================= */
 .feature-description-item {
   background-color: #fff;
+  padding: 16px;
+
+  font-size: 1.4rem;
 
   width: 400px;
-  max-width: 100%;
-
-  padding: 20px;
+  min-height: 450px; /* height → min-height に変更 */
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  font-size: 1.2rem;
-
-  border-radius: 16px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* hover（PCのみ） */
-@media (hover: hover) {
-  .feature-description-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  }
 }
 
 /* =========================
@@ -84,42 +71,46 @@
 ========================= */
 .feature-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 300px;
   object-fit: cover;
-
-  margin-top: 20px;
-  border-radius: 12px;
-  display: block;
+  margin-top: 25px;
 }
 
 /* =========================
-  RESPONSIVE (TABLET)
+  RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-
-  .feature-description-container {
-    flex-direction: column;
-    gap: 20px;
-
-    padding: 24px 16px;
-    min-height: auto;
-  }
-
-  .feature-description-item {
-    width: 100%;
-    max-width: 420px;
-    font-size: 1.05rem;
-  }
 
   .features {
     font-size: 28px;
     margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .features-section-inner {
+    padding: 20px 0;
+  }
+
+  .feature-description-container {
+    padding: 24px 16px;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .feature-description-item {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+
+  .feature-image {
+    height: 200px;
+    margin-top: 16px;
   }
 }
 
-/* =========================
-  SMALL MOBILE
-========================= */
 @media (max-width: 480px) {
 
   .features {
@@ -128,6 +119,9 @@
 
   .feature-description-item {
     font-size: 1rem;
-    padding: 16px;
+  }
+
+  .feature-image {
+    height: 180px;
   }
 }
