@@ -1,0 +1,184 @@
+
+/* =========================
+  SECTION
+========================= */
+.features-two-section {
+  padding: 100px 0;
+  background: #f7f9fb;
+}
+
+.features-two-section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* =========================
+  NUMBER
+========================= */
+.feature-two-number {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.feature-two-number span {
+  font-size: 34px;
+  font-weight: 900;
+  margin-left: 8px;
+}
+
+/* =========================
+  TITLE
+========================= */
+.feature-two-title {
+  font-size: clamp(28px, 4vw, 60px);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+}
+
+/* =========================
+  CONTAINER
+========================= */
+.feature-two-description-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* =========================
+  CARD
+========================= */
+.feature-two-description-item {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: floatUp 0.8s ease forwards;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* hover（デスクトップのみ） */
+@media (hover: hover) {
+  .feature-two-description-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+}
+
+/* =========================
+  IMAGE
+========================= */
+.feature-two-description-item img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* =========================
+  TEXT
+========================= */
+.feature-two-description-item p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 700;
+  margin-top: 12px;
+  color: #333;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+}
+
+/* =========================
+  ANIMATION
+========================= */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 遅延 */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* =========================
+  REDUCE MOTION（重要）
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .feature-two-description-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================
+  RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .features-two-section {
+    padding: 60px 0;
+  }
+
+  .feature-two-title {
+    margin-bottom: 32px;
+  }
+
+  .feature-two-description-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .feature-two-description-item {
+    width: 100%;
+    max-width: 340px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .features-two-section {
+    padding: 50px 0;
+  }
+
+  .feature-two-description-item {
+    max-width: 92%;
+  }
+
+  .feature-two-description-item p {
+    font-size: 14px;
+  }
+}

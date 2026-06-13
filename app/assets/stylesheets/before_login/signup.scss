@@ -1,9 +1,9 @@
+
 /* =========================
   CTA SECTION
 ========================= */
 .cta-section {
   position: relative;
-
   padding: 140px 20px;
   margin: 100px 40px;
 
@@ -15,58 +15,39 @@
 
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      135deg,
-      #28c2c2 0%,
-      #1da1d2 100%
-    );
+  background: linear-gradient(135deg, #28c2c2 0%, #1da1d2 100%);
 
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.10);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.10);
 }
 
-/* 背景演出 */
-.cta-section::before {
+/* 背景装飾 */
+.cta-section::before,
+.cta-section::after {
   content: "";
-
   position: absolute;
-
-  top: -120px;
-  right: -120px;
-
-  width: 320px;
-  height: 320px;
-
   border-radius: 50%;
-
-  background:
-    rgba(255,255,255,0.12);
-
+  background: rgba(255,255,255,0.12);
   filter: blur(10px);
 }
 
+.cta-section::before {
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+}
+
 .cta-section::after {
-  content: "";
-
-  position: absolute;
-
   bottom: -100px;
   left: -80px;
-
   width: 240px;
   height: 240px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(255,255,255,0.08);
-
+  background: rgba(255,255,255,0.08);
   filter: blur(8px);
 }
 
 /* =========================
-  Inner
+  INNER
 ========================= */
 .cta-section-inner {
   position: relative;
@@ -79,10 +60,10 @@
 }
 
 /* =========================
-  Title
+  TITLE
 ========================= */
 .cta-title {
-  font-size: 68px;
+  font-size: clamp(28px, 5vw, 68px);
   font-weight: 900;
   line-height: 1.35;
 
@@ -92,8 +73,7 @@
 
   letter-spacing: -0.03em;
 
-  text-shadow:
-    0 4px 12px rgba(0,0,0,0.12);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.12);
 
   font-family:
     'ヒラギノ角ゴ StdN',
@@ -101,17 +81,23 @@
     sans-serif;
 }
 
+/* =========================
+  BUTTONS
+========================= */
+.cta-section-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
 /* =========================
-  Animation
+  ANIMATION
 ========================= */
 .fade-up {
   opacity: 0;
-
   transform: translateY(24px);
-
-  animation:
-    fadeUp 0.8s ease forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .delay-1 {
@@ -126,55 +112,47 @@
 }
 
 /* =========================
-  Responsive
+  RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
 
   .cta-section {
     margin: 48px 16px;
-
     padding: 84px 20px;
-
     border-radius: 30px;
   }
 
   .cta-title {
-    font-size: 38px;
-
-    line-height: 1.45;
-
     margin-bottom: 40px;
+    line-height: 1.4;
   }
 
   .cta-section-buttons {
     flex-direction: column;
-
+    align-items: center;
     gap: 16px;
   }
 
   .cta-section-buttons .btn {
     width: 100%;
     max-width: 340px;
-
-    min-width: auto;
-
     font-size: 17px;
   }
 }
 
-/* 小さいスマホ */
+/* =========================
+  SMALL DEVICE
+========================= */
 @media (max-width: 480px) {
 
   .cta-section {
     margin: 28px 12px;
-
     padding: 68px 16px;
-
     border-radius: 24px;
   }
 
   .cta-title {
-    font-size: 30px;
+    margin-bottom: 32px;
   }
 
   .cta-section-buttons .btn {

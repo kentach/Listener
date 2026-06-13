@@ -1,31 +1,47 @@
-.feature-heading-group .swiper {
-  width: 420px;
-}
-
-.feature-heading-group .swiper-slide {
+.title-img-container {
+  width: 100%;
   display: flex;
   justify-content: center;
+  padding: 20px 0;
 }
 
-.feature-heading-group .title-img {
-  width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+/* Swiper本体 */
+.title-img-container .swiper {
+  width: 420px;
+  max-width: 100%;
 }
 
+/* スライド */
+.title-img-container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* 画像 */
+.title-img-container .title-img {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* ホバー（PCのみちょい演出） */
+.title-img-container .title-img:hover {
+  transform: scale(1.05);
+}
+
+/* スマホ対応 */
 @media (max-width: 768px) {
 
-  .feature-heading-group {
-    flex-direction: column;
-    gap: 32px;
+  .title-img-container .swiper {
+    width: 260px;
   }
 
-  .feature-heading-group .swiper {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .feature-heading-group .title-img {
-    width: 140px;
+  .title-img-container .title-img {
+    width: 130px;
   }
 }
