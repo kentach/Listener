@@ -1,4 +1,3 @@
-
 /* =========================
   SECTION
 ========================= */
@@ -40,7 +39,7 @@
   line-height: 1.4;
   margin-bottom: 50px;
   color: #333;
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
 }
 
 /* =========================
@@ -51,7 +50,6 @@
   gap: 24px;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: stretch;
 }
 
 /* =========================
@@ -59,8 +57,8 @@
 ========================= */
 .feature-two-description-item {
   background: #fff;
-  border-radius: 18px;
-  padding: 22px;
+  border-radius: 16px;
+  padding: 20px;
   width: 300px;
 
   display: flex;
@@ -72,17 +70,18 @@
 
   opacity: 0;
   transform: translateY(40px);
+
   animation: floatUp 0.8s ease forwards;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
 }
 
-/* hover（デスクトップのみ） */
+/* hover（PCのみ） */
 @media (hover: hover) {
   .feature-two-description-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
   }
 }
 
@@ -93,11 +92,12 @@
   width: 100%;
   max-width: 260px;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
+
   display: block;
+
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 12px;
 }
 
 /* =========================
@@ -105,11 +105,11 @@
 ========================= */
 .feature-two-description-item p {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
   font-weight: 700;
   margin-top: 12px;
   color: #333;
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
 }
 
 /* =========================
@@ -120,6 +120,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -132,53 +133,17 @@
 .delay-3 { animation-delay: 0.6s; }
 
 /* =========================
-  REDUCE MOTION（重要）
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  .feature-two-description-item {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* =========================
   RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
 
-  .features-two-section {
-    padding: 60px 0;
-  }
-
-  .feature-two-title {
-    margin-bottom: 32px;
-  }
-
   .feature-two-description-container {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
   }
 
   .feature-two-description-item {
     width: 100%;
     max-width: 340px;
-    padding: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .features-two-section {
-    padding: 50px 0;
-  }
-
-  .feature-two-description-item {
-    max-width: 92%;
-  }
-
-  .feature-two-description-item p {
-    font-size: 14px;
   }
 }
