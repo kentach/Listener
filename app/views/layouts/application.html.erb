@@ -22,21 +22,14 @@
   </head>
 
   <body>
-  <% if (controller_name == "static_pages" && action_name == "top" && !user_signed_in?) ||
-        (controller_name == "audios" && action_name == "show") %>
-
-    <% if controller_name == "static_pages" %>
-      <%= render "static_pages/before_login" %>
+      <% if controller_name == "static_pages" && action_name == "top" && !user_signed_in? %>
+          <%= render "static_pages/before_login" %>
+      <% else %>
+        <main class="with-header">
+          <%= render 'shared/header' %>
+          <%= render 'shared/flash_message' %>
+          <%= yield %>
+        </main>
     <% end %>
-
-    <%= yield %>
-
-  <% else %>
-    <main class="with-header">
-      <%= render "shared/header" %>
-      <%= render "shared/flash_message" %>
-      <%= yield %>
-    </main>
-  <% end %>
-</body>
+  </body>
 </html>
