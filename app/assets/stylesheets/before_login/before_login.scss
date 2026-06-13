@@ -1,3 +1,8 @@
+/* =========================
+  TITLE SECTION
+========================= */
+/* [修正1] font-family をセクション全体に一括指定 */
+/* [修正5] floatIn アニメーションを追加 */
 .title-section {
   background: #15c3d3;
   min-height: 600px;
@@ -7,6 +12,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: floatIn 1s ease-out forwards;
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title-section-inner {
@@ -20,30 +38,26 @@
   flex: 1;
 }
 
+/* [修正1] font-family 削除（セクションから継承） */
 .subtitle h1 {
   color: #fff;
   font-size: 64px;
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: 30px;
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
 }
 
+/* [修正1] font-family 削除（セクションから継承） */
 .small-subtitle {
   font-size: 22px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.9;
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
 }
 
-/* LISTENERタイトル */
+/* =========================
+  MAIN TITLE
+========================= */
 .main-title-container {
   flex: 1;
   display: flex;
@@ -52,29 +66,21 @@
   justify-content: center;
 }
 
-/* タグライン */
+/* [修正1] font-family 削除（セクションから継承） */
 .tagline {
   font-size: 25px;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12px;
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
 }
 
-/* アプリタイトル */
+/* [修正1] font-family 削除（セクションから継承） */
 .hero-title {
   font-size: 92px;
   font-weight: 900;
   letter-spacing: 6px;
   color: #fff;
   line-height: 1;
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
 }
 
 /* =========================
@@ -88,10 +94,11 @@
   flex-wrap: wrap;
 }
 
-/* ボタンhover */
+/* [修正3] !important を削除してセレクタ詳細度で解決 */
+/* [修正4] transform を .btn:hover に集約 */
 .cta-section-buttons .btn {
   min-width: 240px;
-  padding: 18px 34px !important;
+  padding: 18px 34px;
   font-size: 18px;
   font-weight: 700;
   border-radius: 9999px;
@@ -101,12 +108,17 @@
     box-shadow 0.25s ease,
     background 0.25s ease;
 
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* [修正4] transform をここに集約し、各ホバーとの競合を解消 */
+.cta-section-buttons .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
 }
 
 .cta-section-buttons .btn-outline-primary {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   color: #0f3d75;
   border: 2px solid transparent;
 }
@@ -116,38 +128,19 @@
   color: #fff;
 }
 
-
-.cta-section-buttons .btn:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 18px 36px rgba(0,0,0,0.18);
-}
-
 .cta-section-buttons .btn-primary {
-  background:
-    linear-gradient(
-      135deg,
-      #0f3d75 0%,
-      #0b2f5c 100%
-    );
-
+  background: linear-gradient(135deg, #0f3d75 0%, #0b2f5c 100%);
   color: #fff;
   border: none;
 }
 
 .cta-section-buttons .btn-primary:hover {
-  background:
-    linear-gradient(
-      135deg,
-      #12498d 0%,
-      #0f3d75 100%
-    );
-
+  background: linear-gradient(135deg, #12498d 0%, #0f3d75 100%);
   color: #fff;
 }
 
 /* =========================
-  Responsive
+  RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
 
@@ -156,6 +149,11 @@
     margin: 16px;
     padding: 48px 20px;
     border-radius: 24px;
+
+    /* [修正5] スマホではアニメーション無効化 */
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .title-section-inner {
@@ -164,9 +162,9 @@
     gap: 48px;
   }
 
-  /* 左側 */
+  /* [修正2] 768px以下を 36px に修正（480px以下の 40px より小さい値に）*/
   .subtitle h1 {
-    font-size: 20px;
+    font-size: 36px;
     line-height: 1.4;
     margin-bottom: 20px;
   }
@@ -177,7 +175,6 @@
     line-height: 1.8;
   }
 
-  /* 右側 */
   .tagline {
     font-size: 16px;
     letter-spacing: 1px;
@@ -187,7 +184,6 @@
   .hero-title {
     font-size: 62px;
     letter-spacing: 2px;
-
     line-height: 1.1;
   }
 }
@@ -199,15 +195,25 @@
     padding: 40px 16px;
   }
 
+  /* [修正2] 768px以下（36px）より小さい 32px に修正 */
   .subtitle h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .small-subtitle {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .hero-title {
     font-size: 42px;
+  }
+}
+
+/* [修正5] reduced-motion 対応 */
+@media (prefers-reduced-motion: reduce) {
+  .title-section {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
