@@ -6,7 +6,7 @@ import * as bootstrap from "bootstrap"
 import "./accordion"
 import './audioPlayer'
 import './checkBtn'
-import './header'
+import './hamburgerMenu'
 import './modal'
 import './swiper'
 import "chartkick/chart.js"

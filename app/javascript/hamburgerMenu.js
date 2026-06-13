@@ -7,6 +7,7 @@ document.addEventListener('turbo:load', () => {
 
   hamburgerButton.addEventListener('click', () => {
       hamburgerMenu.classList.toggle('open');
+      hamburgerButton.classList.toggle('active');
       overlay.classList.toggle('active');
     })
   

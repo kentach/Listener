@@ -12,35 +12,36 @@
         </h1>
       </div>
       <p class="small-subtitle">
-        「スクリプトを使った音読」で<br>
-        「聴く力」と「読む力」の土台を作る<br>
-        新しい英語音読トレーニングアプリ
+        「スクリプトを使った音読トレーニング」<br>
+        で「聴く力」と「読む力」の土台を作る<br>
+        英語音読トレーニングアプリ
       </p>
     </div>
 
     <div class="main-title-container">
-      <p class="tagline">
-        音読強化アプリ
-      </p>
-      <h1 class="hero-title">
-        LISTENER
-      </h1>
-      <div>
-        <div class="cta-section-buttons fade-up delay-1 mt-5">
-            <%= link_to "今すぐ始める",
-              new_user_registration_path,
-              class: "btn btn-primary rounded-pill fw-bold px-5 py-3 shadow" %>
+        <p class="tagline">
+          音読強化アプリ
+        </p>
+        <h1 class="hero-title">
+          LISTENER
+        </h1>
+        <div>
+          <div class="cta-section-buttons fade-up delay-1 mt-5">
+              <%= link_to "今すぐ始める",
+                new_user_registration_path,
+                class: "btn btn-primary rounded-pill fw-bold px-5 py-3 shadow" %>
 
-            <%= link_to "ログインする",
-              new_user_session_path,
-              class: "btn btn-outline-primary rounded-pill fw-bold px-5 py-3" %>
+              <%= link_to "ログインする",
+                new_user_session_path,
+                class: "btn btn-outline-primary rounded-pill fw-bold px-5 py-3" %>
+          </div>
         </div>
     </div>
 
-    </div>
   </div>
 </section>
 
+<%= render 'static_pages/features' %>
 <%= render 'static_pages/feature1' %>
 <%= render 'static_pages/feature2' %>
 <%= render 'static_pages/signup' %>

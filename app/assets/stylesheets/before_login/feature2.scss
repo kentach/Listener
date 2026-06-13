@@ -1,290 +1,184 @@
+
 /* =========================
-  FEATURE 02
+  SECTION
 ========================= */
-.feature02-section {
-  padding: 50px 20px 100px;
-
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #c8dff6 100%
-  );
-
-  display: flex;
-  justify-content: center;
+.features-two-section {
+  padding: 100px 0;
+  background: #f7f9fb;
 }
 
-/* 中央コンテナ */
-.feature02-inner {
-  width: 100%;
-  max-width: 1100px;
-
+.features-two-section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
   text-align: center;
 }
 
 /* =========================
-  FEATURE番号
+  NUMBER
 ========================= */
-.feature02-number {
+.feature-two-number {
   font-size: 15px;
   font-weight: 700;
-
   letter-spacing: 3px;
-
-  color: #54c9de;
-
+  color: #333;
   margin-bottom: 24px;
 }
 
-.feature02-number span {
+.feature-two-number span {
   font-size: 34px;
   font-weight: 900;
-
   margin-left: 8px;
 }
 
 /* =========================
-  タイトル
+  TITLE
 ========================= */
-.feature02-title {
-  font-size: 60px;
+.feature-two-title {
+  font-size: clamp(28px, 4vw, 60px);
   font-weight: 900;
-
   line-height: 1.4;
-
-  margin-bottom: 28px;
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
-
-  background: linear-gradient(
-    135deg,
-    #54c9de 0%,
-    #3b82f6 50%,
-    #7c3aed 100%
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
-  color: transparent;
-}
-
-/* =========================
-  説明文
-========================= */
-.feature02-subtitle {
-  font-size: 30px;
-
-  line-height: 1.9;
-
-  color: #1e1e1e;
-
-  margin-bottom: 80px;
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
-}
-
-/* =========================
-  アイコンエリア
-========================= */
-.feature02-icon-area {
-  display: flex;
-  justify-content: center;
-
-  gap: 32px;
-
-  flex-wrap: wrap;
-}
-
-/* カード */
-.feature02-icon-wrapper {
-  width: 220px;
-
-  padding: 40px 24px;
-
-  background: #fff;
-
-  border-radius: 28px;
-
-  box-shadow:
-    0 10px 30px rgba(84, 201, 222, 0.08);
-
-  transition: 0.25s;
-}
-
-/* hover */
-.feature02-icon-wrapper:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 20px 40px rgba(84, 201, 222, 0.16);
-}
-
-/* アイコン丸 */
-.feature02-icon-circle {
-  width: 90px;
-  height: 90px;
-
-  margin: 0 auto 24px;
-
-  border-radius: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: linear-gradient(
-    135deg,
-    #54c9de 0%,
-    #3b82f6 100%
-  );
-
-  color: #fff;
-}
-
-/* Bootstrap icon */
-.feature02-icon-circle i {
-  font-size: 40px;
-}
-
-/* ラベル */
-.feature02-icon-label {
-  font-size: 18px;
-  font-weight: 700;
-
+  margin-bottom: 50px;
   color: #333;
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
 
 /* =========================
-  アニメーション
+  CONTAINER
 ========================= */
-.fade-up {
+.feature-two-description-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* =========================
+  CARD
+========================= */
+.feature-two-description-item {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(40px);
+  animation: floatUp 0.8s ease forwards;
 
-  animation: fadeUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
-.delay-1 {
-  animation-delay: 0.2s;
+/* hover（デスクトップのみ） */
+@media (hover: hover) {
+  .feature-two-description-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
 }
 
-.delay-2 {
-  animation-delay: 0.4s;
+/* =========================
+  IMAGE
+========================= */
+.feature-two-description-item img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: block;
 }
 
-.delay-3 {
-  animation-delay: 0.6s;
+/* =========================
+  TEXT
+========================= */
+.feature-two-description-item p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 700;
+  margin-top: 12px;
+  color: #333;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
 
-.delay-4 {
-  animation-delay: 0.8s;
-}
-
-@keyframes fadeUp {
+/* =========================
+  ANIMATION
+========================= */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* 遅延 */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
 /* =========================
-  Responsive
+  REDUCE MOTION（重要）
 ========================= */
-@media (max-width: 768px) {
-
-  .feature02-section {
-    padding: 40px 16px;
-  }
-
-  .feature02-inner {
-    max-width: 100%;
-  }
-
-  /* FEATURE番号 */
-  .feature02-number {
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-  }
-
-  .feature02-number span {
-    font-size: 24px;
-  }
-
-  /* タイトル */
-  .feature02-title {
-    font-size: 34px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  /* 説明 */
-  .feature02-subtitle {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 44px;
-  }
-
-  /* カード */
-  .feature02-icon-area {
-    gap: 10px;
-    display:flex;
-    justify-content:center;
-  }
-
-  .feature02-icon-wrapper {
-    width: 50%;
-    max-width: 100px;
-    padding: 22px 6px;
-    border-radius: 22px;
-  }
-
-  /* アイコン */
-  .feature02-icon-circle {
-    width: 65px;
-    height: 65px;
-    margin-bottom: 18px;
-  }
-
-  .feature02-icon-circle i {
-    font-size: 30px;
-  }
-
-  /* ラベル */
-  .feature02-icon-label {
-    font-size: 10px;
+@media (prefers-reduced-motion: reduce) {
+  .feature-two-description-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
 
-/* 小さいスマホ */
+/* =========================
+  RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .features-two-section {
+    padding: 60px 0;
+  }
+
+  .feature-two-title {
+    margin-bottom: 32px;
+  }
+
+  .feature-two-description-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .feature-two-description-item {
+    width: 100%;
+    max-width: 340px;
+    padding: 18px;
+  }
+}
+
 @media (max-width: 480px) {
 
-  .feature02-section {
-    padding: 70px 14px;
+  .features-two-section {
+    padding: 50px 0;
   }
 
-  .feature02-title {
-    font-size: 28px;
+  .feature-two-description-item {
+    max-width: 92%;
   }
 
-  .feature02-subtitle {
-    font-size: 16px;
-  }
-
-  .feature02-icon-wrapper {
-    padding: 28px 18px;
+  .feature-two-description-item p {
+    font-size: 14px;
   }
 }

@@ -1,170 +1,237 @@
 /* =========================
-  Feature Section
+  Base Layout
 ========================= */
-.feature-title-section {
-  padding: 140px 20px;
 
-  background: #ffffff;
-
+.feature-one-section {
+  padding: 80px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: floatIn 1s ease-out forwards;
 }
 
-/* 中央コンテナ */
-.section-inner {
+.feature-one-inner {
   width: 100%;
-  max-width: 1000px;
-
+  max-width: 1100px;
   text-align: center;
-}
-
-/* FEATURE 01 */
-.feature-number {
-  font-size: 15px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  color: #28c2c2;
-
-  margin-bottom: 24px;
-}
-
-.feature-number span {
-  font-size: 34px;
-  font-weight: 900;
-
-  margin-left: 10px;
-}
-
-/* メインタイトル */
-.feature-title {
-  font-size: 60px;
-  font-weight: 900;
-
-  line-height: 1.3;
-
-  color: #fff;
-  background-color: #28c2c2;
-
-  margin-bottom: 50px;
-
-  padding: 16px 24px;
-
-  border-radius: 20px;
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
-}
-
-/* サブタイトル */
-.feature-subtitle {
-  margin-top: 50px;
-
-  font-size: 50px;
-  line-height: 2;
-
-  color: #111111;
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
+  margin-bottom: 20px;
 }
 
 /* =========================
-  アニメーション
+  Three Features Section
 ========================= */
-.fade-up {
+
+.three-features {
+  background: #15c3d3;
+  width: 100%;
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 80px 40px;
+
+  border-radius: 300px 300px 0 0;
+}
+
+.three-features h1 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* =========================
+  Feature Text
+========================= */
+
+.feature-one-number {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color:#fff;
+  margin-bottom: 24px;
+}
+
+.feature-one-number span {
+  font-size: 34px;
+  font-weight: 900;
+  margin-left: 8px;
+  color: #fff;
+}
+
+.feature-one-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  color: #fff;
+}
+
+.feature-one-subtitle {
+  font-size: 40px;
+  line-height: 1.9;
+  color: #1e1e1e;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+/* =========================
+  Icon Area
+========================= */
+
+.feature-one-icon-area {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.feature-one-icon-wrapper {
+  width: 220px;
+  padding: 40px 24px;
+  background: #fff;
+  border-radius: 28px;
+
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(40px);
+  animation: floatIn 0.7s ease-out forwards;
 
-  animation: fadeUp 0.8s ease forwards;
+  box-shadow: 0 10px 30px rgba(84, 201, 222, 0.08);
+  transition: all 0.3s ease;
+  will-change: transform;
 }
 
-.delay-1 {
-  animation-delay: 0.2s;
+.feature-one-icon-wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(84, 201, 222, 0.25);
 }
 
-.delay-2 {
-  animation-delay: 0.4s;
+/* Icon circle */
+.feature-one-icon-circle {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg,#54c9de 0%,#3b82f6 100%);
+  color: #fff;
 }
 
-.delay-3 {
-  animation-delay: 0.6s;
+.feature-one-icon-circle i {
+  font-size: 40px;
 }
 
-@keyframes fadeUp {
+/* Label */
+.feature-one-icon-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* =========================
+  Animation
+========================= */
+
+@keyframes floatIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* delay */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.35s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.65s; }
+
+/* =========================
+  Responsive (Tablet)
+========================= */
 
 @media (max-width: 768px) {
 
-  .feature-title-section {
+  .feature-one-section {
     padding: 40px 16px;
   }
 
-  .section-inner {
-    max-width: 100%;
+  .three-features {
+    padding: 60px 20px;
+    border-radius: 120px 120px 0 0;
   }
 
-  /* FEATURE */
-  .feature-number {
+  .three-features h1 {
+    font-size: 28px;
+  }
+
+  .feature-one-title {
+    font-size: 34px;
+  }
+
+  .feature-one-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  /* Cards */
+  .feature-one-icon-wrapper {
+    flex: 1 1 calc(50% - 10px);
+    max-width: 140px;
+    padding: 22px 10px;
+  }
+
+  .feature-one-icon-circle {
+    width: 65px;
+    height: 65px;
+  }
+
+  .feature-one-icon-circle i {
+    font-size: 30px;
+  }
+
+  .feature-one-icon-label {
     font-size: 12px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 18px;
   }
 
-  .feature-number span {
-    font-size: 24px;
-
-    margin-left: 6px;
-  }
-
-  /* タイトル */
-  .feature-title {
-    font-size: 32px;
-
-    line-height: 1.5;
-
-    margin-bottom: 32px;
-
-    padding: 14px 16px;
-
-    border-radius: 16px;
-  }
-
-  /* サブタイトル */
-  .feature-subtitle {
-    margin-top: 28px;
-
-    font-size: 22px;
-
-    line-height: 1.8;
+  /* アニメ軽量化 */
+  .feature-one-section,
+  .feature-one-icon-wrapper {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
 
-/* 小さいスマホ */
+/* =========================
+  Small Mobile
+========================= */
+
 @media (max-width: 480px) {
 
-  .feature-title-section {
-    padding: 40px 14px;
+  .feature-one-title {
+    font-size: 28px;
   }
 
-  .feature-title {
-    font-size: 26px;
+  .feature-one-subtitle {
+    font-size: 16px;
   }
 
-  .feature-subtitle {
-    font-size: 18px;
+  .feature-one-icon-wrapper {
+    flex: 1 1 100%;
+    max-width: 160px;
   }
 }

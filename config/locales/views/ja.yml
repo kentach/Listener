@@ -1,8 +1,5 @@
 ja:
   static_pages:
-    top:
-      title: 教材一覧
-
   textbooks:
     show:
       title: 教材詳細
