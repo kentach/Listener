@@ -6,43 +6,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
-
-  opacity: 0;
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+  margin-top: 80px;
   transform: translateY(60px);
-  animation: floatIn 1s ease-out forwards;
-}
 
-.feature-one-inner {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* =========================
-  ANIMATION
-========================= */
-@keyframes floatIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @media (max-width: 768px) {
+    padding: 40px 0;
+    margin-top: 40px;
+    transform: none;
   }
 }
-
-/* [修正1] fadeUp を floatIn に統一して削除
-   fade-up クラスも floatIn を使用するよう変更 */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: floatIn 0.8s ease forwards;
-}
-
-/* delay */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.35s; }
-.delay-3 { animation-delay: 0.5s; }
-.delay-4 { animation-delay: 0.65s; }
 
 /* =========================
   THREE FEATURES
@@ -51,228 +24,172 @@
   background: #15c3d3;
   width: 100%;
   min-height: 600px;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
   justify-content: center;
   align-items: center;
-
   padding: 80px 40px;
   border-radius: 500px 500px 0 0;
-}
 
-.three-features h1 {
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
-  color: #fff;
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 60px 24px;
+    border-radius: 80px 80px 0 0;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 48px 16px;
+    border-radius: 50px 50px 0 0;
+  }
+
+  h3 {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 32px;
+    }
+  }
 }
 
 /* =========================
   TEXT
 ========================= */
 .feature-one-number {
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
   color: #fff;
   margin-bottom: 24px;
-}
 
-.feature-one-number span {
-  font-size: 34px;
-  font-weight: 900;
-  margin-left: 8px;
-  color: #fff;
+  @media (max-width: 768px) {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  span {
+    font-size: 34px;
+    font-weight: 900;
+    margin-left: 8px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
 }
 
 .feature-one-title {
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   font-size: 60px;
   font-weight: 900;
   line-height: 1.4;
-  margin-bottom: 28px;
-  color: #fff;
-}
-
-/* [修正4] font-size を 40px → 26px に変更してタイポグラフィ階層を明確化 */
-.feature-one-subtitle {
-  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
-  font-size: 26px;
-  line-height: 1.9;
-  color: #1e1e1e;
-  margin-bottom: 80px;
   text-align: center;
-}
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+  color: #fff;
 
-/* =========================
-  ICON AREA
-========================= */
-.feature-one-icon-area {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
+  @media (max-width: 768px) {
+    font-size: 52px;
+  }
 
-/* CARD */
-/* [修正2] will-change: transform を追加してホバー競合を安定化 */
-.feature-one-icon-wrapper {
-  width: 220px;
-  padding: 40px 24px;
-  background: #fff;
-
-  border-radius: 28px;
-
-  opacity: 0;
-  transform: translateY(40px);
-  animation: floatIn 0.7s ease-out forwards;
-
-  box-shadow: 0 10px 30px rgba(84, 201, 222, 0.08);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
-}
-
-/* [修正5] delay-* クラスが上書きされる問題を :nth-child で解決 */
-.feature-one-icon-wrapper:nth-child(1) { animation-delay: 0.1s; }
-.feature-one-icon-wrapper:nth-child(2) { animation-delay: 0.25s; }
-.feature-one-icon-wrapper:nth-child(3) { animation-delay: 0.4s; }
-.feature-one-icon-wrapper:nth-child(4) { animation-delay: 0.55s; }
-
-/* hover（PCのみ） */
-@media (hover: hover) {
-  .feature-one-icon-wrapper:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(84, 201, 222, 0.25);
+  @media (max-width: 480px) {
+    font-size: 52px;
   }
 }
 
-/* ICON */
-.feature-one-icon-circle {
-  width: 90px;
-  height: 90px;
-
-  margin: 0 auto 24px;
-  border-radius: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: linear-gradient(135deg, #54c9de 0%, #3b82f6 100%);
+.feature-one-subtitle {
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+  font-size: 36px;
+  line-height: 1.9;
   color: #fff;
-}
+  margin-bottom: 40px;
+  text-align: center;
 
-.feature-one-icon-circle i {
-  font-size: 40px;
-}
+  @media (max-width: 768px) {
+    font-size: 25px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
 
-.feature-one-icon-label {
-  font-size: 18px;
-  font-weight: 700;
-  color: #333;
+  @media (max-width: 480px) {
+    font-size: 25px;
+    margin-bottom: 28px;
+  }
 }
 
 /* =========================
-  RESPONSIVE
+  FEATURE HEADER
+========================= */
+.feature-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 14px;
+  }
+}
+
+/* =========================
+  FEATURE ONE HEADING
+========================= */
+.feature-one-heading {
+  margin-bottom: 28px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
+
+/* =========================
+  FEATURE ONE DESCRIPTION
+========================= */
+.feature-one-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+/* =========================
+  ANIMATION RESET (MOBILE)
 ========================= */
 @media (max-width: 768px) {
-
-  .feature-one-section {
-    padding: 40px 16px;
-  }
-
-  .feature-one-inner {
-    max-width: 100%;
-  }
-
-  /* [修正3] .three-features h1 のレスポンシブを追加 */
-  .three-features h1 {
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-
-  .feature-one-number {
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-  }
-
-  .feature-one-number span {
-    font-size: 24px;
-  }
-
-  .feature-one-title {
-    font-size: 34px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .feature-one-subtitle {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 44px;
-  }
-
-  .feature-one-icon-area {
-    gap: 12px;
-  }
-
-  .feature-one-icon-wrapper {
-    width: calc(50% - 10px);
-    max-width: 160px;
-    padding: 22px 10px;
-  }
-
-  .feature-one-icon-circle {
-    width: 65px;
-    height: 65px;
-  }
-
-  .feature-one-icon-circle i {
-    font-size: 30px;
-  }
-
-  .feature-one-icon-label {
-    font-size: 10px;
-  }
-
-  /* スマホではアニメ軽量化 */
   .feature-one-section,
-  .feature-one-icon-wrapper {
+  .fade-up {
     animation: none;
     opacity: 1;
     transform: none;
   }
+
+  .delay-1, .delay-2, .delay-3, .delay-4 {
+    animation-delay: 0s;
+  }
 }
 
-@media (max-width: 480px) {
-
-  /* [修正6] padding-top を 70px → 40px に修正（768px以下の値より大きくなっていた逆転を解消） */
-  .feature-one-section {
-    padding: 40px 14px;
-  }
-
-  /* [修正3] 480px以下でさらに縮小 */
-  .three-features h1 {
-    font-size: 24px;
-  }
-
-  .feature-one-title {
-    font-size: 28px;
-  }
-
-  .feature-one-subtitle {
-    font-size: 16px;
-  }
-
-  .feature-one-icon-wrapper {
-    padding: 28px 18px;
+@media (prefers-reduced-motion: reduce) {
+  .feature-one-section,
+  .fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

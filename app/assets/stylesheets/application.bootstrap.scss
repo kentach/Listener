@@ -29,12 +29,14 @@
 @import './before_login/feature1';
 @import './before_login/feature2';
 @import './before_login/signup';
-@import './before_login/signin';
+@import './before_login/footer';
+
 
 // Devise
 @import './devise/session_new';
 @import './devise/registration_new';
 @import './devise/registration_edit';
+@import './devise/signin';
 
 //ブックリスト一覧ページ
 @import './booklists/booklist';

@@ -1,11 +1,6 @@
-/* =========================
-  SECTION
-========================= */
 .features-two-section {
   padding: 100px 0;
   background: #f7f9fb;
-
-  /* [修正5] font-family をセクション全体に一括指定 */
   font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
 }
 
@@ -19,8 +14,8 @@
 /* =========================
   NUMBER
 ========================= */
-/* [修正5] font-family 削除（セクションから継承） */
-.feature-two-number {
+.feature-number {
+  font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -37,7 +32,6 @@
 /* =========================
   TITLE
 ========================= */
-/* [修正5] font-family 削除（セクションから継承） */
 .feature-two-title {
   font-size: clamp(28px, 4vw, 60px);
   font-weight: 900;
@@ -64,30 +58,27 @@
   border-radius: 16px;
   padding: 20px;
   width: 300px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
-  opacity: 0;
-  transform: translateY(40px);
-
-  /* [修正3] from ブロックが冗長なため floatUp をシンプル化に合わせて維持 */
-  animation: floatUp 0.8s ease forwards;
-
+  transform: translateY(20px);
+  animation: floatIn 0.8s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
 }
 
-/* [修正1] delay-* クラスが効かない問題を :nth-child で解決 */
+.feature-two-description-item p {
+  font-size: 18px;
+  line-height: 1.0;
+  margin-top: 16px;
+}
+
 .feature-two-description-item:nth-child(1) { animation-delay: 0.2s; }
 .feature-two-description-item:nth-child(2) { animation-delay: 0.4s; }
 .feature-two-description-item:nth-child(3) { animation-delay: 0.6s; }
 
-/* hover（PCのみ） */
 @media (hover: hover) {
   .feature-two-description-item:hover {
     transform: translateY(-12px) scale(1.03);
@@ -98,13 +89,12 @@
 /* =========================
   IMAGE
 ========================= */
-.feature-two-description-item img {
+/* img タグ直指定 → クラス指定に変更 */
+.feature-two-image {
   width: 100%;
   max-width: 260px;
   height: auto;
-
   display: block;
-
   border-radius: 12px;
   object-fit: cover;
   margin-bottom: 12px;
@@ -113,24 +103,13 @@
 /* =========================
   TEXT
 ========================= */
-/* [修正5] font-family 削除（セクションから継承） */
-.feature-two-description-item p {
-  font-size: 16px;
+.feature-two-text {
+  font-size: 22px;
   line-height: 1.6;
   font-weight: 700;
-  margin-top: 12px;
+  margin-top: 22px;
   color: #333;
-}
-
-/* =========================
-  ANIMATION
-========================= */
-/* [修正3] from ブロックを削除（カード初期値と重複していたため） */
-@keyframes floatUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  white-space: pre-line;
 }
 
 /* =========================
@@ -138,29 +117,41 @@
 ========================= */
 @media (max-width: 768px) {
 
+  .features-two-section {
+    padding: 60px 0;
+  }
+
   .feature-two-description-container {
-    flex-direction: column;
+    flex-direction: flex;
     align-items: center;
   }
 
   .feature-two-description-item {
-    width: 100%;
-    max-width: 340px;
+    width: 40%;
+    min-width: 340px;
   }
 
-  /* [修正4] スマホでアニメーション無効化（パフォーマンス対策） */
-  .feature-two-description-item {
+  .feature-two-description-item p {
+    font-size: 17px;
+    font-weight: normal;
+  }
+
+  /* カードと fade-up 両方をリセット */
+  .feature-two-description-item,
+  .fade-up {
     animation: none;
-    opacity: 1;
     transform: none;
+  }
+
+  .delay-1, .delay-2, .delay-3, .delay-4 {
+    animation-delay: 0s;
   }
 }
 
-/* [修正4] reduced-motion 対応 */
 @media (prefers-reduced-motion: reduce) {
-  .feature-two-description-item {
+  .feature-two-description-item,
+  .fade-up {
     animation: none;
-    opacity: 1;
     transform: none;
   }
 }
