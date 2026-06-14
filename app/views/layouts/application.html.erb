@@ -23,8 +23,8 @@
 
   <body>
     <% if controller_name == "static_pages" && action_name == "top" && !user_signed_in? %>
-      <%= render "static_pages/before_login_header" %>
-      <%= render "static_pages/before_login_page" %>
+      <%= render "before_login_pages/before_login_header" %>
+      <%= render "before_login_pages/before_login_page" %>
     <% else %>
       <%= render 'shared/header' %>
 
