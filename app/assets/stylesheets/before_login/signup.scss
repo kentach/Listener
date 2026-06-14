@@ -1,161 +1,32 @@
-
-/* =========================
-  CTA SECTION
-========================= */
-.cta-section {
-  position: relative;
-  padding: 140px 20px;
-  margin: 100px 40px;
-
-  border-radius: 42px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-  background: linear-gradient(135deg, #28c2c2 0%, #1da1d2 100%);
-
-  box-shadow: 0 30px 80px rgba(0,0,0,0.10);
-}
-
-/* 背景装飾 */
-.cta-section::before,
-.cta-section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  filter: blur(10px);
-}
-
-.cta-section::before {
-  top: -120px;
-  right: -120px;
-  width: 320px;
-  height: 320px;
-}
-
-.cta-section::after {
-  bottom: -100px;
-  left: -80px;
-  width: 240px;
-  height: 240px;
-  background: rgba(255,255,255,0.08);
-  filter: blur(8px);
-}
-
-/* =========================
-  INNER
-========================= */
-.cta-section-inner {
-  position: relative;
-  z-index: 2;
-
+.sign-up-btn-container {
   width: 100%;
-  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(
+  135deg,
+  #15c3d3 0%,
+  #20c997 100%
+  );
+  font-family: 'Helvetica Neue','Helvetica','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+}
 
+.sign-up-section {
+  display:flex;
+  margin: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-/* =========================
-  TITLE
-========================= */
-.cta-title {
-  font-size: clamp(28px, 5vw, 68px);
-  font-weight: 900;
-  line-height: 1.35;
-
-  color: #fff;
-
-  margin-bottom: 54px;
-
-  letter-spacing: -0.03em;
-
-  text-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
-  font-family:
-    'ヒラギノ角ゴ StdN',
-    'Hiragino Kaku Gothic StdN',
-    sans-serif;
+.sign-up-section h1 {
+  font-weight: bold;
+  font-size: 60px;
 }
 
-/* =========================
-  BUTTONS
-========================= */
-.cta-section-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* =========================
-  ANIMATION
-========================= */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.delay-1 {
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-  RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-
-  .cta-section {
-    margin: 48px 16px;
-    padding: 84px 20px;
-    border-radius: 30px;
-  }
-
-  .cta-title {
-    margin-bottom: 40px;
-    line-height: 1.4;
-  }
-
-  .cta-section-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .cta-section-buttons .btn {
-    width: 100%;
-    max-width: 340px;
-    font-size: 17px;
-  }
-}
-
-/* =========================
-  SMALL DEVICE
-========================= */
-@media (max-width: 480px) {
-
-  .cta-section {
-    margin: 28px 12px;
-    padding: 68px 16px;
-    border-radius: 24px;
-  }
-
-  .cta-title {
-    margin-bottom: 32px;
-  }
-
-  .cta-section-buttons .btn {
-    padding: 16px 24px !important;
-  }
+.sign-up-section p {
+  margin-top: 30px;
+  font-size: 32px;
 }

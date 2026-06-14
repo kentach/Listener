@@ -1,18 +1,10 @@
-<section class="cta-section">
-  <div class="cta-section-inner">
-
-    <h2 class="cta-title fade-up">
-      さあ、今すぐ始めよう
-    </h2>
-
-    <div class="cta-section-buttons fade-up delay-1">
-      <%= link_to "今すぐ始める",
-        new_user_registration_path,
-        class: "btn btn-primary btn-lg rounded-pill fw-bold px-5 py-3 shadow" %>
-
-      <%= link_to "ログインする",
-        new_user_session_path,
-        class: "btn btn-outline-primary btn-lg rounded-pill fw-bold px-5 py-3" %>
-    </div>
+<section class="sign-up-btn-container">
+  <div class="sign-up-section">
+      <h1>さあ、今すぐ始めよう</h1>
+      <div class="hero-buttons fade-up delay-1 mt-4">
+        <%= link_to "今すぐ始める",
+              new_user_registration_path,
+              class: "hero-btn hero-btn--primary" %>
+      </div>
   </div>
 </section>

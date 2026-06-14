@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 /* Swiper本体 */
@@ -16,7 +16,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
 }
 
 /* 画像 */
@@ -39,9 +38,11 @@
 
   .title-img-container .swiper {
     width: 260px;
+    padding: 0;
   }
 
   .title-img-container .title-img {
     width: 130px;
+    padding: 0;
   }
 }
