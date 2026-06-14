@@ -22,15 +22,16 @@
   </head>
 
   <body>
-      <% if controller_name == "static_pages" && action_name == "top" && !user_signed_in? %>
-          <%= render "static_pages/before_login_header" %>
-          <%= render "static_pages/before_login_page" %>
-      <% else %>
-        <main class="with-header">
-          <%= render 'shared/header' %>
-          <%= render 'shared/flash_message' %>
-          <%= yield %>
-        </main>
+    <% if controller_name == "static_pages" && action_name == "top" && !user_signed_in? %>
+      <%= render "static_pages/before_login_header" %>
+      <%= render "static_pages/before_login_page" %>
+    <% else %>
+      <%= render 'shared/header' %>
+
+      <main class="with-header">
+        <%= render 'shared/flash_message' %>
+        <%= yield %>
+      </main>
     <% end %>
   </body>
 </html>
