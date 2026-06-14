@@ -125,8 +125,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-
-  width: min(360px, 85vw);
+  max-width: 360px;
   height: 100vh;
 
   padding-top: 80px;
