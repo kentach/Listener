@@ -1,10 +1,15 @@
 .features-title-section {
-  padding: 20px 0;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   transform: translateY(60px);
+
+  @media (max-width: 768px) {
+    padding: 22px 16px;
+    transform: none;
+  }
 }
 
 .features-section-inner {
@@ -12,102 +17,138 @@
   margin: 0 auto;
   text-align: center;
   padding: 40px 0;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
 }
 
-
-.features {
+.features-training {
   font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
   text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #15c3d3 0%, #26d0ce 50%, #1a9be6 100%);
+  display: inline;
+  padding: 30px 40px;
   font-size: 44px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 30px 0;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    padding: 16px 24px;
+    margin: 16px 0;
+    display: block; // inlineだとスマホで崩れるためblockに
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    padding: 12px 16px;
+  }
 }
 
 .feature-description-container {
   background: #0f3d75;
   width: 100%;
-  padding: 60px;
+  padding: 70px;
   display: flex;
-  margin-bottom: 40px;
+  margin: 40px 0; 
   justify-content: center;
   gap: 40px;
   align-items: center;
   flex-wrap: wrap;
+  box-sizing: border-box; // paddingで幅が溢れないように
+
+  @media (max-width: 768px) {
+    padding: 34px 26px;
+    margin: 0;
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 .feature-description-item {
   background-color: #fff;
   padding: 16px;
-
   font-size: 22px;
-
   width: 400px;
   min-height: 450px;
-
   border-radius: 16px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 360px;
+    min-height: auto;
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+.feature-title {
+  font-size: 20px;
+  margin: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 17px;
+  }
+}
+
+.feature-subtitle {
+  font-size: 28px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 17px;
+  }
 }
 
 .feature-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  margin-top: 25px;
+  margin-top: 15px;
   display: block;
   border-radius: 12px;
-}
 
-@media (max-width: 768px) {
-
-  .features-title-section {
-    animation: none;
-    transform: none;
+  @media (max-width: 768px) {
+    height: 260px;
+    margin-top: 5px;
   }
 
-  .features {
+  @media (max-width: 480px) {
+    height: 180px;
+  }
+}
+
+.features {
+  @media (max-width: 768px) {
     font-size: 28px;
     margin-bottom: 24px;
     line-height: 1.4;
   }
 
-  .features-section-inner {
-    padding: 20px 0;
-  }
-
-  .feature-description-container {
-    padding: 24px 16px;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .feature-description-item {
-    width: 100%;
-    max-width: 400px;
-    min-height: auto;
-    padding: 16px;
-    font-size: 18px;
-  }
-
-  .feature-image {
-    height: 200px;
-    margin-top: 16px;
+  @media (max-width: 480px) {
+    font-size: 24px;
   }
 }
 
-@media (max-width: 480px) {
-
-  .features {
-    font-size: 24px;
-  }
-
-  .feature-description-item {
-    font-size: 16px;
-  }
-
-  .feature-image {
-    height: 180px;
+@media (prefers-reduced-motion: reduce) {
+  .features-title-section {
+    animation: none;
+    transform: none;
   }
 }

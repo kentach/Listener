@@ -12,7 +12,7 @@ body {
 .textbook-container {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 0 20px 10px;
+  padding: 40px 20px 10px;
 }
 
 /* ================= 各テキストのタイトル ================= */
@@ -68,7 +68,7 @@ body {
 @media (max-width: 768px) {
 
   .textbook-container {
-    padding: 30px 14px 20px;
+    padding: 40px 14px 20px;
   }
 
   .textbook-title,

@@ -1,18 +1,4 @@
 /* =========================
-  GLOBAL
-========================= */
-
-.with-header {
-  padding-top: 80px;
-}
-
-@media (max-width: 768px) {
-  .with-header {
-    padding-top: 5px;
-  }
-}
-
-/* =========================
   LOGO
 ========================= */
 .logo-area {
@@ -26,42 +12,54 @@
 ========================= */
 .lp-header {
   position: fixed;
-  top: 20px;
+  top: 16px;
   left: 20px;
-
   z-index: 1000;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 10px 20px;
-
+  padding: 5px 18px;
   background: #fff;
   border-radius: 20px;
-
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-
   max-width: calc(100% - 40px);
+
+  @media (max-width: 768px) {
+    top: 10px;
+    left: 10px;
+    padding: 3px 14px;
+    max-width: calc(100% - 80px);
+    border-radius: 14px;
+  }
+
+  @media (max-width: 480px) {
+    top: 8px;
+    left: 8px;
+    padding: 2px 12px;
+    max-width: calc(100% - 72px);
+  }
 }
 
 /* =========================
   LOGO TEXT
 ========================= */
 .logo-text {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
   color: #002f71;
   text-decoration: none;
-
   white-space: nowrap;
+  letter-spacing: 1px;
+  font-family: 'Helvetica Neue', 'Arial', 'YuGothic', 'Hiragino Kaku Gothic ProN', sans-serif;
 
-  font-family:
-    'Helvetica Neue',
-    'Arial',
-    'YuGothic',
-    'Hiragino Kaku Gothic ProN',
-    sans-serif;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 }
 
 /* =========================
@@ -71,43 +69,46 @@
   position: fixed;
   top: 20px;
   right: 20px;
-
   z-index: 2000;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 44px;
   height: 44px;
-
-  padding: 10px;
-
+  padding: 8px;
   background: #fff;
   border: none;
   border-radius: 12px;
-
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-
-  cursor: pointer;
-
   -webkit-tap-highlight-color: transparent;
+  cursor: pointer; // タップ領域を明示
+
+  @media (max-width: 768px) {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
 }
 
 .hamburger span {
   width: 100%;
   height: 3px;
-
   background: #14C5D6;
   border-radius: 2px;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -115,7 +116,7 @@
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* =========================
@@ -125,21 +126,20 @@
   position: fixed;
   top: 0;
   right: -100%;
-  max-width: 360px;
+  width: 360px;
   height: 100vh;
-
   padding-top: 80px;
-
   background: #fff;
-
   z-index: 1700;
-
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
-
   transition: right 0.4s ease;
-
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding-top: 70px;
+  }
 }
 
 .hamburger-menu.open {
@@ -159,18 +159,20 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 14px 20px;
   font-size: 1.3rem;
-
-  font-family:
-    'Helvetica Neue',
-    'Arial',
-    'YuGothic',
-    'Hiragino Kaku Gothic ProN',
-    sans-serif;
-
+  font-family: 'Helvetica Neue', 'Arial', 'YuGothic', 'Hiragino Kaku Gothic ProN', sans-serif;
   transition: background 0.2s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 16px 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    padding: 18px 20px;
+  }
 }
 
 @media (hover: hover) {
@@ -186,6 +188,10 @@
 .hamburger-menu i {
   font-size: 1.3rem;
   opacity: 0.85;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 }
 
 /* =========================
@@ -194,17 +200,11 @@
 .menu-overlay {
   position: fixed;
   inset: 0;
-
   z-index: 1400;
-
   background: rgba(0, 0, 0, 0.35);
-
   opacity: 0;
   visibility: hidden;
-
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .menu-overlay.active {
@@ -212,32 +212,10 @@
   visibility: visible;
 }
 
-/* =========================
-  MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  body {
-    padding-top: 80px;
-  }
-
-  .lp-header {
-    top: 12px;
-    left: 12px;
-    padding: 8px 14px;
-    max-width: calc(100% - 24px);
-  }
-
-  .logo-text {
-    font-size: 20px;
-  }
-
-  .hamburger {
-    top: 12px;
-    right: 12px;
-  }
-
-  .hamburger-menu li {
-    font-size: 1rem;
+@media (prefers-reduced-motion: reduce) {
+  .hamburger span,
+  .hamburger-menu,
+  .menu-overlay {
+    transition: none;
   }
 }
