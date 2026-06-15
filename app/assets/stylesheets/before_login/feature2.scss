@@ -2,6 +2,14 @@
   padding: 100px 0;
   background: #f7f9fb;
   font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
 }
 
 .features-two-section-inner {
@@ -12,11 +20,21 @@
 }
 
 .feature-two-title {
-  font-size: 50px;
+  font-size: 52px;
   font-weight: 900;
   line-height: 1.4;
   margin-bottom: 50px;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 25px;
+    margin-bottom: 24px;
+  }
 }
 
 .feature-two-container {
@@ -24,6 +42,12 @@
   gap: 24px;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 .feature-script {
@@ -34,11 +58,30 @@
   border-radius: 12px;
   object-fit: cover;
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 200px;
+  }
 }
 
 .fa-right-long {
   font-size: 60px;
   color: #ff5757;
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    transform: rotate(90deg);
+    display: block;
+    margin: 8px auto;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 32px;
+  }
 }
 
 .feature-two-item {
@@ -55,10 +98,45 @@
   animation: floatIn 0.8s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 240px;
+    animation: none;
+    transform: none;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 240px;
+    padding: 8px;
+  }
 }
 
 .feature-two-item p {
   font-size: 18px;
   line-height: 1.0;
   margin-top: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-two-item {
+    animation: none;
+    transform: none;
+  }
 }

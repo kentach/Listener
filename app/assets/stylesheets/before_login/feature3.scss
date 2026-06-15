@@ -5,6 +5,15 @@
   display: flex;
   padding: 80px 40px;
   font-family: 'ヒラギノ角ゴ StdN', 'Hiragino Kaku Gothic StdN', sans-serif;
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 60px 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 12px;
+  }
 }
 
 .features-three-section-inner {
@@ -12,6 +21,11 @@
   margin: 0 auto;
   padding: 0 16px;
   text-align: center;
+  width: 100%; // 追加：中身が広がるよう
+
+  @media (max-width: 768px) {
+    padding: 0 8px;
+  }
 }
 
 /* =========================
@@ -24,12 +38,21 @@
   letter-spacing: 3px;
   color: #333;
   margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 }
 
 .feature-three-number span {
   font-size: 34px;
   font-weight: 900;
   margin-left: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 /* =========================
@@ -41,7 +64,18 @@
   line-height: 1.4;
   margin-bottom: 50px;
   color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
 }
+
 /* =========================
   CONTAINER
 ========================= */
@@ -50,6 +84,12 @@
   gap: 24px;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // flexではなくcolumnに修正
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 /* =========================
@@ -69,17 +109,40 @@
   animation: floatIn 0.8s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
-}
 
-.feature-three-description-item p {
-  font-size: 18px;
-  line-height: 1.0;
-  margin-top: 16px;
-}
+  &:nth-child(1) { animation-delay: 0.2s; }
+  &:nth-child(2) { animation-delay: 0.4s; }
+  &:nth-child(3) { animation-delay: 0.6s; }
 
-.feature-three-description-item:nth-child(1) { animation-delay: 0.2s; }
-.feature-three-description-item:nth-child(2) { animation-delay: 0.4s; }
-.feature-three-description-item:nth-child(3) { animation-delay: 0.6s; }
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 400px;
+    min-width: unset; // min-width: 340pxを解除
+    animation: none;
+    transform: none;
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6; 
+    margin-top: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+}
 
 @media (hover: hover) {
   .feature-three-description-item:hover {
@@ -91,7 +154,6 @@
 /* =========================
   IMAGE
 ========================= */
-
 .feature-three-image {
   width: 100%;
   max-width: 260px;
@@ -100,34 +162,20 @@
   border-radius: 12px;
   object-fit: cover;
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 200px;
+  }
 }
 
-
 /* =========================
-  RESPONSIVE
+  ANIMATION RESET
 ========================= */
 @media (max-width: 768px) {
-
-  .features-three-section {
-    padding: 60px 0;
-  }
-
-  .feature-three-description-container {
-    flex-direction: flex;
-    align-items: center;
-  }
-
-  .feature-three-description-item {
-    width: 40%;
-    min-width: 340px;
-  }
-
-  .feature-three-description-item p {
-    font-size: 17px;
-    font-weight: normal;
-  }
-
-  /* カードと fade-up 両方をリセット */
   .feature-three-description-item,
   .fade-up {
     animation: none;

@@ -10,8 +10,9 @@
 
     <%= yield :head %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" href="<%= asset_path('icon.png') %>" type="image/png">
+    <link rel="apple-touch-icon" href="<%= asset_path('icon.png') %>">
+    <link rel="icon" sizes="192x192" href="<%= asset_path('icon.png') %>">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <link
@@ -27,11 +28,8 @@
       <%= render "before_login_pages/before_login_page" %>
     <% else %>
       <%= render 'shared/header' %>
-
-      <main class="with-header">
-        <%= render 'shared/flash_message' %>
-        <%= yield %>
-      </main>
+      <%= render 'shared/flash_message' %>
+      <%= yield %>
     <% end %>
   </body>
 </html>

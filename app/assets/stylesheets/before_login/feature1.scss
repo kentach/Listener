@@ -33,6 +33,14 @@
   font-size: 44px;
   font-weight: bold;
   margin: 30px 0;
+
+  @media (max-width: 768px) {
+  font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 }
 
 .three-features-container {
@@ -50,13 +58,13 @@
   @media (max-width: 768px) {
     min-height: auto;
     padding: 60px 24px;
-    border-radius: 80px 80px 0 0;
+    border-radius: 100px 100px 0 0;
     gap: 16px;
   }
 
   @media (max-width: 480px) {
     padding: 48px 16px;
-    border-radius: 50px 50px 0 0;
+    border-radius: 100px 100px 0 0;
   }
 
   h3 {
