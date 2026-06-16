@@ -25,16 +25,16 @@
   max-width: calc(100% - 40px);
 
   @media (max-width: 768px) {
-    top: 10px;
-    left: 10px;
+    top: 12px;
+    left: 12px;
     padding: 3px 14px;
     max-width: calc(100% - 80px);
     border-radius: 14px;
   }
 
   @media (max-width: 480px) {
-    top: 8px;
-    left: 8px;
+    top: 12px;
+    left: 12px;
     padding: 2px 12px;
     max-width: calc(100% - 72px);
   }
@@ -44,7 +44,7 @@
   LOGO TEXT
 ========================= */
 .logo-text {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
   color: #002f71;
   text-decoration: none;
@@ -81,21 +81,22 @@
   border-radius: 12px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -webkit-tap-highlight-color: transparent;
-  cursor: pointer; // タップ領域を明示
+  cursor: pointer;
 
   @media (max-width: 768px) {
     top: 12px;
     right: 12px;
     width: 40px;
     height: 40px;
+    padding: 8px;
   }
 
   @media (max-width: 480px) {
     top: 10px;
     right: 10px;
-    width: 36px;
-    height: 36px;
-    padding: 6px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
   }
 }
 
