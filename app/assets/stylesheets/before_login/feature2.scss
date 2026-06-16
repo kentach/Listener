@@ -52,7 +52,7 @@
 
 .feature-script {
   width: 100%;
-  max-width: 260px;
+  max-width: 300px;
   height: auto;
   display: block;
   border-radius: 12px;
@@ -60,11 +60,11 @@
   margin-bottom: 12px;
 
   @media (max-width: 768px) {
-    max-width: 200px;
+    max-width: 230px;
   }
 
   @media (max-width: 480px) {
-    max-width: 200px;
+    max-width: 230px;
   }
 }
 
