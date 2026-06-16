@@ -81,17 +81,17 @@
 
 |全ての音声に日英スクリプトがついている|リピート再生・速度調整・スキップ機能|
 |:-------------|:-------------|
-|[![Image from Gyazo](https://i.gyazo.com/e50399c4b2919a10973139b4e85ac5d5.gif)](https://i.gyazo.com/e50399c4b2919a10973139b4e85ac5d5)|[![Image from Gyazo](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87.gif)](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87)|
+|[![Image from Gyazo](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3.gif)](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3)|[![Image from Gyazo](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87.gif)](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87)|
 |英語のスクリプト + 日本語訳も確認できるので安心。|学習者のレベルに合わせて音声の速度変換可能|
 
 |完了・未完了で進捗度合いを確認|音声のお気に入り登録|
 |:-------------|:-------------|
-|[![Image from Gyazo](https://i.gyazo.com/e5f89099bf357a74c078739947065751.gif)](https://i.gyazo.com/e5f89099bf357a74c078739947065751)|[![Image from Gyazo](https://i.gyazo.com/9b5812c3b0b5703ffb388b0cf5fb0122.gif)](https://i.gyazo.com/9b5812c3b0b5703ffb388b0cf5fb0122)|
+|[![Image from Gyazo](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3.gif)](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3)|[![Image from Gyazo](https://i.gyazo.com/86529c31a689f4c95024bb2d887ddfc7.gif)](https://i.gyazo.com/86529c31a689f4c95024bb2d887ddfc7)|
 |学習記録の可視化|練習したい音声をお気に入りに入れてすぐにアクセス可能|
 
 |英検スコアの記録|テキストのブックリスト登録|
 |:-------------|:-------------|
-|[![Image from Gyazo](https://i.gyazo.com/a7377af0df6f14fccf4ad323795ad466.gif)](https://i.gyazo.com/a7377af0df6f14fccf4ad323795ad466)|[![Image from Gyazo](https://i.gyazo.com/2d84734cef1b4f3ba3449a2290b30cfc.gif)](https://i.gyazo.com/2d84734cef1b4f3ba3449a2290b30cfc)|
+|[![Image from Gyazo](https://i.gyazo.com/074f0e92b96f842e98759265af9a4037.gif)](https://i.gyazo.com/074f0e92b96f842e98759265af9a4037)|[![Image from Gyazo](https://i.gyazo.com/6646bf8e66895b6f401a57d467051ebd.gif)](https://i.gyazo.com/6646bf8e66895b6f401a57d467051ebd)|
 |自分の英検スコアの推移を可視化|ブックリストに追加してすぐ学習できる|
 
 ## 3. 本当に解決したい課題は何か
