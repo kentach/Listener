@@ -5,7 +5,7 @@
   height: calc(100vh - 62px); 
   box-sizing: border-box;
   position: fixed;
-  top: 62px;
+  top: 0;
   left: -300px;
   border-right: 1px solid #ddd;
   background: #fff;
@@ -18,7 +18,7 @@
   @media (max-width: 768px) {
     width: 260px;
     left: -260px;
-    top: 55px;
+    top: 0;
     height: calc(100vh - 55px);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
   }
@@ -32,8 +32,8 @@
 
 .side-bar-toggle {
   position: fixed;
-  top: 100px;
-  left: 50px;
+  top: 20px;
+  left: 20px;
   font-size: 30px;
   cursor: pointer;
   z-index: 400;
@@ -48,12 +48,13 @@
 }
 
 .side-bar-toggle h1 {
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
   margin: 0;
   padding: 10px 14px;
   border-radius: 12px;
-  background: #fff;
+  background: #28c2c2;
+  color: #fff;
   box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.18);
 }
 
@@ -68,8 +69,8 @@
   text-align: center;
   margin: 0;
   padding: 18px 12px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
+  border-bottom: 1px solid #ddd;
+  background: #ddd;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -77,9 +78,6 @@
   cursor: pointer;
   flex-shrink: 0;
 
-  &:hover {
-    background-color: #eaeaea;
-  }
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -107,19 +105,19 @@
   padding: 12px 20px;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   line-height: 1.6;
   word-break: break-word;
 
   &:hover {
     transform: translateY(-2px);
-    background-color: #f3f0f0;
+    color:#28c2c2;
   }
 
   &.active {
     transform: translateY(-2px);
-    color: rgb(224, 66, 66);
-    background-color: #f3f0f0;
+    color: #fff;
+    background-color: #28c2c2;
   }
 
   @media (max-width: 768px) {
