@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
   def top
-    @ontre_textbooks = Textbook.where(series: "音トレ")
-    @rhythmas_textbooks = Textbook.where(series: "リズマス")
+    @fiveStage_textbooks = Textbook.where(series: "5ステージ")
     @textbooks = Textbook.all
   end
 end

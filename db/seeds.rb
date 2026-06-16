@@ -8,19 +8,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!('textbooks')
 
 ActiveRecord::Base.transaction do
   textbooks = [
-    { name: "音トレ道場6段", series: "音トレ", level: "英検準1級", image: "ontra_step6.png" },
-    { name: "音トレ道場5段", series: "音トレ", level: "英検2級", image: "ontra_step5.png" },
-    { name: "音トレ道場4段", series: "音トレ", level: "英検準2級", image: "ontra_step4.png" },
-    { name: "音トレ道場3段", series: "音トレ", level: "英検3級", image: "ontra_step3.png" },
-    { name: "音トレ道場2段", series: "音トレ", level: "英検4級", image: "ontra_step2.png" },
-    { name: "音トレ道場初段", series: "音トレ", level: "英検5級", image: "ontra_beginner.png" },
+    { name: "5ステージLEVEL4", series: "5ステージ", level: "英検準1級", image: "textbook4.png" },
+    { name: "5ステージLEVEL3", series: "5ステージ", level: "英検2級", image: "textbook3.png" },
+    { name: "5ステージLEVEL2", series: "5ステージ", level: "英検準2級", image: "textbook2.png" },
+    { name: "5ステージLEVEL1", series: "5ステージ", level: "英検3級", image: "textbook1.png" }
 
-    { name: "リズムでマスター英検準1級", series: "リズマス", level: "英検準1級", image: "rhythmas_pre1.png" },
-    { name: "リズムでマスター英検2級", series: "リズマス", level: "英検2級", image: "rhythmas_step2.png" },
-    { name: "リズムでマスター英検準2級", series: "リズマス", level: "英検準2級", image: "rhythmas_pre2.png" },
-    { name: "リズムでマスター英検3級", series: "リズマス", level: "英検3級", image: "rhythmas_step3.png" },
-    { name: "リズムでマスター英検4級", series: "リズマス", level: "英検4級", image: "rhythmas_step4.png" },
-    { name: "リズムでマスター英検5級", series: "リズマス", level: "英検5級", image: "rhythmas_step5.png" }
   ]
 
   textbooks.each do |attrs|
@@ -53,62 +45,20 @@ ActiveRecord::Base.transaction do
     audio_files: [
       {
         title: "TOPIC1",
-        file_name: "ontre_1dan/TOPIC1.mp3",
-        ja_script: "こんにちは、みなさん。私の名前は山田ケンタです。私の誕生日は1月7日です。私は11歳です。私の好きな色は青です。好きな食べ物はハンバーグです。ありがとうございました。",
-        en_script: "Hello everyone, my name is Yamada Kenta. My birthday is January 7th. I'm 11 years old.  My favorite color is blue. My favorite food is hamburger steak. Thank you."
+        file_name: "#",
+        ja_script: "こんにちは、みなさん。私の名前は山田ケンタです。私は11歳です。私はサッカーをすることが好きです。好きな教科は英語です。将来はエンジニアになりたいです。ありがとうございました。",
+        en_script: "Hello everyone. My name is Yamada Kenta. I'm 11 years old. I like playing soccer. My favorite subject is English. I want to be an engineer in the future. Thank you."
       },
       {
         title: "TOPIC2",
-        file_name: "ontre_1dan/TOPIC2.mp3",
-        ja_script: "私はスポーツが大好きです。サッカー、テニス、バドミントンをします。私は毎週日曜日に公園で走ります。あなたもスポーツは好きですか？
-        いいえ、好きではありません。私は本が大好きです。部屋にたくさん本があります。小説や雑誌を読みます。漫画は読みません。",
-        en_script: "I like sports very much. I play soccer tennis and badminton. I run in the park every Sunday. Do you like sports, too?
-        No, I don't. I love books. I have many books in my room. I read novels and magazines. I don't read comic books."
-      },
-      {
-        title: "TOPIC3",
-        file_name: "ontre_1dan/TOPIC3.mp3",
-        ja_script: "すみません、次のショーは何時ですか？\n5時30分です。\nわかりました。いくらですか？\n5ドルです。\nチケットは何枚必要ですか？ \n2枚お願いします。
-        \nどの席がいいですか？前ですか、後ろですか？\n前でお願いします。\nはい、どうぞ。10ドルです。\nありがとうございます。\nトイレはどこですか？あちらです。",
-      en_script: "Excuse me, what time is the next show?  \nIt's at 5:30. \nOkay. How much is it? \nIt's 5 dollars. \nHow many tickets do you want? 2 tickets, please.
-        \nWhich seats do you want, front or back? Front, please. \nOkay. Here you are. It's 10 dollars. \nThank you. And where is the restroom? \nIt's over there. "
-
-      },
-      {
-        title: "TOPIC4",
-        file_name: "ontre_1dan/TOPIC4.mp3",
-        ja_script: "「私にはアメリカ人の友達がいます。彼の名前はジョンです。彼はニューヨークに住んでいます。彼は音楽がとても好きで、長い髪をしています。彼はギターをとても上手に弾きます。彼のお母さんはピアノの先生です。お母さんもとても上手に歌います。彼女の声は美しいです。彼らは週末に裏庭で家族コンサートを開きます。たくさんの人が来て、彼らの音楽を楽しみます。」",
-        en_script: "I have an American friend. His name is John. He lives in New York. He likes music very much, and he has long hair. He plays the guitar very well. His mother is a piano teacher. She sings very well, too. Her voice is beautiful. They have a family concert in their backyard on weekends. Many people come and enjoy their music."
-      },
-      {
-        title: "TOPIC5",
-        file_name: "ontre_1dan/TOPIC5.mp3",
-        ja_script: "「ボブ、家ではいつも何をしているの？」 「だいたい4時ごろに家に帰るよ。いつもまず宿題をするんだ。」 「わあ、それはいいね。お兄さん（弟さん）はどうなの？」 「兄はいつも帰りが遅いんだ。いつも忙しくて疲れているよ。僕たちは一緒に夕食を食べることが全然ないんだ。」 \n「週末はお兄さん（弟さん）と何をするの？」 \n「よく公園でサッカーをするよ。時々テニスもするんだ。」 \n「いいね。今週末はいっしょにテニスをしようよ。」",
-        en_script: "What do you usually do at home, Bob?  I usually get home at around 4. I always do my homework first. Wow. That’s good. How about your brother? He always comes home late. He’s always busy and tired. We never eat dinner together. What do you do with your brother on weekends?  We often play soccer in the park. We sometimes play tennis. Great. Let’s play tennis together this weekend."
+        file_name: "#",
+        ja_script: "私はスポーツが大好きです。私はサッカーとバスケットボールをします。放課後によく友達と遊びます。体を動かすことが好きです。あなたはどんなスポーツが好きですか？",
+        en_script: "I love sports. I play soccer and basketball. I often play with my friends after school. I like being active. What sports do you like?"
       }
-    ]
-  },
-
-  {
-    learning_mode: "listening",
-    title: "Scene1",
-    audio_files: [
-      { title: "SCENE1 No1", file_name: "ontre_1dan/音トレ初段SCENE1_No1.mp3", ja_script: "メアリー、あなたの誕生日は7月ですか？ いいえ、6月です。 \n【質問】：メアリーの誕生日はいつですか？", en_script: "Is your birthday in July, Mary? No, it's in June. \n 【Question】When is Mary's birthday?" },
-      { title: "SCENE1 No2", file_name: "ontre_1dan/音トレ初段SCENE1_No2.mp3", ja_script: "ジョージ、あなたの家族は何人ですか？ 母、父、姉（妹）、そして私です。 \n【質問】：ジョージの家族は何人ですか？", en_script: "How many people are there in your family, George? \n My mom, my dad, my sister and me.\n 【Question】How many people are there in George's family?" },
-      { title: "SCENE1 No3", file_name: "ontre_1dan/音トレ初段SCENE1_No3.mp3", ja_script: "メグ、あなたはにんじんが好きですか？ いいえ、好きではありません。 私はトマトが好きです。 \n【質問】：メグはどんな野菜が好きですか？", en_script: "Do you like carrots, Meg? No, I don't. \n I like tomato. \n 【Question】What vegetables does Meg like?" },
-      { title: "SCENE1 No4", file_name: "ontre_1dan/音トレ初段SCENE1_No4.mp3", ja_script: "ショウゴ、あなたはどこの出身ですか？ 大阪出身ですが、今は東京に住んでいます。 \n【質問】：ショウゴは今どこに住んでいますか？", en_script: "Where are you from, Shogo? \nI'm from Osaka, but now I live in Tokyo. \n 【Question】Where does Shogo live now?" },
-      { title: "SCENE1 Q1", file_name: "ontre_1dan/音トレ初段SCENE1_Q1.mp3", ja_script: "こんにちは、ジェーン。今日は元気ですか？ \n1. 元気です、ありがとう。 \n2. あなたもね。 \n3. 自転車で。", en_script: "Q. Hi Jane. How are you today? \n1. Fine, thanks. \n2. You, too. \n3. By bike." },
-      { title: "SCENE1 Q2", file_name: "ontre_1dan/音トレ初段SCENE1_Q2.mp3", ja_script: "ジョンはシドニー出身ですか？ \n1. 彼は親切です。 \n2.彼はサッカーをします。 \n3.はい、そうです。", en_script: "Q. Is John from Sydney? \n1. He's kind. \n2. He plays soccer. \n3. Yes, he is." },
-      { title: "SCENE1 Q3", file_name: "ontre_1dan/音トレ初段SCENE1_Q3.mp3", ja_script: "あなたはバスケットボールが好きですか？ \n1. はい、とても楽しいスポーツです。 \n2.4月16日です。 \n3.いいえ、それは公園にあります。", en_script: "Q. Do you like basketball? \n1. Yes, it's a fun sport. \n2. on April 16th. \n3. No, it's in the park." },
-      { title: "SCENE1 Q4", file_name: "ontre_1dan/音トレ初段SCENE1_Q4.mp3", ja_script: "テッド、あなたには兄弟がいますか？ \n1. 私はテニスをします。 \n2.いいえ、でも姉（妹）が1人います。 \n3.私は猫を3匹飼っています。", en_script: "Q. Do you have brothers, Ted? \n1. I play tennis. \n2. No, but I have one sister. \n3. I have three cats." },
-      { title: "SCENE1 Q5", file_name: "ontre_1dan/音トレ初段SCENE1_Q5.mp3", ja_script: "ブラウンさん、ごちそうさまでした。 \n1. 私は30歳です。 \n2.私は夕食を作りません。 \n3.どういたしまして。", en_script: "Q. Thank you for the dinner, Mr. Brown. \n1. I'm 30 years old. \n2. I don't cook dinner. \n3. You're welcome." },
-      { title: "SCENE1 Q6", file_name: "ontre_1dan/音トレ初段SCENE1_Q6.mp3", ja_script: "ポール、あなたは何の教科が好きですか？ \n1. 緑色が好きです。 \n2.理科です。 \n3.それは私の教科書です。", en_script: "Q. What subject do you like, Paul? \n1. I like green. \n2. Science. \n3. It's my textbook" },
-      { title: "SCENE1 Q7", file_name: "ontre_1dan/音トレ初段SCENE1_Q7.mp3", ja_script: "ナンシー、あなたの誕生日はいつですか？ \n1. ケーキが欲しいです。 \n2.私は11歳です。 \n3. 9月です。", en_script: "Q. When's your birthday, Nancy?  \n1. I want a cake. \n2. I'm 1\n1. \n3. It's in September." },
-      { title: "SCENE1 Q8", file_name: "ontre_1dan/音トレ初段SCENE1_Q8.mp3", ja_script: "よい休暇を過ごしてね、トム。 \n1. ありがとう、ベス。あなたもね。 \n2.こんばんは、ベス。 \n3.どういたしまして。", en_script: "Q. Have a nice vacation, Tom. \n1. Thank you Beth, you too. \n2. Good evening, Beth. \n3. You're welcome." }
     ]
   }
 ]
-  create_lessons_for("音トレ道場初段", lesson_data1)
+  create_lessons_for("5ステージLEVEL1", lesson_data1)
 end
 
 AdminUser.find_or_create_by(email: 'admin@example.com') do |admin|
@@ -116,11 +66,11 @@ AdminUser.find_or_create_by(email: 'admin@example.com') do |admin|
   admin.password_confirmation = 'password'
 end
 
-AllowedStudent.find_or_create_by(student_id: "saiei3181")
+AllowedStudent.find_or_create_by(student_id: "saitama3181")
 
-User.find_or_create_by(student_id: "saiei3181") do |user|
-  user.password = "saiei3181"
-  user.password_confirmation = "saiei3181"
-  user.name = "サイエイ太郎"
+User.find_or_create_by(student_id: "saitama3181") do |user|
+  user.password = "saitama3181"
+  user.password_confirmation = "saitama3181"
+  user.name = "埼玉太郎"
   user.eiken_level = "英検5級"
 end

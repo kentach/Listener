@@ -21,6 +21,8 @@
 // 共通部分
 @import './shared/navigation_bar';
 @import './shared/header';
+@import './shared/flash_message';
+
 
 //ログイン前　LP
 @import './before_login/swiper';
@@ -31,7 +33,6 @@
 @import './before_login/feature3';
 @import './before_login/signup';
 @import './before_login/footer';
-
 
 // Devise
 @import './devise/session_new';

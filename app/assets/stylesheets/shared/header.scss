@@ -12,7 +12,7 @@
 ========================= */
 .lp-header {
   position: fixed;
-  top: 16px;
+  top: 20px;
   left: 20px;
   z-index: 1000;
   display: flex;
@@ -44,7 +44,7 @@
   LOGO TEXT
 ========================= */
 .logo-text {
-  font-size: 28px;
+  font-size: 21px;
   font-weight: bold;
   color: #002f71;
   text-decoration: none;
@@ -92,8 +92,8 @@
   }
 
   @media (max-width: 480px) {
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     width: 40px;
     height: 40px;
     padding: 8px;
