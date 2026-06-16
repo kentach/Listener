@@ -1,3 +1,4 @@
+<%= render 'shared/header' %>
 <!-- モーダルウィンドウ -->
 <div class="modal-background" id="modal">
   <div class="modal-inner">
@@ -23,10 +24,10 @@
 
 <!-- トップ画面 -->
 <div class="textbook-container">
-  <h2 class="textbook-title">音トレ道場</h2>
+  <h2 class="textbook-title">5ステージ</h2>
   <div class="textbook-img-container">
 
-    <% @ontre_textbooks.each do |textbook| %>
+    <% @fiveStage_textbooks.each do |textbook| %>
       <div class="textbook-card"
             data-image="<%= asset_path(textbook.image) %>"
             data-name="<%= textbook.name %>"
@@ -41,9 +42,9 @@
 
   </div>
 
-  <h2 class="textbook-title">リズムでマスター</h2>
+  <h2 class="textbook-title">5ステージ</h2>
   <div class="textbook-img-container">
-    <% @rhythmas_textbooks.each do |textbook| %>
+    <% @fiveStage_textbooks.each do |textbook| %>
       <div class="textbook-card"
             data-image="<%= asset_path(textbook.image) %>"
             data-name="<%= textbook.name %>"
