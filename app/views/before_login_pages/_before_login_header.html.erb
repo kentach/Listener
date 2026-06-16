@@ -1,7 +1,9 @@
 <header class="lp-header">
   <div class="logo-area">
-    <%= image_tag "icon_header.png", width:"40px", height: "40px" %>
-    <%= link_to "LISTENER", root_path, class:"logo-text" %>
+    <%= image_tag "icon_header.png", width:"30px", height: "30px" %>
+    <%= link_to root_path, class:"logo-text" do %>
+      LISTENER
+    <% end %>
   </div>
 
   <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="メニューを開く">
