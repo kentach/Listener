@@ -81,7 +81,7 @@
 
 |全ての音声に日英スクリプトがついている|リピート再生・速度調整・スキップ機能|
 |:-------------|:-------------|
-|[![Image from Gyazo](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3.gif)](https://i.gyazo.com/63d9c15f9351799781b025b0ca9006b3)|[![Image from Gyazo](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87.gif)](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87)|
+|[![Image from Gyazo](https://i.gyazo.com/7f57db477dbf8ee24214f80fc6c8d674.gif)](https://i.gyazo.com/7f57db477dbf8ee24214f80fc6c8d674)|[![Image from Gyazo](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87.gif)](https://i.gyazo.com/99b9fc6949f62220fe3d3ecea3555e87)|
 |英語のスクリプト + 日本語訳も確認できるので安心。|学習者のレベルに合わせて音声の速度変換可能|
 
 |完了・未完了で進捗度合いを確認|音声のお気に入り登録|
