@@ -1,7 +1,6 @@
-## サービス名 英語音読トレーニングアプリ LISTENER
-### URL[LISTENER](https://listener-2026.onrender.com/)
+## サービス名 「英語音読トレーニングアプリ LISTENER」
+### URL：[LISTENER](https://listener-2026.onrender.com/)
 
----
 ## ロゴ
 [![Image from Gyazo](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d.png)](https://i.gyazo.com/ac3390d7e56bffb2e0dadadd98bae33d)
 
