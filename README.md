@@ -3,7 +3,7 @@
 ### ゲストログインの方　studentID・password 「saitama3181」でログインしてください。
 
 ## ロゴ
-[![Image from Gyazo](https://i.gyazo.com/91e1de16a5d62ed6b48a42fab8f3caf3.png)](https://i.gyazo.com/91e1de16a5d62ed6b48a42fab7f3caf3)
+[![Image from Gyazo](https://i.gyazo.com/91e1de16a5d62ed6b48a42fab7f3caf3.png)](https://i.gyazo.com/91e1de16a5d62ed6b48a42fab7f3caf3)
 
 --- 
 ## 広告デザイン
@@ -83,19 +83,19 @@
 <table>
   <tr>
     <td align="center">
-      <img src="images/image1.png" width="180"><br>
+      <img src="image1.png" width="180"><br>
       音読トレーニング
     </td>
     <td align="center">
-      <img src="images/image2.png" width="180"><br>
+      <img src="image2.png" width="180"><br>
       英検スコア記録
     </td>
     <td align="center">
-      <img src="images/image3.png" width="180"><br>
+      <img src="image3.png" width="180"><br>
       音声の完了・お気に入り
     </td>
     <td align="center">
-      <img src="images/image4.png" width="180"><br>
+      <img src="image4.png" width="180"><br>
       テキストのお気に入り登録
     </td>
   </tr>
