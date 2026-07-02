@@ -87,11 +87,10 @@ AdminUser.find_or_create_by(email: 'admin@example.com') do |admin|
   admin.password_confirmation = 'password'
 end
 
-AllowedStudent.find_or_create_by(student_id: "saitama3181")
+AllowedStudent.find_or_create_by(student_id: "guest555")
 
-user = User.find_or_initialize_by(student_id: "saitama3181")
-user.password = "saitama3181"
-user.password_confirmation = "saitama3181"
-user.name = "埼玉太郎"
+user = User.find_or_initialize_by(student_id: "guest555")
+user.password = "guest555"
+user.password_confirmation = "guest555"
+user.name = "ゲスト"
 user.eiken_level = "英検5級"
-
