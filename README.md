@@ -83,19 +83,19 @@
 <table>
   <tr>
     <td align="center">
-      <img src="image1.png" width="180"><br>
+      <img src="app/assets/images/image1.png" width="180"><br>
       音読トレーニング
     </td>
     <td align="center">
-      <img src="image2.png" width="180"><br>
+      <img src="app/assets/images/image2.png" width="180"><br>
       英検スコア記録
     </td>
     <td align="center">
-      <img src="image3.png" width="180"><br>
+      <img src="app/assets/images/image3.png" width="180"><br>
       音声の完了・お気に入り
     </td>
     <td align="center">
-      <img src="image4.png" width="180"><br>
+      <img src="app/assets/images/image4.png" width="180"><br>
       テキストのお気に入り登録
     </td>
   </tr>
